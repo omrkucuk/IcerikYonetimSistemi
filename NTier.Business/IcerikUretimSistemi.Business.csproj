@@ -12,4 +12,9 @@
     <Folder Include="Services\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NTier.DataAccess\IcerikUretimSistemi.DataAccess.csproj" />
+    <ProjectReference Include="..\NTier.Entites\IcerikUretimSistemi.Entites.csproj" />
+  </ItemGroup>
+
 </Project>
