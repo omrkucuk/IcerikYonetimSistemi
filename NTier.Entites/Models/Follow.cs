@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace IcerikUretimSistemi.Entites.Models
 {
-    public class Follows:BaseEntity
+    public class Follow : BaseEntity
     {
         public Guid FollowerID { get; set; }
-        public Users? Follower { get; set; }
+        public User? Follower { get; set; } // Takip eden kişi
+
         public Guid FollowingID { get; set; }
-        public Users? Following { get; set; }
+        public User? Following { get; set; } // Takip edilen kişi
     }
+
 }

@@ -12,7 +12,7 @@ namespace IcerikUretimSistemi.Entites.Models
         public Guid PostID { get; set; }
         public Posts? Post { get; set; }
         public Guid UserID { get; set; }
-        public Users? User { get; set; }
+        public User? User { get; set; }
         public string? Text { get; set; }
     }
 }

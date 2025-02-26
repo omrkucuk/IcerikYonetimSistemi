@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IcerikUretimSistemi.Entites.Models
 {
-    public class Users:BaseEntity
+    public class User:BaseEntity
     {
         public string? UserName { get; set; }
         public string? Password { get; set; }
@@ -15,7 +15,7 @@ namespace IcerikUretimSistemi.Entites.Models
         public ICollection<Posts>? Posts { get; set; }
         public ICollection<Comments>? Comments { get; set; }
         public ICollection<Likes>? Likes { get; set; }
-        public ICollection<Follows>? Followers { get; set; }
-        public ICollection<Follows>? Following { get; set; }
+        public ICollection<Follow>? Followers { get; set; }
+        public ICollection<Follow>? Following { get; set; }
     }
 }
