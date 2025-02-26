@@ -53,10 +53,10 @@ namespace IcerikUretimSistemi.DataAccess.Context
                 .HasKey(l => new { l.PostID, l.UserID });
 
             modelBuilder.Entity<Message>()
-    .HasOne(m => m.Sender)
-    .WithMany()
-    .HasForeignKey(m => m.SenderID)
-    .OnDelete(DeleteBehavior.Restrict);  
+                .HasOne(m => m.Sender)
+                .WithMany()
+                .HasForeignKey(m => m.SenderID)
+                .OnDelete(DeleteBehavior.Restrict);  
 
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Receiver)
@@ -65,10 +65,10 @@ namespace IcerikUretimSistemi.DataAccess.Context
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Comments>()
-    .HasOne(c => c.Post)
-    .WithMany(p => p.Comments)
-    .HasForeignKey(c => c.PostID)
-    .OnDelete(DeleteBehavior.Cascade); 
+                .HasOne(c => c.Post)
+                .WithMany(p => p.Comments)
+                .HasForeignKey(c => c.PostID)
+                .OnDelete(DeleteBehavior.Cascade); 
 
             modelBuilder.Entity<Comments>()
                 .HasOne(c => c.User)
