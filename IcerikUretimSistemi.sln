@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcerikUretimSistemi", "IcerikUretimSistemi\IcerikUretimSistemi.csproj", "{84F70DD6-E122-4845-A5F7-57847BE9625B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcerikUretimSistemi.UI", "IcerikUretimSistemi\IcerikUretimSistemi.UI.csproj", "{84F70DD6-E122-4845-A5F7-57847BE9625B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.DataAccess", "NTier.DataAccess\NTier.DataAccess.csproj", "{26561D91-63C9-466E-85D0-7861BB86B803}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Entites", "NTier.Entites\NTier.Entites.csproj", "{6E10FAC8-AD1C-4038-A5FE-01CCE008C563}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTier.Business", "NTier.Business\NTier.Business.csproj", "{CB7861A8-C5A0-426E-9E7F-5BB9FECCEC3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{84F70DD6-E122-4845-A5F7-57847BE9625B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F70DD6-E122-4845-A5F7-57847BE9625B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F70DD6-E122-4845-A5F7-57847BE9625B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26561D91-63C9-466E-85D0-7861BB86B803}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26561D91-63C9-466E-85D0-7861BB86B803}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26561D91-63C9-466E-85D0-7861BB86B803}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26561D91-63C9-466E-85D0-7861BB86B803}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E10FAC8-AD1C-4038-A5FE-01CCE008C563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E10FAC8-AD1C-4038-A5FE-01CCE008C563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E10FAC8-AD1C-4038-A5FE-01CCE008C563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E10FAC8-AD1C-4038-A5FE-01CCE008C563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB7861A8-C5A0-426E-9E7F-5BB9FECCEC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB7861A8-C5A0-426E-9E7F-5BB9FECCEC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB7861A8-C5A0-426E-9E7F-5BB9FECCEC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB7861A8-C5A0-426E-9E7F-5BB9FECCEC3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
