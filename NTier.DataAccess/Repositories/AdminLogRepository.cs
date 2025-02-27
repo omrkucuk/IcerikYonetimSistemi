@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IcerikUretimSistemi.DataAccess.Repositories
 {
-    public class AdminLog : GenericRepository<AdminLog>
+    public class AdminLogRepository : GenericRepository<AdminLogRepository>
     {
-        public AdminLog(AppDBContext db) : base(db)
+        public AdminLogRepository(AppDBContext db) : base(db)
         {
         }
     }

@@ -9,6 +9,8 @@ namespace IcerikUretimSistemi.Entites.Models
 {
     public class Admin:BaseEntity
     {
+        public string? AdminName { get; set; }
+        public string? AdminPassword { get; set; }
         public bool CanManagersUsers { get; set; } = true;
         public bool CanEditPosts { get; set; } = true;
         public bool CanDeletePosts { get; set; } = true;
