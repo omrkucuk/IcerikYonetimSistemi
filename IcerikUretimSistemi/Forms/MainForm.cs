@@ -16,5 +16,20 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            PostControl newPost = new PostControl()
+            {
+                
+            };
+
+            flowLayoutPanel1.Controls.Add(newPost);
+        }
     }
 }

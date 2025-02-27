@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using IcerikUretimSistemi.DataAccess.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +6,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IcerikUretimSistemi.DataAccess.Abstractions
+namespace IcerikUretimSistemi.Business.Abstractions
 {
-    public interface IRepository<T> where T : class
+    interface IManager<T> where T : class
     {
         void Create(T entity);
 

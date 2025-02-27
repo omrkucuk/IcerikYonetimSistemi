@@ -25,7 +25,7 @@ namespace IcerikUretimSistemi.DataAccess.Repositories
             _dbContext.SaveChanges();
         }
 
-        public void Delete(T id)
+        public void Delete(Guid id)
         {
             var data = _dbSet.Find(id);
             if (data != null)
