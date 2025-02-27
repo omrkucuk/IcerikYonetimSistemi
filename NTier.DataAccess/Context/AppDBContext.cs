@@ -21,7 +21,7 @@ namespace IcerikUretimSistemi.DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=MURATHAN\SQLEXPRESS01;Initial Catalog=CMS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=OMERKUCUK\SQLEXPRESS;Initial Catalog=CMS;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
