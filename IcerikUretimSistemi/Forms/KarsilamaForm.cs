@@ -16,5 +16,19 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            SignUpForm sgn = new();
+            sgn.Show();
+            this.Hide();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm lgn = new();
+            lgn.Show();
+            this.Hide();
+        }
     }
 }

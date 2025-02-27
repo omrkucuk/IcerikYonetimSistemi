@@ -38,59 +38,66 @@
             // 
             // btnSignUp
             // 
-            btnSignUp.Location = new Point(108, 324);
+            btnSignUp.Location = new Point(94, 243);
+            btnSignUp.Margin = new Padding(3, 2, 3, 2);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(94, 29);
+            btnSignUp.Size = new Size(82, 22);
             btnSignUp.TabIndex = 0;
             btnSignUp.Text = "Üye Ol";
             btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += btnSignUp_Click;
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(78, 143);
+            txtUserName.Location = new Point(68, 107);
+            txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(213, 27);
+            txtUserName.Size = new Size(187, 23);
             txtUserName.TabIndex = 1;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(78, 216);
+            txtPassword.Location = new Point(68, 162);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(213, 27);
+            txtPassword.Size = new Size(187, 23);
             txtPassword.TabIndex = 2;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
-            lblUserName.Location = new Point(78, 111);
+            lblUserName.Location = new Point(68, 83);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(92, 20);
+            lblUserName.Size = new Size(73, 15);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "Kullanıcı Adı";
             // 
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(78, 193);
+            lblPassword.Location = new Point(68, 145);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(70, 20);
+            lblPassword.Size = new Size(57, 15);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Password";
             // 
             // SignUpForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(334, 421);
+            ClientSize = new Size(292, 316);
             Controls.Add(lblPassword);
             Controls.Add(lblUserName);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(btnSignUp);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "SignUpForm";
             Text = "SignUpForm";
+            Load += SignUpForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

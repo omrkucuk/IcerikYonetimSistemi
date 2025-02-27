@@ -35,39 +35,44 @@
             // 
             // btnSignUp
             // 
-            btnSignUp.Location = new Point(52, 120);
+            btnSignUp.Location = new Point(46, 90);
+            btnSignUp.Margin = new Padding(3, 2, 3, 2);
             btnSignUp.Name = "btnSignUp";
-            btnSignUp.Size = new Size(94, 29);
+            btnSignUp.Size = new Size(82, 22);
             btnSignUp.TabIndex = 0;
             btnSignUp.Text = "Üye Ol";
             btnSignUp.UseVisualStyleBackColor = true;
+            btnSignUp.Click += btnSignUp_Click;
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(220, 120);
+            btnLogin.Location = new Point(192, 90);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(94, 29);
+            btnLogin.Size = new Size(82, 22);
             btnLogin.TabIndex = 1;
             btnLogin.Text = "Giriş Yap";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(78, 49);
+            label2.Location = new Point(68, 37);
             label2.Name = "label2";
-            label2.Size = new Size(207, 20);
+            label2.Size = new Size(165, 15);
             label2.TabIndex = 3;
             label2.Text = "CONTENTİFY 'E HOŞGELDİNİZ";
             // 
             // KarsilamaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(372, 214);
+            ClientSize = new Size(326, 160);
             Controls.Add(label2);
             Controls.Add(btnLogin);
             Controls.Add(btnSignUp);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "KarsilamaForm";
             Text = "KarsilamaForm";
             ResumeLayout(false);

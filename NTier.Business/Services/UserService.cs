@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace IcerikUretimSistemi.Business.Services
 {
-    class UserService : IManager<User>
+    public class UserService : IManager<User>
     {
         private UserRepository _userRepository;
 
