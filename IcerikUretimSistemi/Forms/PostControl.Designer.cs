@@ -93,7 +93,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(groupBox1);
             Name = "PostControl";
-            Size = new Size(476, 294);
+            Size = new Size(437, 295);
             Load += PostControl_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

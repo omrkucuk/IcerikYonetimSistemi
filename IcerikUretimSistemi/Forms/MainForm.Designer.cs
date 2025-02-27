@@ -37,7 +37,7 @@
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(114, 35);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(562, 518);
+            flowLayoutPanel1.Size = new Size(505, 471);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // btnEkle
