@@ -29,7 +29,7 @@ namespace IcerikUretimSistemi.UI.Forms
                 
             };
 
-            flowLayoutPanel1.Controls.Add(newPost);
+            //flowLayoutPanel1.Controls.Add(newPost);
         }
     }
 }
