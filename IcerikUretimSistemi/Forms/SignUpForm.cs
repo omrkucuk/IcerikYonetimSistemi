@@ -51,5 +51,26 @@ namespace IcerikUretimSistemi.UI.Forms
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void lblUserName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ıconPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
