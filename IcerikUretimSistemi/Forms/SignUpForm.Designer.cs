@@ -29,31 +29,31 @@
         private void InitializeComponent()
         {
             btnSignUp = new Button();
-            txtUserName = new TextBox();
-            txtPassword = new TextBox();
+            x = new TextBox();
+            txtKayitUserName = new TextBox();
             lblUserName = new Label();
             lblPassword = new Label();
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            btnLogin = new Button();
+            txtGirisKullanıcıAdi = new TextBox();
+            txtGirisSifre = new TextBox();
             label3 = new Label();
             groupBox1 = new GroupBox();
-            groupBox2 = new GroupBox();
-            ıconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            textBox3 = new TextBox();
-            ıconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            ıconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             label7 = new Label();
+            ıconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            groupBox2 = new GroupBox();
+            ıconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            txtKayitSifre = new TextBox();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            ıconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)ıconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ıconPictureBox2).BeginInit();
+            groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ıconPictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ıconPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnSignUp
@@ -67,22 +67,21 @@
             btnSignUp.UseVisualStyleBackColor = true;
             btnSignUp.Click += btnSignUp_Click;
             // 
-            // txtUserName
+            // x
             // 
-            txtUserName.Location = new Point(108, 88);
-            txtUserName.Margin = new Padding(3, 2, 3, 2);
-            txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(227, 23);
-            txtUserName.TabIndex = 1;
+            x.Location = new Point(108, 88);
+            x.Margin = new Padding(3, 2, 3, 2);
+            x.Name = "x";
+            x.Size = new Size(227, 23);
+            x.TabIndex = 1;
             // 
-            // txtPassword
+            // txtKayitUserName
             // 
-            txtPassword.Location = new Point(108, 144);
-            txtPassword.Margin = new Padding(3, 2, 3, 2);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(227, 23);
-            txtPassword.TabIndex = 2;
-            txtPassword.UseSystemPasswordChar = true;
+            txtKayitUserName.Location = new Point(108, 144);
+            txtKayitUserName.Margin = new Padding(3, 2, 3, 2);
+            txtKayitUserName.Name = "txtKayitUserName";
+            txtKayitUserName.Size = new Size(227, 23);
+            txtKayitUserName.TabIndex = 2;
             // 
             // lblUserName
             // 
@@ -123,31 +122,33 @@
             label2.TabIndex = 7;
             label2.Text = "\"İçeriğin gücünü keşfedin\"";
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Location = new Point(223, 244);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(109, 43);
-            button1.TabIndex = 8;
-            button1.Text = "Giriş Yap";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.Location = new Point(223, 244);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(109, 43);
+            btnLogin.TabIndex = 8;
+            btnLogin.Text = "Giriş Yap";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
-            // textBox1
+            // txtGirisKullanıcıAdi
             // 
-            textBox1.Location = new Point(105, 85);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(227, 23);
-            textBox1.TabIndex = 9;
+            txtGirisKullanıcıAdi.Location = new Point(105, 85);
+            txtGirisKullanıcıAdi.Margin = new Padding(3, 2, 3, 2);
+            txtGirisKullanıcıAdi.Name = "txtGirisKullanıcıAdi";
+            txtGirisKullanıcıAdi.Size = new Size(227, 23);
+            txtGirisKullanıcıAdi.TabIndex = 9;
             // 
-            // textBox2
+            // txtGirisSifre
             // 
-            textBox2.Location = new Point(105, 164);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(227, 23);
-            textBox2.TabIndex = 10;
+            txtGirisSifre.Location = new Point(105, 164);
+            txtGirisSifre.Margin = new Padding(3, 2, 3, 2);
+            txtGirisSifre.Name = "txtGirisSifre";
+            txtGirisSifre.Size = new Size(227, 23);
+            txtGirisSifre.TabIndex = 10;
+            txtGirisSifre.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -163,9 +164,9 @@
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(ıconPictureBox2);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(txtGirisSifre);
+            groupBox1.Controls.Add(txtGirisKullanıcıAdi);
+            groupBox1.Controls.Add(btnLogin);
             groupBox1.Controls.Add(lblPassword);
             groupBox1.Location = new Point(467, 175);
             groupBox1.Name = "groupBox1";
@@ -174,79 +175,18 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // groupBox2
+            // label7
             // 
-            groupBox2.Controls.Add(ıconPictureBox3);
-            groupBox2.Controls.Add(textBox3);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(lblUserName);
-            groupBox2.Controls.Add(txtPassword);
-            groupBox2.Controls.Add(txtUserName);
-            groupBox2.Controls.Add(btnSignUp);
-            groupBox2.Location = new Point(60, 175);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(389, 382);
-            groupBox2.TabIndex = 14;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
-            // 
-            // ıconPictureBox1
-            // 
-            ıconPictureBox1.BackColor = Color.Transparent;
-            ıconPictureBox1.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_02_28_at_12_33_16;
-            ıconPictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            ıconPictureBox1.ForeColor = SystemColors.ControlText;
-            ıconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            ıconPictureBox1.IconColor = SystemColors.ControlText;
-            ıconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ıconPictureBox1.IconSize = 135;
-            ıconPictureBox1.Location = new Point(31, 24);
-            ıconPictureBox1.Name = "ıconPictureBox1";
-            ıconPictureBox1.Size = new Size(204, 135);
-            ıconPictureBox1.TabIndex = 15;
-            ıconPictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(55, 91);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 15);
-            label4.TabIndex = 4;
-            label4.Text = "E-posta";
-            label4.Click += label4_Click;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(72, 207);
-            label5.Name = "label5";
-            label5.Size = new Size(30, 15);
-            label5.TabIndex = 5;
-            label5.Text = "Şifre";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(29, 147);
-            label6.Name = "label6";
-            label6.Size = new Size(73, 15);
-            label6.TabIndex = 6;
-            label6.Text = "Kullanıcı Adı";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(108, 204);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(227, 23);
-            textBox3.TabIndex = 7;
+            label7.AutoSize = true;
+            label7.Location = new Point(26, 38);
+            label7.Name = "label7";
+            label7.Size = new Size(252, 15);
+            label7.TabIndex = 14;
+            label7.Text = "Giriş yapın, içeriklerinizi düzenlemeye başlayın.";
             // 
             // ıconPictureBox2
             // 
             ıconPictureBox2.BackColor = SystemColors.Control;
-            ıconPictureBox2.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_02_28_at_12_33_16;
             ıconPictureBox2.ForeColor = SystemColors.ControlText;
             ıconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             ıconPictureBox2.IconColor = SystemColors.ControlText;
@@ -260,10 +200,27 @@
             ıconPictureBox2.TabStop = false;
             ıconPictureBox2.Click += ıconPictureBox2_Click;
             // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(ıconPictureBox3);
+            groupBox2.Controls.Add(txtKayitSifre);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(lblUserName);
+            groupBox2.Controls.Add(txtKayitUserName);
+            groupBox2.Controls.Add(x);
+            groupBox2.Controls.Add(btnSignUp);
+            groupBox2.Location = new Point(60, 175);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(389, 382);
+            groupBox2.TabIndex = 14;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "groupBox2";
+            // 
             // ıconPictureBox3
             // 
             ıconPictureBox3.BackColor = SystemColors.Control;
-            ıconPictureBox3.BackgroundImage = Properties.Resources.WhatsApp_Image_2025_02_28_at_12_33_16;
             ıconPictureBox3.ForeColor = SystemColors.ControlText;
             ıconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Lock;
             ıconPictureBox3.IconColor = SystemColors.ControlText;
@@ -276,14 +233,56 @@
             ıconPictureBox3.TabIndex = 13;
             ıconPictureBox3.TabStop = false;
             // 
-            // label7
+            // txtKayitSifre
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(26, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(252, 15);
-            label7.TabIndex = 14;
-            label7.Text = "Giriş yapın, içeriklerinizi düzenlemeye başlayın.";
+            txtKayitSifre.Location = new Point(108, 204);
+            txtKayitSifre.Name = "txtKayitSifre";
+            txtKayitSifre.Size = new Size(227, 23);
+            txtKayitSifre.TabIndex = 7;
+            txtKayitSifre.UseSystemPasswordChar = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(29, 147);
+            label6.Name = "label6";
+            label6.Size = new Size(73, 15);
+            label6.TabIndex = 6;
+            label6.Text = "Kullanıcı Adı";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(72, 207);
+            label5.Name = "label5";
+            label5.Size = new Size(30, 15);
+            label5.TabIndex = 5;
+            label5.Text = "Şifre";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(55, 91);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 15);
+            label4.TabIndex = 4;
+            label4.Text = "E-posta";
+            label4.Click += label4_Click;
+            // 
+            // ıconPictureBox1
+            // 
+            ıconPictureBox1.BackColor = Color.Transparent;
+            ıconPictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            ıconPictureBox1.ForeColor = SystemColors.ControlText;
+            ıconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
+            ıconPictureBox1.IconColor = SystemColors.ControlText;
+            ıconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            ıconPictureBox1.IconSize = 135;
+            ıconPictureBox1.Location = new Point(31, 24);
+            ıconPictureBox1.Name = "ıconPictureBox1";
+            ıconPictureBox1.Size = new Size(204, 135);
+            ıconPictureBox1.TabIndex = 15;
+            ıconPictureBox1.TabStop = false;
             // 
             // SignUpForm
             // 
@@ -302,11 +301,11 @@
             Load += SignUpForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ıconPictureBox2).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)ıconPictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)ıconPictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)ıconPictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ıconPictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -314,19 +313,19 @@
         #endregion
 
         private Button btnSignUp;
-        private TextBox txtUserName;
-        private TextBox txtPassword;
+        private TextBox x;
+        private TextBox txtKayitUserName;
         private Label lblUserName;
         private Label lblPassword;
         private Label label1;
         private Label label2;
-        private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private Button btnLogin;
+        private TextBox txtGirisKullanıcıAdi;
+        private TextBox txtGirisSifre;
         private Label label3;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private TextBox textBox3;
+        private TextBox txtKayitSifre;
         private Label label6;
         private Label label5;
         private Label label4;

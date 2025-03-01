@@ -1,8 +1,10 @@
 ﻿using FluentValidation.Results;
 using IcerikUretimSistemi.Business.Abstractions;
 using IcerikUretimSistemi.Business.Validators;
+using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,10 +40,35 @@ namespace IcerikUretimSistemi.Business.Services
         public void Delete(Guid id)
         {
             var bulunan = _userRepository.GetByID(id);
-
             if (bulunan == null)
             {
                 throw new Exception("Kullanıcı Bulunamadı.");
+            }
+
+            using (var context = new AppDBContext())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // Kullanıcının takip ilişkilerini kaldır
+                        var follows = context.Follows
+                            .Where(f => f.FollowerID == id || f.FollowingID == id)
+                            .ToList();
+                        context.Follows.RemoveRange(follows);
+
+                        // Kullanıcıyı sil
+                        context.Users.Remove(bulunan);
+
+                        context.SaveChanges();
+                        transaction.Commit(); // Her şey başarılıysa işlemi tamamla
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback(); // Hata olursa işlemi geri al
+                        throw;
+                    }
+                }
             }
 
             _userRepository.Delete(id);
@@ -75,6 +102,35 @@ namespace IcerikUretimSistemi.Business.Services
             }
 
             _userRepository.Update(entity);
+        }
+
+        public bool ToggleFollow(Guid followerId, Guid followingId)
+        {
+            using (var context = new AppDBContext())
+            {
+                var follow = context.Follows
+                    .FirstOrDefault(f => f.FollowerID == followerId && f.FollowingID == followingId);
+
+                if (follow == null)
+                {
+                    // Takip etme işlemi
+                    var newFollow = new Follow
+                    {
+                        FollowerID = followerId,
+                        FollowingID = followingId
+                    };
+                    context.Follows.Add(newFollow);
+                    context.SaveChanges();
+                    return true; // Takip edildi
+                }
+                else
+                {
+                    // Takibi bırakma işlemi
+                    context.Follows.Remove(follow);
+                    context.SaveChanges();
+                    return false; // Takipten çıkıldı
+                }
+            }
         }
     }
 }

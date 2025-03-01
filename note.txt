@@ -1,0 +1,227 @@
+ namespace IcerikUretimSistemi.UI.Forms
+{
+     public partial class SignUpForm : Form
+    {
+        private readonly UserService _userService;
+        private readonly UserRepository _userRepository;
+        public SignUpForm()
+        {
+            InitializeComponent();
+
+            var context = new AppDBContext();
+            _userRepository = new UserRepository(context);
+            _userService = new UserService(_userRepository);
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User kullanici = new User()
+                {
+                    UserName = txtUserName.Text,
+                    Password = txtPassword.Text
+                };
+
+                _userService.Create(kullanici);
+                MessageBox.Show("Kayýt iþlemi baþarýlý");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+    }
+
+
+
+
+    ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+     public partial class MainForm : Form
+    {
+        public MainForm()
+        {
+            InitializeComponent();
+            KullaniciListele();
+        }
+
+        // ListView için örnek veri ekleme
+        void KullaniciListele()
+        {
+            // Önce FlowLayoutPanel içindeki her þeyi temizle
+            flpKullanicilar.Controls.Clear();
+
+            // Örnek kullanýcý listesi
+            List<(string ad, string kullaniciAdi)> kullanicilar = new List<(string, string)>
+    {
+        ("Ahmet Yýlmaz", "ahmet123"),
+        ("Mehmet Demir", "mehmet99"),
+        ("Elif Karaca", "elif.k"),
+        ("Zeynep Çelik", "zeynepc"),
+        ("Burak Kaya", "burak.kaya")
+    };
+
+            foreach (var kullanici in kullanicilar)
+            {
+                // Kullanýcý kartý (Panel)
+                Panel pnl = new Panel();
+                pnl.Size = new Size(250, 100); // Kartýn boyutu
+                pnl.BackColor = Color.White;
+                pnl.BorderStyle = BorderStyle.FixedSingle;
+                pnl.Margin = new Padding(10); // Kartlar arasý boþluk
+
+                // Kullanýcý adý etiketi
+                Label lblAd = new Label();
+                lblAd.Text = kullanici.ad;
+                lblAd.Font = new Font("Arial", 12, FontStyle.Bold);
+                lblAd.Location = new Point(10, 10);
+                lblAd.AutoSize = true;
+
+                // Kullanýcý adý (username) etiketi
+                Label lblKullaniciAdi = new Label();
+                lblKullaniciAdi.Text = $"@{kullanici.kullaniciAdi}";
+                lblKullaniciAdi.Font = new Font("Arial", 10, FontStyle.Italic);
+                lblKullaniciAdi.ForeColor = Color.Gray;
+                lblKullaniciAdi.Location = new Point(10, 40);
+                lblKullaniciAdi.AutoSize = true;
+
+                // Takip Et butonu
+                Button btnTakip = new Button();
+                btnTakip.Text = "Takip Et";
+                btnTakip.Size = new Size(80, 30);
+                btnTakip.Location = new Point(10, 60);
+                btnTakip.BackColor = Color.LightBlue;
+                btnTakip.Click += (s, e) => MessageBox.Show($"{kullanici.ad} takip edildi!");
+
+                // Panel içine elemanlarý ekle
+                pnl.Controls.Add(lblAd);
+                pnl.Controls.Add(lblKullaniciAdi);
+                pnl.Controls.Add(btnTakip);
+
+                // FlowLayoutPanel içine kartý ekle
+                flpKullanicilar.Controls.Add(pnl);
+            }
+        }
+
+
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            ýconPictureBox1.IconChar = IconChar.Bars;
+            ýconPictureBox1.IconSize = 50;
+
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.IconChar = IconChar.Bars;  // Bars ikonunu kullanýyoruz
+            iconButton1.IconSize = iconButton1.Width;  // Ýkonun boyutunu butonun geniþliðine ayarlýyoruz
+            //iconButton1. = ContentAlignment.MiddleCenter;  // Ýkonu butonun ortasýna yerleþtiriyoruz
+            iconButton1.Text = "";
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            foreach (Panel pnl in flpKullanicilar.Controls)
+            {
+                Label lblAd = pnl.Controls.OfType<Label>().FirstOrDefault();
+                Label lblKullaniciAdi = pnl.Controls.OfType<Label>().Skip(1).FirstOrDefault();
+
+                if (lblAd != null && lblKullaniciAdi != null)
+                {
+                    bool goster = lblAd.Text.ToLower().Contains(textBox1.Text.ToLower()) ||
+                                  lblKullaniciAdi.Text.ToLower().Contains(textBox1.Text.ToLower());
+
+                    pnl.Visible = goster;
+                }
+            }
+        }
+    }
+
+
+
+
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+     public partial class LoginForm : Form
+    {
+        private readonly UserRepository _userRepository;
+        private readonly UserService _userService;
+        public LoginForm()
+        {
+            InitializeComponent();
+
+            var context = new AppDBContext();
+            _userRepository = new UserRepository(context);
+            _userService = new UserService(_userRepository);
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var kullaniciadi = txtUserName.Text;
+                var sifre = txtPassword.Text;
+
+                // Veritabanýndaki kullanýcýyý kontrol et
+                var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == kullaniciadi && x.Password == sifre);
+
+                if (user != null)
+                {
+                    MessageBox.Show("Giriþ Baþarýlý");
+
+                    // Aktif kullanýcýyý CurrentUser'a set et
+                    CurrentUser.SetCurrentUser(user);
+
+                    // Kullanýcýnýn ID'sini al ve ProfileForm'u aç
+                    ProfileForm profileForm = new ProfileForm(user.ID);
+                    this.Hide();
+                    profileForm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz kullanýcý adý veya þifre");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+    }

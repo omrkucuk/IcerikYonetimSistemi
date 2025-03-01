@@ -92,12 +92,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            PostControl newPost = new PostControl()
-            {
 
-            };
-
-            flowLayoutPanel1.Controls.Add(newPost);
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)

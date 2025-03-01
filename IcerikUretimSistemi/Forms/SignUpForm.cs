@@ -2,6 +2,8 @@
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
+using IcerikUretimSistemi.UI.Forms.Controls;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,8 +35,8 @@ namespace IcerikUretimSistemi.UI.Forms
             {
                 User kullanici = new User()
                 {
-                    UserName = txtUserName.Text,
-                    Password = txtPassword.Text
+                    UserName = txtKayitUserName.Text,
+                    Password = txtKayitSifre.Text
                 };
 
                 _userService.Create(kullanici);
@@ -71,6 +73,40 @@ namespace IcerikUretimSistemi.UI.Forms
         private void ıconPictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var kullaniciadi = txtGirisKullanıcıAdi.Text;
+                var sifre = txtGirisSifre.Text;
+
+                // Veritabanındaki kullanıcıyı kontrol et
+                var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == kullaniciadi && x.Password == sifre);
+
+                if (user != null)
+                {
+                    MessageBox.Show("Giriş Başarılı");
+
+                    // Aktif kullanıcıyı CurrentUser'a set et
+                    CurrentUser.SetCurrentUser(user);
+
+                    // Kullanıcının ID'sini al ve ProfileForm'u aç
+                    ProfileForm profileForm = new ProfileForm(user.ID);
+                    this.Hide();
+                    profileForm.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Geçersiz kullanıcı adı veya şifre");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

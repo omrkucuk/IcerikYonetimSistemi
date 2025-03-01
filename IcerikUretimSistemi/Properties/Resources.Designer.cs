@@ -59,15 +59,5 @@ namespace IcerikUretimSistemi.UI.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2025_02_28_at_12_33_16 {
-            get {
-                object obj = ResourceManager.GetObject("WhatsApp Image 2025-02-28 at 12.33.16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
