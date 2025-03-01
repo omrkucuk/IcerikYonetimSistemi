@@ -1,0 +1,138 @@
+﻿using IcerikUretimSistemi.Business.Services;
+using IcerikUretimSistemi.DataAccess.Context;
+using IcerikUretimSistemi.DataAccess.Repositories;
+using IcerikUretimSistemi.Entites.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace IcerikUretimSistemi.UI.Forms
+{
+    public partial class ProfileSetting : Form
+    {
+        private readonly UserRepository _userRepo;
+        private readonly UserService _userService;
+        public ProfileSetting()
+        {
+            InitializeComponent();
+            LoadImages();
+
+            var context = new AppDBContext();
+            _userRepo = new UserRepository(context);
+            _userService = new UserService(_userRepo);
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProfileSetting_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadImages()
+        {
+            string imagesFolderPath = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
+
+            // Folder içindeki tüm resim dosyalarını al
+            var imageFiles = Directory.GetFiles(imagesFolderPath, "*.jpg")
+                                      .Concat(Directory.GetFiles(imagesFolderPath, "*.jpeg"))
+                                      .Concat(Directory.GetFiles(imagesFolderPath, "*.png"))
+                                      .ToList();
+
+            // FlowLayoutPanel içinde her resim için PictureBox ekle
+            foreach (var imagePath in imageFiles)
+            {
+                PictureBox pictureBox = new PictureBox
+                {
+                    ImageLocation = imagePath,
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Width = 100,
+                    Height = 100,
+                    Margin = new Padding(5),
+                    Cursor = Cursors.Hand
+                };
+
+                // Resme tıklanabilirlik ekle
+                pictureBox.Click += (sender, e) => OnImageSelected(imagePath);
+
+                // PictureBox'ı FlowLayoutPanel'e ekle
+                flowLayoutPanelImages.Controls.Add(pictureBox);
+            }
+        }
+
+        private void OnImageSelected(string imagePath)
+        {
+            // Resmi kaydetmek için işlemleri yapabilirsiniz
+            // Örneğin, Image path'i alıp veritabanına kaydedelim
+            var currentUser = CurrentUser.GetUser();
+            if (currentUser != null)
+            {
+                currentUser.ImagePath = imagePath;
+                var userRepository = new UserRepository(new AppDBContext());
+                userRepository.Update(currentUser);
+
+                MessageBox.Show("Profil resmi başarıyla güncellendi.");
+            }
+        }
+
+        private void btnSaveProfileImage_Click(object sender, EventArgs e)
+        {
+            // Kaydedilen profil resmini veritabanına yazma işlemi
+            var currentUser = CurrentUser.GetUser();
+            string selectedImagePath = currentUser.ImagePath;
+
+            if (!string.IsNullOrEmpty(selectedImagePath))
+            {
+                // Profil resmini kaydedelim
+                MessageBox.Show($"Profil resminiz {selectedImagePath} olarak kaydedildi.");
+            }
+            else
+            {
+                MessageBox.Show("Lütfen bir resim seçin.");
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+
+                var userName = CurrentUser.LoggedInUser;
+
+
+                userName.UserName = txtUserName.Text;
+                userName.Email = txtEmail.Text;
+                userName.Password = txtPassword.Text;
+
+
+                _userService.Update(userName);
+                MessageBox.Show("Güncelleme işlemi başarılı");
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

@@ -12,13 +12,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 {
     public partial class PostCard : UserControl
     {
-        public PostCard(string creatorName, string title, string content, DateTime createdAt)
+        public PostCard(string creatorName, string title, string content, DateTime createdAt, string ImagePath)
         {
             InitializeComponent();
 
             lblCreator.Text = creatorName;
             lblTitle.Text = title;
             lblContent.Text = content;
+            pictureProfil.ImageLocation = ImagePath;
             lblDate.Text = createdAt.ToString("dd.MM.yyyy HH:mm");
         }
 
@@ -33,6 +34,16 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         }
 
         private void PostCard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PostCard_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCreator_Click(object sender, EventArgs e)
         {
 
         }

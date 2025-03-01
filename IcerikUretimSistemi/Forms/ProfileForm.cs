@@ -11,6 +11,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
     public partial class ProfileForm : Form
     {
         private readonly UserRepository _userRepo;
+        private readonly PostRepository _postRepo;
         private readonly Guid _userId; // Ziyaret edilen profilin ID'si
         private readonly Guid _currentUserId; // Giriş yapan kullanıcının ID'si
 
@@ -22,20 +23,77 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
             var context = new AppDBContext();
             _userRepo = new UserRepository(context);
+            _postRepo = new PostRepository(context);
         }
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             LoadUserProfile(_userId);
+            LoadUserPosts(_userId);
 
             if (_currentUserId == _userId)
             {
                 btnFollow.Visible = false;
+                iconSetting.Visible = true;
             }
             else
             {
                 btnFollow.Visible = true;
+                iconSetting.Visible = false;
+            }   
+
+        }
+
+        private void LoadUserPosts(Guid userId)
+        {
+            var posts = _postRepo.GetPostsByUserId(userId);
+
+            foreach (var post in posts)
+            {
+                Panel postCard = CreatePostCard(post);
+                flowLayoutPost.Controls.Add(postCard);  // Post kartlarını FlowLayoutPanel'e ekle
             }
+        }
+
+        private Panel CreatePostCard(Posts post)
+        {
+            Panel postCard = new Panel
+            {
+                Width = 300,
+                Height = 150,
+                BorderStyle = BorderStyle.FixedSingle,
+                Padding = new Padding(10),
+                Margin = new Padding(10)
+            };
+
+            // Başlık etiketi
+            Label lblTitle = new Label
+            {
+                Text = post.Title,
+                Font = new Font("Arial", 12, FontStyle.Bold),
+                Dock = DockStyle.Top
+            };
+            postCard.Controls.Add(lblTitle);
+
+            // İçerik etiketi
+            Label lblContent = new Label
+            {
+                Text = post.Content.Length > 50 ? post.Content.Substring(0, 50) + "..." : post.Content,
+                Font = new Font("Arial", 10),
+                Dock = DockStyle.Fill
+            };
+            postCard.Controls.Add(lblContent);
+
+            // Oluşturulma tarihi etiketi
+            Label lblCreatedAt = new Label
+            {
+                Text = post.CreatedDate.ToString("g"),
+                Font = new Font("Arial", 8, FontStyle.Italic),
+                Dock = DockStyle.Bottom
+            };
+            postCard.Controls.Add(lblCreatedAt);
+
+            return postCard;
         }
 
         private void LoadUserProfile(Guid userId)
@@ -45,7 +103,19 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             if (user != null)
             {
                 lblUserName.Text = user.UserName;
+
+                if (System.IO.File.Exists(user.ImagePath))
+                {
+                    pictureBoxProfile.ImageLocation = user.ImagePath;
+                }
+                else
+                {
+                    pictureBoxProfile.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\user.png";
+                }
+
                 UpdateFollowCounts(user); // Takipçi sayısını hedef kullanıcıya göre güncelle
+
+                //pictureBoxProfile.Image
 
                 bool isFollowing = _userRepo.IsFollowing(_currentUserId, user.ID);
                 UpdateFollowButton(isFollowing);
@@ -155,6 +225,17 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         private void pictureBoxProfile_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ıconButton2_Click(object sender, EventArgs e)
+        {
+            ProfileSetting profSetting = new();
+            profSetting.Show();
         }
     }
 }

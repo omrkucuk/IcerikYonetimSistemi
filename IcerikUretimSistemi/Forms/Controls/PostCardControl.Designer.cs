@@ -1,13 +1,13 @@
-﻿namespace IcerikUretimSistemi.UI.Forms
+﻿namespace IcerikUretimSistemi.UI.Forms.Controls
 {
-    partial class Persons
+    partial class PostCardControl
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,38 +20,25 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanelUsers = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flowLayoutPanelUsers
-            // 
-            flowLayoutPanelUsers.Location = new Point(46, 34);
-            flowLayoutPanelUsers.Name = "flowLayoutPanelUsers";
-            flowLayoutPanelUsers.Size = new Size(634, 373);
-            flowLayoutPanelUsers.TabIndex = 0;
-            // 
-            // Persons
+            // PostCardControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(724, 485);
-            Controls.Add(flowLayoutPanelUsers);
-            Name = "Persons";
-            Text = "Persons";
-            Load += Persons_Load;
+            Name = "PostCardControl";
+            Size = new Size(407, 351);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private FlowLayoutPanel flowLayoutPanelUsers;
     }
 }
