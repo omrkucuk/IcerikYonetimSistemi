@@ -93,6 +93,7 @@
             btnPersons.TabIndex = 3;
             btnPersons.Text = "Kişiler";
             btnPersons.UseVisualStyleBackColor = false;
+            btnPersons.Click += btnPersons_Click;
             // 
             // btnPost
             // 
@@ -128,6 +129,7 @@
             btnProfil.TabIndex = 1;
             btnProfil.Text = "Profil";
             btnProfil.UseVisualStyleBackColor = false;
+            btnProfil.Click += btnProfil_Click;
             // 
             // btnMessage
             // 
@@ -298,7 +300,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(985, 560);
+            ClientSize = new Size(1014, 581);
             Controls.Add(btnSearch);
             Controls.Add(pictureBox2);
             Controls.Add(lblUserName);
@@ -306,8 +308,9 @@
             Controls.Add(pictureBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(textBox1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "HomePageForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePageForm";
             Load += HomePageForm_Load;
             groupBox1.ResumeLayout(false);

@@ -271,7 +271,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(841, 604);
+            ClientSize = new Size(1014, 581);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(lblBlock);
@@ -281,6 +281,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(dateTimePicker1);
             Name = "AdminForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

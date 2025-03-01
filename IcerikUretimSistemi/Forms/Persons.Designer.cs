@@ -1,6 +1,6 @@
 ﻿namespace IcerikUretimSistemi.UI.Forms
 {
-    partial class Profiller
+    partial class Persons
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxUsers = new ListBox();
             SuspendLayout();
             // 
-            // listBoxUsers
-            // 
-            listBoxUsers.FormattingEnabled = true;
-            listBoxUsers.ItemHeight = 15;
-            listBoxUsers.Location = new Point(114, 32);
-            listBoxUsers.Name = "listBoxUsers";
-            listBoxUsers.Size = new Size(509, 334);
-            listBoxUsers.TabIndex = 0;
-            listBoxUsers.SelectedIndexChanged += listBoxUsers_SelectedIndexChanged_1;
-            // 
-            // Profiller
+            // Persons
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1014, 581);
-            Controls.Add(listBoxUsers);
-            Name = "Profiller";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Profiller";
-            Load += Profiller_Load;
+            ClientSize = new Size(724, 485);
+            Name = "Persons";
+            Text = "Persons";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox listBoxUsers;
     }
 }

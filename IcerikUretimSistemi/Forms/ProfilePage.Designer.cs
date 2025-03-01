@@ -1,6 +1,6 @@
 ﻿namespace IcerikUretimSistemi.UI.Forms
 {
-    partial class Profiller
+    partial class ProfilePage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBoxUsers = new ListBox();
+            txtUserName = new Label();
             SuspendLayout();
             // 
-            // listBoxUsers
+            // txtUserName
             // 
-            listBoxUsers.FormattingEnabled = true;
-            listBoxUsers.ItemHeight = 15;
-            listBoxUsers.Location = new Point(114, 32);
-            listBoxUsers.Name = "listBoxUsers";
-            listBoxUsers.Size = new Size(509, 334);
-            listBoxUsers.TabIndex = 0;
-            listBoxUsers.SelectedIndexChanged += listBoxUsers_SelectedIndexChanged_1;
+            txtUserName.AutoSize = true;
+            txtUserName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            txtUserName.Location = new Point(48, 47);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(51, 21);
+            txtUserName.TabIndex = 0;
+            txtUserName.Text = "label1";
             // 
-            // Profiller
+            // ProfilePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1014, 581);
-            Controls.Add(listBoxUsers);
-            Name = "Profiller";
+            Controls.Add(txtUserName);
+            Name = "ProfilePage";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Profiller";
-            Load += Profiller_Load;
+            Text = "ProfilePage";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private ListBox listBoxUsers;
+        private Label txtUserName;
     }
 }

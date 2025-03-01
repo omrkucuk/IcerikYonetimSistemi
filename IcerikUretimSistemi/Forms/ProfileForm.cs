@@ -27,6 +27,15 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         private void ProfileForm_Load(object sender, EventArgs e)
         {
             LoadUserProfile(_userId);
+
+            if (_currentUserId == _userId)
+            {
+                btnFollow.Visible = false;
+            }
+            else
+            {
+                btnFollow.Visible = true;
+            }
         }
 
         private void LoadUserProfile(Guid userId)
@@ -138,10 +147,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Takipçi listesine yönlendirme veya başka bir işlem eklenebilir
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Profiller pro = new Profiller();
-            pro.ShowDialog();
+
+        }
+
+        private void pictureBoxProfile_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

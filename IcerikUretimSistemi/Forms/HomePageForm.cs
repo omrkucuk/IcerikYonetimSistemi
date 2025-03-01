@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IcerikUretimSistemi.Entites.Models;
+using IcerikUretimSistemi.UI.Forms.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,8 +49,6 @@ namespace IcerikUretimSistemi.UI.Forms
             gp.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
             pictureBox2.Region = new Region(gp);
 
-
-
         }
 
         private void btnPost_Click(object sender, EventArgs e)
@@ -64,6 +64,20 @@ namespace IcerikUretimSistemi.UI.Forms
         private void lblContent_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnProfil_Click(object sender, EventArgs e)
+        {
+            var user = CurrentUser.GetUser();
+
+            ProfileForm profileForm = new ProfileForm(user.ID);
+            profileForm.ShowDialog();
+        }
+
+        private void btnPersons_Click(object sender, EventArgs e)
+        {
+            Profiller pro = new Profiller();
+            pro.ShowDialog();
         }
     }
 }

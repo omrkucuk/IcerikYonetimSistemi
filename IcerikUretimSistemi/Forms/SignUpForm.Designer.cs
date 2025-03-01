@@ -106,7 +106,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Black", 21.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(241, 47);
+            label1.Location = new Point(329, 51);
             label1.Name = "label1";
             label1.Size = new Size(402, 41);
             label1.TabIndex = 6;
@@ -116,7 +116,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial", 18F, FontStyle.Italic, GraphicsUnit.Point, 162);
-            label2.Location = new Point(300, 97);
+            label2.Location = new Point(388, 101);
             label2.Name = "label2";
             label2.Size = new Size(287, 28);
             label2.TabIndex = 7;
@@ -168,12 +168,13 @@
             groupBox1.Controls.Add(txtGirisKullanıcıAdi);
             groupBox1.Controls.Add(btnLogin);
             groupBox1.Controls.Add(lblPassword);
-            groupBox1.Location = new Point(467, 175);
+            groupBox1.Location = new Point(590, 175);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(368, 382);
             groupBox1.TabIndex = 13;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // label7
             // 
@@ -289,7 +290,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(847, 569);
+            ClientSize = new Size(1014, 581);
             Controls.Add(ıconPictureBox1);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -297,6 +298,7 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "SignUpForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SignUpForm";
             Load += SignUpForm_Load;
             groupBox1.ResumeLayout(false);

@@ -90,13 +90,11 @@ namespace IcerikUretimSistemi.UI.Forms
                     MessageBox.Show("Giriş Başarılı");
 
                     // Aktif kullanıcıyı CurrentUser'a set et
-                    CurrentUser.SetCurrentUser(user);
+                    CurrentUser.LogIn(user);
 
-                    // Kullanıcının ID'sini al ve ProfileForm'u aç
-                    ProfileForm profileForm = new ProfileForm(user.ID);
-                    this.Hide();
-                    profileForm.ShowDialog();
-                    this.Show();
+                    HomePageForm home = new HomePageForm();
+                    home.Show();
+
                 }
                 else
                 {
@@ -107,6 +105,11 @@ namespace IcerikUretimSistemi.UI.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

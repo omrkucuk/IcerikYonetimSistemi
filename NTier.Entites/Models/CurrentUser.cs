@@ -11,13 +11,16 @@ namespace IcerikUretimSistemi.Entites.Models
         // Statik bir özellik olarak giriş yapmış kullanıcıyı saklar
         public static User LoggedInUser { get; set; }
 
-        // Kullanıcıyı oturum açtığında set etmek için bir metod
-        public static void SetCurrentUser(User user)
+        public static void LogIn(User user)
         {
             LoggedInUser = user;
         }
 
-        // Kullanıcıyı oturum kapattığında null yapabiliriz
+        public static User GetUser()
+        {
+            return LoggedInUser;
+        }
+
         public static void Logout()
         {
             LoggedInUser = null;
