@@ -1,4 +1,7 @@
-﻿using IcerikUretimSistemi.Entites.Models;
+﻿using IcerikUretimSistemi.Business.Services;
+using IcerikUretimSistemi.DataAccess.Context;
+using IcerikUretimSistemi.DataAccess.Repositories;
+using IcerikUretimSistemi.Entites.Models;
 using IcerikUretimSistemi.UI.Forms.Controls;
 using System;
 using System.Collections.Generic;
@@ -15,9 +18,22 @@ namespace IcerikUretimSistemi.UI.Forms
 {
     public partial class HomePageForm : Form
     {
+        private readonly PostService _postService;
+        private readonly PostRepository _postRepository;
+
+        private readonly UserService _userService;
+        private readonly UserRepository _userRepository;
+
         public HomePageForm()
         {
             InitializeComponent();
+
+            var context = new AppDBContext();
+            _postRepository = new PostRepository(context);
+            _postService = new PostService(_postRepository);
+
+            _userRepository = new UserRepository(context);
+            _userService = new UserService(_userRepository);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -49,11 +65,26 @@ namespace IcerikUretimSistemi.UI.Forms
             gp.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
             pictureBox2.Region = new Region(gp);
 
+
+            var currentUserID = CurrentUser.GetUser().ID;
+
+            // FlowLayoutPanel'i ayarla
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.AutoScroll = true;
+
+            var postList = _postService.GetAll(); 
+            foreach (var post in postList)
+            {
+                var user = _userService.GetByID(post.UserID); 
+                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate);
+                flowLayoutPanel1.Controls.Add(postCard); 
+            }
         }
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-
+            PostCreate postCreateForm = new();
+            postCreateForm.Show();
         }
 
         private void lblName_Click(object sender, EventArgs e)

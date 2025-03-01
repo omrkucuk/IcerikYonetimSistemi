@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class Fixed : Migration
+    public partial class FirstMigration123 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,6 +16,8 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                 columns: table => new
                 {
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    AdminName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AdminPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CanManagersUsers = table.Column<bool>(type: "bit", nullable: false),
                     CanEditPosts = table.Column<bool>(type: "bit", nullable: false),
                     CanDeletePosts = table.Column<bool>(type: "bit", nullable: false),
@@ -46,6 +48,8 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                 {
                     FollowerID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FollowingID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserID1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -55,14 +59,22 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                         name: "FK_Follows_Users_FollowerID",
                         column: x => x.FollowerID,
                         principalTable: "Users",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
                     table.ForeignKey(
                         name: "FK_Follows_Users_FollowingID",
                         column: x => x.FollowingID,
                         principalTable: "Users",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "ID");
+                    table.ForeignKey(
+                        name: "FK_Follows_Users_UserID",
+                        column: x => x.UserID,
+                        principalTable: "Users",
+                        principalColumn: "ID");
+                    table.ForeignKey(
+                        name: "FK_Follows_Users_UserID1",
+                        column: x => x.UserID1,
+                        principalTable: "Users",
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(
@@ -229,6 +241,16 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                 name: "IX_Follows_FollowingID",
                 table: "Follows",
                 column: "FollowingID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Follows_UserID",
+                table: "Follows",
+                column: "UserID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Follows_UserID1",
+                table: "Follows",
+                column: "UserID1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Likes_PostsID",

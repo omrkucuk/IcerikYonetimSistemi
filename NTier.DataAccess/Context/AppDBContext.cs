@@ -1,5 +1,4 @@
-﻿using IcerikUretimSistemi.DataAccess.Migrations;
-using IcerikUretimSistemi.Entites.Models;
+﻿using IcerikUretimSistemi.Entites.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -73,6 +72,13 @@ namespace IcerikUretimSistemi.DataAccess.Context
                 .WithMany(u => u.Comments)
                 .HasForeignKey(c => c.UserID)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Posts>()
+                .HasOne(p => p.User)
+                .WithMany(u => u.Posts)
+                .HasForeignKey(p => p.UserID)
+                .OnDelete(DeleteBehavior.Cascade); // Yani kullanıcı silindiğinde postlar da silinsin.
+
 
         }
     }

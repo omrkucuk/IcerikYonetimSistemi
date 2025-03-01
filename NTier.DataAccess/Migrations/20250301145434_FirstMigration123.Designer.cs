@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250301102927_Deneme123")]
-    partial class Deneme123
+    [Migration("20250301145434_FirstMigration123")]
+    partial class FirstMigration123
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
