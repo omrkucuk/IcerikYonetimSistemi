@@ -55,10 +55,6 @@ namespace IcerikUretimSistemi.UI.Forms
         private void HomePageForm_Load(object sender, EventArgs e)
         {
             pictureBox1.BorderStyle = BorderStyle.None;
-            btnProfil.FlatAppearance.BorderSize = 0;
-            btnMessage.FlatAppearance.BorderSize = 0;
-            btnPersons.FlatAppearance.BorderSize = 0;
-            btnPost.FlatAppearance.BorderSize = 0;
             btnSearch.FlatAppearance.BorderSize = 0;
             GraphicsPath gp = new GraphicsPath();
 
@@ -87,7 +83,7 @@ namespace IcerikUretimSistemi.UI.Forms
                 flowLayoutPanel1.Controls.Add(postCard);
             }
 
-            
+
         }
 
         private void btnPost_Click(object sender, EventArgs e)
@@ -116,16 +112,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void btnPersons_Click(object sender, EventArgs e)
         {
-            Profiller pro = new Profiller();
-            pro.ShowDialog();
-        }
 
-        private void btnProfil_Click_1(object sender, EventArgs e)
-        {
-            var user = CurrentUser.GetUser();
-
-            ProfileForm profileForm = new ProfileForm(user.ID);
-            profileForm.ShowDialog();
         }
 
         private void btnPersons_Click_1(object sender, EventArgs e)
@@ -135,6 +122,19 @@ namespace IcerikUretimSistemi.UI.Forms
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnProfil_Click_2(object sender, EventArgs e)
+        {
+            var user = CurrentUser.GetUser();
+
+            ProfileForm profileForm = new ProfileForm(user.ID);
+            profileForm.ShowDialog();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
         {
 
         }

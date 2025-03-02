@@ -28,22 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             textBox1 = new TextBox();
-            groupBox1 = new GroupBox();
-            btnPersons = new FontAwesome.Sharp.IconButton();
-            btnPost = new FontAwesome.Sharp.IconButton();
-            btnProfil = new FontAwesome.Sharp.IconButton();
-            btnMessage = new FontAwesome.Sharp.IconButton();
-            pictureBox1 = new PictureBox();
             lblUserName = new Label();
             btnSearch = new FontAwesome.Sharp.IconButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             gunaPictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).BeginInit();
+            guna2ContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -54,100 +75,6 @@
             textBox1.Size = new Size(596, 25);
             textBox1.TabIndex = 0;
             textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnPersons);
-            groupBox1.Controls.Add(btnPost);
-            groupBox1.Controls.Add(btnProfil);
-            groupBox1.Controls.Add(btnMessage);
-            groupBox1.Location = new Point(27, 167);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(194, 494);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
-            // 
-            // btnPersons
-            // 
-            btnPersons.BackColor = Color.Transparent;
-            btnPersons.FlatStyle = FlatStyle.Flat;
-            btnPersons.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnPersons.IconChar = FontAwesome.Sharp.IconChar.UserFriends;
-            btnPersons.IconColor = Color.Black;
-            btnPersons.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPersons.IconSize = 35;
-            btnPersons.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPersons.Location = new Point(25, 200);
-            btnPersons.Name = "btnPersons";
-            btnPersons.Size = new Size(145, 34);
-            btnPersons.TabIndex = 3;
-            btnPersons.Text = "Kişiler";
-            btnPersons.UseVisualStyleBackColor = false;
-            btnPersons.Click += btnPersons_Click_1;
-            // 
-            // btnPost
-            // 
-            btnPost.BackColor = Color.Transparent;
-            btnPost.FlatStyle = FlatStyle.Flat;
-            btnPost.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnPost.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            btnPost.IconColor = Color.Black;
-            btnPost.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnPost.IconSize = 35;
-            btnPost.ImageAlign = ContentAlignment.MiddleLeft;
-            btnPost.Location = new Point(25, 130);
-            btnPost.Name = "btnPost";
-            btnPost.Size = new Size(145, 34);
-            btnPost.TabIndex = 2;
-            btnPost.Text = "        Gönderiler";
-            btnPost.UseVisualStyleBackColor = false;
-            btnPost.Click += btnPost_Click;
-            // 
-            // btnProfil
-            // 
-            btnProfil.BackColor = Color.Transparent;
-            btnProfil.FlatStyle = FlatStyle.Flat;
-            btnProfil.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            btnProfil.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            btnProfil.IconColor = Color.Black;
-            btnProfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnProfil.IconSize = 35;
-            btnProfil.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfil.Location = new Point(25, 54);
-            btnProfil.Name = "btnProfil";
-            btnProfil.Size = new Size(145, 34);
-            btnProfil.TabIndex = 1;
-            btnProfil.Text = "Profil";
-            btnProfil.UseVisualStyleBackColor = false;
-            btnProfil.Click += btnProfil_Click_1;
-            // 
-            // btnMessage
-            // 
-            btnMessage.BackColor = Color.Transparent;
-            btnMessage.FlatStyle = FlatStyle.Flat;
-            btnMessage.IconChar = FontAwesome.Sharp.IconChar.Message;
-            btnMessage.IconColor = Color.Black;
-            btnMessage.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnMessage.Location = new Point(48, 368);
-            btnMessage.Name = "btnMessage";
-            btnMessage.Size = new Size(89, 89);
-            btnMessage.TabIndex = 0;
-            btnMessage.Text = "Mesajlaşma";
-            btnMessage.TextAlign = ContentAlignment.BottomCenter;
-            btnMessage.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnMessage.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(-39, -42);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(301, 223);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // lblUserName
             // 
@@ -189,12 +116,165 @@
             gunaPictureProfil.ImageRotate = 0F;
             gunaPictureProfil.Location = new Point(917, 12);
             gunaPictureProfil.Name = "gunaPictureProfil";
-            gunaPictureProfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            gunaPictureProfil.ShadowDecoration.CustomizableEdges = customizableEdges16;
             gunaPictureProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             gunaPictureProfil.Size = new Size(90, 90);
             gunaPictureProfil.SizeMode = PictureBoxSizeMode.StretchImage;
             gunaPictureProfil.TabIndex = 8;
             gunaPictureProfil.TabStop = false;
+            // 
+            // guna2ContainerControl1
+            // 
+            guna2ContainerControl1.BorderRadius = 35;
+            guna2ContainerControl1.Controls.Add(guna2PictureBox3);
+            guna2ContainerControl1.Controls.Add(guna2PictureBox2);
+            guna2ContainerControl1.Controls.Add(guna2PictureBox1);
+            guna2ContainerControl1.Controls.Add(guna2Button3);
+            guna2ContainerControl1.Controls.Add(guna2Button2);
+            guna2ContainerControl1.Controls.Add(guna2Button1);
+            guna2ContainerControl1.CustomizableEdges = customizableEdges29;
+            guna2ContainerControl1.Location = new Point(0, 187);
+            guna2ContainerControl1.Name = "guna2ContainerControl1";
+            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2ContainerControl1.Size = new Size(262, 471);
+            guna2ContainerControl1.TabIndex = 9;
+            guna2ContainerControl1.Text = "guna2ContainerControl1";
+            // 
+            // guna2Button3
+            // 
+            guna2Button3.BackColor = Color.Transparent;
+            guna2Button3.BorderColor = Color.Transparent;
+            guna2Button3.BorderRadius = 20;
+            guna2Button3.BorderThickness = 2;
+            guna2Button3.Cursor = Cursors.Hand;
+            guna2Button3.CustomizableEdges = customizableEdges23;
+            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button3.FillColor = Color.FromArgb(153, 123, 225);
+            guna2Button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button3.ForeColor = Color.White;
+            guna2Button3.HoverState.BorderColor = Color.FromArgb(153, 123, 225);
+            guna2Button3.HoverState.FillColor = Color.White;
+            guna2Button3.HoverState.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button3.HoverState.ForeColor = Color.FromArgb(153, 123, 225);
+            guna2Button3.Location = new Point(63, 113);
+            guna2Button3.Name = "guna2Button3";
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            guna2Button3.Size = new Size(180, 45);
+            guna2Button3.TabIndex = 2;
+            guna2Button3.Text = "Kişiler";
+            guna2Button3.Click += btnPersons_Click_1;
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.BackColor = Color.Transparent;
+            guna2Button2.BorderColor = Color.Transparent;
+            guna2Button2.BorderRadius = 20;
+            guna2Button2.BorderThickness = 2;
+            guna2Button2.Cursor = Cursors.Hand;
+            guna2Button2.CustomizableEdges = customizableEdges25;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.FromArgb(153, 123, 225);
+            guna2Button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.HoverState.BorderColor = Color.FromArgb(153, 123, 225);
+            guna2Button2.HoverState.FillColor = Color.White;
+            guna2Button2.HoverState.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button2.HoverState.ForeColor = Color.FromArgb(153, 123, 225);
+            guna2Button2.Location = new Point(63, 185);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            guna2Button2.Size = new Size(180, 45);
+            guna2Button2.TabIndex = 1;
+            guna2Button2.Text = "Gönderi Oluştur";
+            guna2Button2.Click += btnPost_Click;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.BorderColor = Color.Transparent;
+            guna2Button1.BorderRadius = 20;
+            guna2Button1.BorderThickness = 2;
+            guna2Button1.Cursor = Cursors.Hand;
+            guna2Button1.CustomizableEdges = customizableEdges27;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.FromArgb(153, 123, 225);
+            guna2Button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.HoverState.BorderColor = Color.FromArgb(153, 123, 225);
+            guna2Button1.HoverState.FillColor = Color.White;
+            guna2Button1.HoverState.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            guna2Button1.HoverState.ForeColor = Color.FromArgb(153, 123, 225);
+            guna2Button1.Location = new Point(63, 40);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 0;
+            guna2Button1.Text = "Profil";
+            guna2Button1.Click += btnProfil_Click_2;
+            // 
+            // guna2PictureBox1
+            // 
+            guna2PictureBox1.BackColor = Color.Transparent;
+            guna2PictureBox1.CustomizableEdges = customizableEdges21;
+            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
+            guna2PictureBox1.ImageRotate = 0F;
+            guna2PictureBox1.Location = new Point(12, 40);
+            guna2PictureBox1.Name = "guna2PictureBox1";
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2PictureBox1.Size = new Size(40, 40);
+            guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox1.TabIndex = 16;
+            guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox2
+            // 
+            guna2PictureBox2.BackColor = Color.Transparent;
+            guna2PictureBox2.CustomizableEdges = customizableEdges19;
+            guna2PictureBox2.Image = (Image)resources.GetObject("guna2PictureBox2.Image");
+            guna2PictureBox2.ImageRotate = 0F;
+            guna2PictureBox2.Location = new Point(12, 113);
+            guna2PictureBox2.Name = "guna2PictureBox2";
+            guna2PictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2PictureBox2.Size = new Size(40, 40);
+            guna2PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox2.TabIndex = 17;
+            guna2PictureBox2.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            guna2PictureBox3.BackColor = Color.Transparent;
+            guna2PictureBox3.CustomizableEdges = customizableEdges17;
+            guna2PictureBox3.Image = (Image)resources.GetObject("guna2PictureBox3.Image");
+            guna2PictureBox3.ImageRotate = 0F;
+            guna2PictureBox3.Location = new Point(12, 190);
+            guna2PictureBox3.Name = "guna2PictureBox3";
+            guna2PictureBox3.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2PictureBox3.Size = new Size(40, 40);
+            guna2PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox3.TabIndex = 18;
+            guna2PictureBox3.TabStop = false;
+            // 
+            // guna2PictureBox4
+            // 
+            guna2PictureBox4.CustomizableEdges = customizableEdges31;
+            guna2PictureBox4.Image = (Image)resources.GetObject("guna2PictureBox4.Image");
+            guna2PictureBox4.ImageRotate = 0F;
+            guna2PictureBox4.Location = new Point(0, 3);
+            guna2PictureBox4.Name = "guna2PictureBox4";
+            guna2PictureBox4.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2PictureBox4.Size = new Size(243, 178);
+            guna2PictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
+            guna2PictureBox4.TabIndex = 10;
+            guna2PictureBox4.TabStop = false;
             // 
             // HomePageForm
             // 
@@ -202,22 +282,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1034, 711);
+            Controls.Add(guna2ContainerControl1);
             Controls.Add(gunaPictureProfil);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSearch);
             Controls.Add(lblUserName);
-            Controls.Add(groupBox1);
-            Controls.Add(pictureBox1);
             Controls.Add(textBox1);
+            Controls.Add(guna2PictureBox4);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             MaximizeBox = false;
             Name = "HomePageForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePageForm";
             Load += HomePageForm_Load;
-            groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).EndInit();
+            guna2ContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,17 +308,19 @@
         #endregion
 
         private TextBox textBox1;
-        private GroupBox groupBox1;
-        private PictureBox pictureBox1;
         private Label lblUserName;
         private FontAwesome.Sharp.IconButton btnSearch;
-        private FontAwesome.Sharp.IconButton btnMessage;
-        private FontAwesome.Sharp.IconButton btnProfil;
-        private FontAwesome.Sharp.IconButton btnPost;
-        private FontAwesome.Sharp.IconButton btnPersons;
         private Label label2;
         private FontAwesome.Sharp.IconPictureBox ıconPictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox gunaPictureProfil;
+        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
     }
 }

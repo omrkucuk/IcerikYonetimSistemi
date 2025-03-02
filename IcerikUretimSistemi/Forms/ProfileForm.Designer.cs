@@ -38,6 +38,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPost = new FlowLayoutPanel();
             btnFollow = new Guna.UI2.WinForms.Guna2Button();
             iconSetting = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -49,6 +50,7 @@
             pictureBoxProfile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             iconBack = new Guna.UI2.WinForms.Guna2PictureBox();
+            guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             ((System.ComponentModel.ISupportInitialize)iconSetting).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
             guna2ContainerControl1.SuspendLayout();
@@ -59,6 +61,7 @@
             // 
             flowLayoutPost.AutoScroll = true;
             flowLayoutPost.AutoSize = true;
+            flowLayoutPost.BackColor = Color.Transparent;
             flowLayoutPost.Location = new Point(92, 185);
             flowLayoutPost.Name = "flowLayoutPost";
             flowLayoutPost.Size = new Size(882, 454);
@@ -180,7 +183,7 @@
             guna2ContainerControl1.Controls.Add(label2);
             guna2ContainerControl1.Controls.Add(lblFollowing);
             guna2ContainerControl1.CustomizableEdges = customizableEdges6;
-            guna2ContainerControl1.FillColor = Color.FromArgb(255, 248, 222);
+            guna2ContainerControl1.FillColor = Color.FromArgb(192, 192, 255);
             guna2ContainerControl1.Location = new Point(92, 32);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges7;
@@ -204,12 +207,30 @@
             iconBack.TabStop = false;
             iconBack.Click += iconBack_Click;
             // 
+            // guna2Shapes1
+            // 
+            guna2Shapes1.BackColor = Color.Transparent;
+            guna2Shapes1.BorderThickness = 5;
+            guna2Shapes1.LineThickness = 3;
+            guna2Shapes1.Location = new Point(92, 164);
+            guna2Shapes1.Name = "guna2Shapes1";
+            guna2Shapes1.PolygonSides = 10;
+            guna2Shapes1.PolygonSkip = 1;
+            guna2Shapes1.Rotate = 0F;
+            guna2Shapes1.RoundedEdges = customizableEdges10;
+            guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
+            guna2Shapes1.Size = new Size(882, 10);
+            guna2Shapes1.TabIndex = 32;
+            guna2Shapes1.Text = "guna2Shapes1";
+            guna2Shapes1.Zoom = 100;
+            // 
             // ProfileForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1034, 711);
+            Controls.Add(guna2Shapes1);
             Controls.Add(iconBack);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(flowLayoutPost);
@@ -239,5 +260,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxProfile;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private Guna.UI2.WinForms.Guna2PictureBox iconBack;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
     }
 }
