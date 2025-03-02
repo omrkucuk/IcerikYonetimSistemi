@@ -119,7 +119,7 @@
             guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2ContainerControl1.Size = new Size(645, 299);
+            guna2ContainerControl1.Size = new Size(629, 299);
             guna2ContainerControl1.TabIndex = 10;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;

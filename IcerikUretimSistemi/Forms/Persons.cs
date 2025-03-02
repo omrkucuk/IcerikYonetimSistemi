@@ -12,6 +12,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace IcerikUretimSistemi.UI.Forms
@@ -38,11 +39,11 @@ namespace IcerikUretimSistemi.UI.Forms
             var users = _userService.GetAll();
             var follow = _followRepository.GetAll();
 
-            foreach (var user in users)
-            {
-                PersonsControl personControl = new PersonsControl(user.ImagePath, user.UserName, user.ID, user.Followers.ToList().Count().ToString());
-                flowLayoutPanelUsers.Controls.Add(personControl);
-            }
+            var userId = CurrentUser.LoggedInUser.ID;
+
+            var persons = _userService.GetByID(userId);
+
+            SearchPosts();
         }
 
         private void iconBack_Click(object sender, EventArgs e)
@@ -55,6 +56,30 @@ namespace IcerikUretimSistemi.UI.Forms
         private void flowLayoutPanelUsers_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim();
+            SearchPosts(searchText);
+        }
+
+        private void SearchPosts(string searchText ="")
+        {
+            flowLayoutPanelUsers.Controls.Clear();
+
+            var filteredPosts = _userService.GetAll()
+                .Where(person => person.UserName.Contains(searchText, StringComparison.OrdinalIgnoreCase) && person.ID != CurrentUser.LoggedInUser.ID)
+                .ToList();
+
+            var currentUserID = CurrentUser.GetUser().ID;
+
+            foreach (var item in filteredPosts)
+            {
+                var user = _userService.GetByID(item.ID);
+                PersonsControl PersonCard = new PersonsControl(user.ImagePath, user.UserName, user.ID, user.Followers.ToList().Count().ToString());
+                flowLayoutPanelUsers.Controls.Add(PersonCard);
+            }
         }
     }
 }

@@ -32,6 +32,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonsControl));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
@@ -121,7 +122,8 @@
             // profilePhoto
             // 
             profilePhoto.Cursor = Cursors.Hand;
-            profilePhoto.FillColor = Color.DimGray;
+            profilePhoto.FillColor = Color.Transparent;
+            profilePhoto.Image = (Image)resources.GetObject("profilePhoto.Image");
             profilePhoto.ImageRotate = 0F;
             profilePhoto.Location = new Point(30, 48);
             profilePhoto.Name = "profilePhoto";

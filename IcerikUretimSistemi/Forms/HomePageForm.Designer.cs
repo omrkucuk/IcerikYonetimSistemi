@@ -94,9 +94,9 @@
             flowLayoutPanel1.AllowDrop = true;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(264, 187);
+            flowLayoutPanel1.Location = new Point(272, 187);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(800, 471);
+            flowLayoutPanel1.Size = new Size(780, 471);
             flowLayoutPanel1.TabIndex = 3;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -125,7 +125,7 @@
             guna2ContainerControl1.Controls.Add(guna2Button2);
             guna2ContainerControl1.Controls.Add(guna2Button1);
             guna2ContainerControl1.CustomizableEdges = customizableEdges18;
-            guna2ContainerControl1.Location = new Point(0, 187);
+            guna2ContainerControl1.Location = new Point(5, 187);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2ContainerControl1.Size = new Size(262, 471);
