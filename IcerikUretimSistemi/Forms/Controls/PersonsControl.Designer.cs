@@ -35,10 +35,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            lblFollowers = new Label();
+            label1 = new Label();
             lbluserName = new Label();
             profilePhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            label1 = new Label();
-            lblFollowers = new Label();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)profilePhoto).BeginInit();
             SuspendLayout();
@@ -79,7 +79,32 @@
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(155, 38);
             guna2Button1.TabIndex = 2;
-            guna2Button1.Text = "Takip Et";
+            guna2Button1.Text = "Profile Git";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
+            // lblFollowers
+            // 
+            lblFollowers.AutoSize = true;
+            lblFollowers.Cursor = Cursors.Hand;
+            lblFollowers.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            lblFollowers.Location = new Point(295, 60);
+            lblFollowers.Name = "lblFollowers";
+            lblFollowers.Size = new Size(48, 20);
+            lblFollowers.TabIndex = 1;
+            lblFollowers.Text = "label1";
+            lblFollowers.Click += lbluserName_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Location = new Point(225, 60);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Takipçi :";
+            label1.Click += lbluserName_Click;
             // 
             // lbluserName
             // 
@@ -107,30 +132,6 @@
             profilePhoto.TabIndex = 0;
             profilePhoto.TabStop = false;
             profilePhoto.Click += profilePhoto_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Cursor = Cursors.Hand;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label1.Location = new Point(225, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Takipçi :";
-            label1.Click += lbluserName_Click;
-            // 
-            // lblFollowers
-            // 
-            lblFollowers.AutoSize = true;
-            lblFollowers.Cursor = Cursors.Hand;
-            lblFollowers.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblFollowers.Location = new Point(295, 60);
-            lblFollowers.Name = "lblFollowers";
-            lblFollowers.Size = new Size(48, 20);
-            lblFollowers.TabIndex = 1;
-            lblFollowers.Text = "label1";
-            lblFollowers.Click += lbluserName_Click;
             // 
             // PersonsControl
             // 

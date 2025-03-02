@@ -23,7 +23,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             profilePhoto.ImageLocation = ImagePath;
             lbluserName.Text = userName;
             lblFollowers.Text = followers;
-            
+
 
             var context = new AppDBContext();
             _userRepository = new UserRepository(context);
@@ -46,6 +46,13 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             ProfileForm proForm = new ProfileForm(_userID);
             proForm.Show();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            ProfileForm proForm = new ProfileForm(_userID);
+            proForm.Show();
+            
         }
     }
 }

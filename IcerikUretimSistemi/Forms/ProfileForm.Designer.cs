@@ -229,11 +229,12 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(1034, 711);
+            ClientSize = new Size(1050, 750);
             Controls.Add(guna2Shapes1);
             Controls.Add(iconBack);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(flowLayoutPost);
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "ProfileForm";
             StartPosition = FormStartPosition.CenterScreen;

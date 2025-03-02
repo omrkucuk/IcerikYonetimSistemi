@@ -2,6 +2,7 @@
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
+using IcerikUretimSistemi.UI.Forms.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -105,10 +106,9 @@ namespace IcerikUretimSistemi.UI.Forms
                 MessageBox.Show("Lütfen bir resim seçin.");
             }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
 
@@ -133,6 +133,52 @@ namespace IcerikUretimSistemi.UI.Forms
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            SignUpForm signUpForm = new();
+            signUpForm.Show();
+        }
+
+        private void iconBack_Click(object sender, EventArgs e)
+        {
+            ProfileForm profForm = new(CurrentUser.LoggedInUser.ID);
+            profForm.Show();
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "SİLME İŞLEMİ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    var userId = CurrentUser.LoggedInUser.ID;
+
+                    var userToDelete = _userRepo.GetByID(userId); 
+
+                    if (userToDelete == null)
+                    {
+                        MessageBox.Show("Kullanıcı bulunamadı.");
+                        return;
+                    }
+
+                    
+                    _userRepo.Delete(userToDelete.ID);
+
+                    this.Close();
+                    SignUpForm giris = new();
+                    giris.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Silme işlemi sırasında hata oluştu: {ex.Message}");
+                }
+            }
         }
     }
 }

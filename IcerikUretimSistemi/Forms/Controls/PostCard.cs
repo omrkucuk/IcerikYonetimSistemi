@@ -60,11 +60,6 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             UpdateCommentCount();
         }
 
-        private void PostCard_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblCreator_Click(object sender, EventArgs e)
         {
 

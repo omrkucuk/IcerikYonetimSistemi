@@ -33,7 +33,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void PostCreate_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,6 +63,18 @@ namespace IcerikUretimSistemi.UI.Forms
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void iconBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            HomePageForm ev = new();
+            ev.Show();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

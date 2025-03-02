@@ -27,12 +27,18 @@ namespace IcerikUretimSistemi.DataAccess.Repositories
 
         public void Delete(Guid id)
         {
-            var data = _dbSet.Find(id);
-            if (data != null)
+            var user = _dbSet.Find(id);
+
+            if (user == null)
             {
-                _dbSet.Remove(data);
-                _dbContext.SaveChanges();
+                Console.WriteLine("Kullanıcı zaten silinmiş.");
+                return;
             }
+
+            _dbSet.Remove(user);
+            _dbContext.SaveChanges();
+
+            Console.WriteLine("Kullanıcı başarıyla silindi.");
         }
 
         public IEnumerable<T> GetAll()

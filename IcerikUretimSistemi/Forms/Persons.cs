@@ -45,11 +45,16 @@ namespace IcerikUretimSistemi.UI.Forms
             }
         }
 
-        // Kullanıcı ismine tıklandığında profilini açacak metod
-        private void OpenProfile(User user)
+        private void iconBack_Click(object sender, EventArgs e)
         {
-            ProfileForm profileForm = new ProfileForm(user.ID);
-            profileForm.ShowDialog();
+            HomePageForm homePage = new HomePageForm();
+            homePage.Show();
+            this.Close();
+        }
+
+        private void flowLayoutPanelUsers_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

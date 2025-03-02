@@ -63,7 +63,7 @@
             // 
             lblCreator.AutoSize = true;
             lblCreator.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblCreator.Location = new Point(127, 69);
+            lblCreator.Location = new Point(31, 149);
             lblCreator.Name = "lblCreator";
             lblCreator.Size = new Size(41, 17);
             lblCreator.TabIndex = 0;
@@ -119,7 +119,7 @@
             guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2ContainerControl1.Size = new Size(620, 300);
+            guna2ContainerControl1.Size = new Size(645, 299);
             guna2ContainerControl1.TabIndex = 10;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;
@@ -229,7 +229,7 @@
             Controls.Add(guna2ContainerControl1);
             Name = "PostCard";
             Size = new Size(632, 302);
-            Load += PostCard_Load_1;
+            Load += PostCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureProfil).EndInit();
             guna2ContainerControl1.ResumeLayout(false);
             guna2ContainerControl1.PerformLayout();

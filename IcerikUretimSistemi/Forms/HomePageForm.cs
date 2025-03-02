@@ -115,6 +115,7 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             Persons personsPage = new();
             personsPage.Show();
+            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -127,7 +128,8 @@ namespace IcerikUretimSistemi.UI.Forms
             var user = CurrentUser.GetUser();
 
             ProfileForm profileForm = new ProfileForm(user.ID);
-            profileForm.ShowDialog();
+            profileForm.Show();
+            this.Close();
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

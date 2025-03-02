@@ -84,5 +84,10 @@ namespace IcerikUretimSistemi.UI.Forms
             }
 
         }
+
+        private void iconBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

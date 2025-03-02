@@ -83,11 +83,11 @@
             // 
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Segoe UI", 10F);
-            lblUserName.Location = new Point(841, 52);
+            lblUserName.Location = new Point(881, 25);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(73, 19);
+            lblUserName.Size = new Size(148, 19);
             lblUserName.TabIndex = 5;
-            lblUserName.Text = "UserName";
+            lblUserName.Text = "UserNameasdasdgfasd";
             // 
             // flowLayoutPanel1
             // 
@@ -104,7 +104,7 @@
             // 
             gunaPictureProfil.BackgroundImageLayout = ImageLayout.Stretch;
             gunaPictureProfil.ImageRotate = 0F;
-            gunaPictureProfil.Location = new Point(920, 23);
+            gunaPictureProfil.Location = new Point(917, 60);
             gunaPictureProfil.Name = "gunaPictureProfil";
             gunaPictureProfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
             gunaPictureProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -356,7 +356,7 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(lblUserName);
             Controls.Add(guna2PictureBox4);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "HomePageForm";
             StartPosition = FormStartPosition.CenterScreen;

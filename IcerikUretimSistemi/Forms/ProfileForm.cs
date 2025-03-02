@@ -244,6 +244,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             ProfileSetting profSetting = new();
             profSetting.Show();
+            this.Close();
         }
 
         private void iconBack_Click(object sender, EventArgs e)

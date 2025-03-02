@@ -56,7 +56,7 @@
             guna2ContainerControl1.Controls.Add(guna2ContainerControl2);
             guna2ContainerControl1.CustomizableEdges = customizableEdges6;
             guna2ContainerControl1.ForeColor = Color.Transparent;
-            guna2ContainerControl1.Location = new Point(3, 14);
+            guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ContainerControl1.Size = new Size(488, 125);
@@ -142,7 +142,7 @@
             BackColor = Color.Transparent;
             Controls.Add(guna2ContainerControl1);
             Name = "CommentControl";
-            Size = new Size(516, 166);
+            Size = new Size(515, 138);
             Load += CommentControl_Load;
             guna2ContainerControl1.ResumeLayout(false);
             guna2ContainerControl3.ResumeLayout(false);

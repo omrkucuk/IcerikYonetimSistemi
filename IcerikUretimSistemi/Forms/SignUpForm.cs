@@ -95,6 +95,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
                     HomePageForm home = new HomePageForm();
                     home.Show();
+                    this.Hide();
 
                 }
                 else
