@@ -43,12 +43,6 @@ namespace IcerikUretimSistemi.DataAccess.Context
                 .HasForeignKey(f => f.FollowingID)
                 .OnDelete(DeleteBehavior.NoAction); // ❌ Cascade kaldırıldı
 
-
-            modelBuilder.Entity<Likes>().Ignore(c => c.ID);
-
-            modelBuilder.Entity<Likes>()
-                .HasKey(l => new { l.PostID, l.UserID });
-
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Sender)
                 .WithMany(u => u.SentMessages) // Kullanıcının gönderdiği mesajlar

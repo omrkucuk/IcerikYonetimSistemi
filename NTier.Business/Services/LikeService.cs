@@ -20,11 +20,11 @@ namespace IcerikUretimSistemi.Business.Services
 
         public void Delete(Guid id)
         {
-            var bulunanid = _likeRepository.GetByID(id);
+            var bulunan = _likeRepository.GetByID(id);
 
-            if (bulunanid == null)
+            if (bulunan == null)
             {
-                throw new Exception("ID bilgisi boş geçilemez");
+                throw new Exception("Id bilgisi boş");
             }
 
             _likeRepository.Delete(id);
@@ -59,5 +59,22 @@ namespace IcerikUretimSistemi.Business.Services
 
             _likeRepository.Update(entity);
         }
+
+        public bool ToggleLike(Guid postID, Guid userID)
+        {
+            return _likeRepository.ToggleLike(postID, userID);
+        }
+
+        public int GetLikeCountByPostId(Guid postID)
+        {
+            return _likeRepository.GetLikeCountByPostId(postID);
+        }
+
+        public bool IsPostLikedByUser(Guid postID, Guid userID)
+        {
+            // Veritabanı sorgusu: PostID ve UserID ile Like tablosunda arama yap
+            return _likeRepository.GetAll().Any(l => l.PostID == postID && l.UserID == userID);
+        }
+
     }
 }

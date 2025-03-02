@@ -36,7 +36,8 @@ namespace IcerikUretimSistemi.UI.Forms
                 User kullanici = new User()
                 {
                     UserName = txtKayitUserName.Text,
-                    Password = txtKayitSifre.Text
+                    Password = txtKayitSifre.Text,
+                    Email = txtEmail.Text
                 };
 
                 _userService.Create(kullanici);
@@ -79,11 +80,11 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             try
             {
-                var kullaniciadi = txtGirisKullanıcıAdi.Text;
+                var eMail = txtGirisKullanıcıAdi.Text;
                 var sifre = txtGirisSifre.Text;
 
                 // Veritabanındaki kullanıcıyı kontrol et
-                var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == kullaniciadi && x.Password == sifre);
+                var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == eMail && x.Password == sifre);
 
                 if (user != null)
                 {

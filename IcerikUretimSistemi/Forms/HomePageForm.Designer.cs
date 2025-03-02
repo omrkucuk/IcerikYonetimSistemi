@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePageForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             textBox1 = new TextBox();
             groupBox1 = new GroupBox();
             btnPersons = new FontAwesome.Sharp.IconButton();
@@ -40,9 +41,11 @@
             pictureBox2 = new PictureBox();
             btnSearch = new FontAwesome.Sharp.IconButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            gunaPictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).BeginInit();
             SuspendLayout();
             // 
             // textBox1
@@ -152,7 +155,7 @@
             // 
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Segoe UI", 10F);
-            lblUserName.Location = new Point(887, 65);
+            lblUserName.Location = new Point(925, 115);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(73, 19);
             lblUserName.TabIndex = 5;
@@ -161,12 +164,13 @@
             // pictureBox2
             // 
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(903, 22);
+            pictureBox2.Location = new Point(967, 231);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(40, 40);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 6;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // btnSearch
             // 
@@ -192,12 +196,26 @@
             flowLayoutPanel1.TabIndex = 3;
             flowLayoutPanel1.WrapContents = false;
             // 
+            // gunaPictureProfil
+            // 
+            gunaPictureProfil.BackgroundImageLayout = ImageLayout.Stretch;
+            gunaPictureProfil.ImageRotate = 0F;
+            gunaPictureProfil.Location = new Point(917, 12);
+            gunaPictureProfil.Name = "gunaPictureProfil";
+            gunaPictureProfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            gunaPictureProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            gunaPictureProfil.Size = new Size(90, 90);
+            gunaPictureProfil.SizeMode = PictureBoxSizeMode.StretchImage;
+            gunaPictureProfil.TabIndex = 8;
+            gunaPictureProfil.TabStop = false;
+            // 
             // HomePageForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1034, 711);
+            Controls.Add(gunaPictureProfil);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSearch);
             Controls.Add(pictureBox2);
@@ -213,6 +231,7 @@
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +251,6 @@
         private Label label2;
         private FontAwesome.Sharp.IconPictureBox ıconPictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox gunaPictureProfil;
     }
 }

@@ -71,20 +71,24 @@ namespace IcerikUretimSistemi.UI.Forms
 
             if (System.IO.File.Exists(CurrentUser.GetUser().ImagePath))
             {
-                pictureBox2.ImageLocation = CurrentUser.GetUser().ImagePath;
+                gunaPictureProfil.ImageLocation = CurrentUser.GetUser().ImagePath;
             }
             else
             {
-                pictureBox2.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\user.png";
+                gunaPictureProfil.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\user.png";
             }
 
             var postList = _postService.GetAll();
             foreach (var post in postList)
             {
                 var user = _userService.GetByID(post.UserID);
-                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath);
+                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
+                postCard.UpdateLikeCount();
+                postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
             }
+
+            
         }
 
         private void btnPost_Click(object sender, EventArgs e)
@@ -129,6 +133,11 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             Persons personsPage = new();
             personsPage.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
