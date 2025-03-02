@@ -61,8 +61,7 @@ namespace IcerikUretimSistemi.UI.Forms
             btnPost.FlatAppearance.BorderSize = 0;
             btnSearch.FlatAppearance.BorderSize = 0;
             GraphicsPath gp = new GraphicsPath();
-            gp.AddEllipse(0, 0, pictureBox2.Width, pictureBox2.Height);
-            pictureBox2.Region = new Region(gp);
+
 
 
             var currentUserID = CurrentUser.GetUser().ID;

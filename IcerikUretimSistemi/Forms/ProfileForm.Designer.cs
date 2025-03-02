@@ -36,6 +36,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPost = new FlowLayoutPanel();
             btnFollow = new Guna.UI2.WinForms.Guna2Button();
             iconSetting = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -44,19 +46,22 @@
             label2 = new Label();
             label4 = new Label();
             lblFollowers = new Label();
-            ıconButton1 = new FontAwesome.Sharp.IconButton();
             pictureBoxProfile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            iconBack = new Guna.UI2.WinForms.Guna2PictureBox();
             ((System.ComponentModel.ISupportInitialize)iconSetting).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
             guna2ContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconBack).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPost
             // 
+            flowLayoutPost.AutoScroll = true;
+            flowLayoutPost.AutoSize = true;
             flowLayoutPost.Location = new Point(92, 185);
             flowLayoutPost.Name = "flowLayoutPost";
-            flowLayoutPost.Size = new Size(854, 410);
+            flowLayoutPost.Size = new Size(882, 454);
             flowLayoutPost.TabIndex = 1;
             // 
             // btnFollow
@@ -150,20 +155,6 @@
             lblFollowers.Text = "label1";
             lblFollowers.Click += lblFollowers_Click;
             // 
-            // ıconButton1
-            // 
-            ıconButton1.BackgroundImageLayout = ImageLayout.Stretch;
-            ıconButton1.FlatStyle = FlatStyle.Flat;
-            ıconButton1.IconChar = FontAwesome.Sharp.IconChar.ArrowLeft;
-            ıconButton1.IconColor = Color.Black;
-            ıconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            ıconButton1.IconSize = 20;
-            ıconButton1.Location = new Point(11, 21);
-            ıconButton1.Name = "ıconButton1";
-            ıconButton1.Size = new Size(75, 32);
-            ıconButton1.TabIndex = 5;
-            ıconButton1.UseVisualStyleBackColor = true;
-            // 
             // pictureBoxProfile
             // 
             pictureBoxProfile.BackColor = Color.Transparent;
@@ -189,13 +180,29 @@
             guna2ContainerControl1.Controls.Add(label2);
             guna2ContainerControl1.Controls.Add(lblFollowing);
             guna2ContainerControl1.CustomizableEdges = customizableEdges6;
-            guna2ContainerControl1.FillColor = Color.PapayaWhip;
+            guna2ContainerControl1.FillColor = Color.FromArgb(255, 248, 222);
             guna2ContainerControl1.Location = new Point(92, 32);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2ContainerControl1.Size = new Size(854, 126);
+            guna2ContainerControl1.Size = new Size(882, 126);
             guna2ContainerControl1.TabIndex = 6;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
+            // 
+            // iconBack
+            // 
+            iconBack.BackColor = Color.Transparent;
+            iconBack.Cursor = Cursors.Hand;
+            iconBack.CustomizableEdges = customizableEdges8;
+            iconBack.Image = (Image)resources.GetObject("iconBack.Image");
+            iconBack.ImageRotate = 0F;
+            iconBack.Location = new Point(30, 77);
+            iconBack.Name = "iconBack";
+            iconBack.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            iconBack.Size = new Size(40, 40);
+            iconBack.SizeMode = PictureBoxSizeMode.StretchImage;
+            iconBack.TabIndex = 17;
+            iconBack.TabStop = false;
+            iconBack.Click += iconBack_Click;
             // 
             // ProfileForm
             // 
@@ -203,9 +210,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1034, 711);
+            Controls.Add(iconBack);
             Controls.Add(guna2ContainerControl1);
-            Controls.Add(ıconButton1);
             Controls.Add(flowLayoutPost);
+            MaximizeBox = false;
             Name = "ProfileForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Profile";
@@ -214,7 +222,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).EndInit();
             guna2ContainerControl1.ResumeLayout(false);
             guna2ContainerControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconBack).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -224,10 +234,10 @@
         private Label label2;
         private Label label4;
         private Label lblFollowers;
-        private FontAwesome.Sharp.IconButton ıconButton1;
         private Guna.UI2.WinForms.Guna2Button btnFollow;
         private Guna.UI2.WinForms.Guna2PictureBox iconSetting;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxProfile;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
+        private Guna.UI2.WinForms.Guna2PictureBox iconBack;
     }
 }

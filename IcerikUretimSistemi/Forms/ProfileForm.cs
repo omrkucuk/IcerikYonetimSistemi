@@ -3,6 +3,7 @@ using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -51,7 +52,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
             foreach (var post in posts)
             {
-                Panel postCard = CreatePostCard(post);
+                PostCardProfile postCard = new PostCardProfile(post.Title, post.Content, post.CreatedDate, post.ID, _currentUserId);
                 flowLayoutPost.Controls.Add(postCard);  // Post kartlarını FlowLayoutPanel'e ekle
             }
         }
@@ -243,6 +244,13 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             ProfileSetting profSetting = new();
             profSetting.Show();
+        }
+
+        private void iconBack_Click(object sender, EventArgs e)
+        {
+            HomePageForm home = new HomePageForm();
+            home.Show();
+            this.Close();
         }
     }
 }

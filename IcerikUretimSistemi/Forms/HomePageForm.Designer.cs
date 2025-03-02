@@ -38,13 +38,11 @@
             btnMessage = new FontAwesome.Sharp.IconButton();
             pictureBox1 = new PictureBox();
             lblUserName = new Label();
-            pictureBox2 = new PictureBox();
             btnSearch = new FontAwesome.Sharp.IconButton();
             flowLayoutPanel1 = new FlowLayoutPanel();
             gunaPictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).BeginInit();
             SuspendLayout();
             // 
@@ -161,17 +159,6 @@
             lblUserName.TabIndex = 5;
             lblUserName.Text = "UserName";
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(967, 231);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(40, 40);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 6;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
-            // 
             // btnSearch
             // 
             btnSearch.FlatStyle = FlatStyle.Flat;
@@ -192,7 +179,7 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(264, 187);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(672, 471);
+            flowLayoutPanel1.Size = new Size(800, 471);
             flowLayoutPanel1.TabIndex = 3;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -218,19 +205,18 @@
             Controls.Add(gunaPictureProfil);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSearch);
-            Controls.Add(pictureBox2);
             Controls.Add(lblUserName);
             Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
             Name = "HomePageForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HomePageForm";
             Load += HomePageForm_Load;
             groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -242,7 +228,6 @@
         private GroupBox groupBox1;
         private PictureBox pictureBox1;
         private Label lblUserName;
-        private PictureBox pictureBox2;
         private FontAwesome.Sharp.IconButton btnSearch;
         private FontAwesome.Sharp.IconButton btnMessage;
         private FontAwesome.Sharp.IconButton btnProfil;
