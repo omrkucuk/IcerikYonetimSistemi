@@ -1,4 +1,5 @@
-﻿using IcerikUretimSistemi.DataAccess.Context;
+﻿using Guna.UI2.WinForms;
+using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
 using Microsoft.EntityFrameworkCore;
@@ -129,7 +130,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
         private void btnFollow_Click(object sender, EventArgs e)
         {
-            var userToFollow = (Entites.Models.User)((Button)sender).Tag;
+            var userToFollow = (Entites.Models.User)((Guna2Button)sender).Tag;
 
             if (userToFollow != null)
             {
@@ -192,7 +193,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         private void UpdateFollowButton(bool isFollowing)
         {
             btnFollow.Text = isFollowing ? "Takipten Çık" : "Takip Et";
-            btnFollow.BackColor = isFollowing ? Color.Red : Color.Green;
+            btnFollow.FillColor = isFollowing ? Color.Red : Color.Green;
         }
 
         private void UpdateFollowCounts(Entites.Models.User userToFollow)

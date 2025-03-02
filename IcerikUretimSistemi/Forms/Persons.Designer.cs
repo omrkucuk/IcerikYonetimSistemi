@@ -33,18 +33,21 @@
             // 
             // flowLayoutPanelUsers
             // 
-            flowLayoutPanelUsers.Location = new Point(46, 34);
+            flowLayoutPanelUsers.AutoScroll = true;
+            flowLayoutPanelUsers.Location = new Point(104, 12);
             flowLayoutPanelUsers.Name = "flowLayoutPanelUsers";
-            flowLayoutPanelUsers.Size = new Size(634, 373);
+            flowLayoutPanelUsers.Size = new Size(909, 670);
             flowLayoutPanelUsers.TabIndex = 0;
             // 
             // Persons
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(724, 485);
+            BackColor = Color.AliceBlue;
+            ClientSize = new Size(1034, 711);
             Controls.Add(flowLayoutPanelUsers);
             Name = "Persons";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Persons";
             Load += Persons_Load;
             ResumeLayout(false);

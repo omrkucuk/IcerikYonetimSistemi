@@ -1,4 +1,5 @@
-﻿using IcerikUretimSistemi.Business.Services;
+﻿using Guna.UI2.WinForms;
+using IcerikUretimSistemi.Business.Services;
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
@@ -19,6 +20,7 @@ namespace IcerikUretimSistemi.UI.Forms
     {
         private readonly UserService _userService;
         private readonly UserRepository _userRepository;
+        private readonly FollowRepository _followRepository;
         public Persons()
         {
             InitializeComponent();
@@ -26,20 +28,20 @@ namespace IcerikUretimSistemi.UI.Forms
             var context = new AppDBContext();
             _userRepository = new UserRepository(context);
             _userService = new UserService(_userRepository);
+
+            _followRepository = new FollowRepository(context);
         }
 
         private void Persons_Load(object sender, EventArgs e)
         {
             // Veritabanından kullanıcıları çekin. Bu örnekte, kullanıcıları manuel bir listeyle ekliyoruz.
             var users = _userService.GetAll();
+            var follow = _followRepository.GetAll();
 
             foreach (var user in users)
             {
-                Button userButton = new Button();
-                userButton.Text = user.UserName; // Kullanıcı adı
-                userButton.Click += (sender, e) => OpenProfile(user); // Tıklanınca profilini aç
-                userButton.Dock = DockStyle.Top;
-                flowLayoutPanelUsers.Controls.Add(userButton); // Listede göstermek için FlowLayoutPanel'e ekliyoruz
+                PersonsControl personControl = new PersonsControl(user.ImagePath, user.UserName, user.ID, user.Followers.ToList().Count().ToString());
+                flowLayoutPanelUsers.Controls.Add(personControl);
             }
         }
 
