@@ -7,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace IcerikUretimSistemi.Business.Services
 {
-    class MessageService : IManager<Message>
+    public class MessageService : IManager<Message>
     {
         private MessageRepository _messageRepository;
 

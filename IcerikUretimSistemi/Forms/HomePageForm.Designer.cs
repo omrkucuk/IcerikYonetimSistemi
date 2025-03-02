@@ -171,6 +171,7 @@
             guna2Button4.Size = new Size(180, 45);
             guna2Button4.TabIndex = 19;
             guna2Button4.Text = "Mesaj Gönder";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2PictureBox3
             // 

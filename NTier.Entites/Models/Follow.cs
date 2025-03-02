@@ -10,10 +10,10 @@ namespace IcerikUretimSistemi.Entites.Models
     public class Follow : BaseEntity
     {
         public Guid FollowerID { get; set; }
-        public User? Follower { get; set; } // Takip eden kişi
+        public virtual User? Follower { get; set; } // Takip eden kişi
 
         public Guid FollowingID { get; set; }
-        public User? Following { get; set; } // Takip edilen kişi
+        public virtual User? Following { get; set; } // Takip edilen kişi
     }
 
 }

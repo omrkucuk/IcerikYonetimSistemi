@@ -145,7 +145,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void SearchPosts(string searchText)
         {
-            flowLayoutPanel1.Controls.Clear(); 
+            flowLayoutPanel1.Controls.Clear();
 
             var filteredPosts = _postService.GetAll()
                 .Where(post => post.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase))
@@ -163,6 +163,11 @@ namespace IcerikUretimSistemi.UI.Forms
             }
         }
 
-
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            MessageForm mesForm = new();
+            mesForm.Show();
+            this.Close();
+        }
     }
 }
