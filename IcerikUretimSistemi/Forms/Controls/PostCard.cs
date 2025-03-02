@@ -18,6 +18,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
     {
         private LikeService _likeService;
         private LikeRepository _likeRepo;
+        private CommentService _commentService;
+        private CommentsRepository _commentRepository;
 
         private Guid _postID;
         private Guid _currentUserID;
@@ -34,6 +36,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             var context = new AppDBContext();
             _likeRepo = new LikeRepository(context);
             _likeService = new LikeService(_likeRepo);
+            _commentRepository = new CommentsRepository(context);
+            _commentService = new CommentService(_commentRepository);
 
             _postID = postID; // _postID'yi doğru şekilde ayarlıyoruz
             _currentUserID = currentUserID;
@@ -53,6 +57,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             UpdateLikeCount();
             UpdateLikeIcon();
+            UpdateCommentCount();
         }
 
         private void PostCard_Load_1(object sender, EventArgs e)
@@ -117,6 +122,23 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         }
 
         private void guna2ContainerControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void UpdateCommentCount()
+        {
+            var yorumSayisi = _commentService.GetAll().Count(c => c.PostID == _postID);
+            lblCommentCount.Text = yorumSayisi.ToString();
+        }
+
+        private void iconComment_Click(object sender, EventArgs e)
+        {
+            CommentForm comForm = new CommentForm(_currentUserID, _postID);
+            comForm.Show();
+        }
+
+        private void lblCommentCount_Click(object sender, EventArgs e)
         {
 
         }

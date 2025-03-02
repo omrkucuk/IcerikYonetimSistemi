@@ -4,6 +4,7 @@ using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
 using IcerikUretimSistemi.UI.Forms.Controls;
+using Microsoft.Extensions.Logging.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,14 +53,9 @@ namespace IcerikUretimSistemi.UI.Forms
 
         }
 
+        PostCard postCard;
         private void HomePageForm_Load(object sender, EventArgs e)
         {
-            pictureBox1.BorderStyle = BorderStyle.None;
-            btnSearch.FlatAppearance.BorderSize = 0;
-            GraphicsPath gp = new GraphicsPath();
-
-
-
             var currentUserID = CurrentUser.GetUser().ID;
 
             lblUserName.Text = CurrentUser.GetUser().UserName;
@@ -77,7 +73,7 @@ namespace IcerikUretimSistemi.UI.Forms
             foreach (var post in postList)
             {
                 var user = _userService.GetByID(post.UserID);
-                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
+                postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
                 postCard.UpdateLikeCount();
                 postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
@@ -138,5 +134,33 @@ namespace IcerikUretimSistemi.UI.Forms
         {
 
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = txtSearch.Text.Trim();
+            SearchPosts(searchText);
+        }
+
+        private void SearchPosts(string searchText)
+        {
+            flowLayoutPanel1.Controls.Clear(); 
+
+            var filteredPosts = _postService.GetAll()
+                .Where(post => post.Title.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            var currentUserID = CurrentUser.GetUser().ID;
+
+            foreach (var post in filteredPosts)
+            {
+                var user = _userService.GetByID(post.UserID);
+                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
+                postCard.UpdateLikeCount();
+                postCard.UpdateLikeIcon();
+                flowLayoutPanel1.Controls.Add(postCard);
+            }
+        }
+
+
     }
 }

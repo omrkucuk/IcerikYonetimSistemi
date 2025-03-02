@@ -9,13 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IcerikUretimSistemi.Business.Services;
 using IcerikUretimSistemi.DataAccess.Context;
+using IcerikUretimSistemi.DataAccess.Repositories;
 
 namespace IcerikUretimSistemi.UI.Forms.Controls
 {
     public partial class PostCardProfile : UserControl
     {
-        private LikeService _likeService;
-        private LikeRepository _likeRepo;
+        private readonly LikeService _likeService;
+        private readonly LikeRepository _likeRepo;
+
+        private readonly CommentService _commentService;
+        private readonly CommentsRepository _commentRepository;
 
         private Guid _postID;
         private Guid _currentUserID;
@@ -31,7 +35,10 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             _likeRepo = new LikeRepository(context);
             _likeService = new LikeService(_likeRepo);
 
-            _postID = postID; // _postID'yi doğru şekilde ayarlıyoruz
+            _commentRepository = new CommentsRepository(context);
+            _commentService = new CommentService(_commentRepository);
+
+            _postID = postID;
             _currentUserID = currentUserID;
         }
 
@@ -91,11 +98,29 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             UpdateLikeCount();
             UpdateLikeIcon();
+            UpdateCommentCount();
         }
 
         private void iconLike_Click(object sender, EventArgs e)
         {
             ToggleLike();
+        }
+
+        public void UpdateCommentCount()
+        {
+            var yorumSayisi = _commentService.GetAll().Count(c => c.PostID == _postID);
+            lblCommentCount.Text = yorumSayisi.ToString();
+        }
+
+        private void guna2ContainerControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconComment_Click_1(object sender, EventArgs e)
+        {
+            CommentForm comForm = new CommentForm(_currentUserID, _postID);
+            comForm.Show();
         }
     }
 }
