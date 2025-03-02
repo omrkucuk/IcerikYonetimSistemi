@@ -40,7 +40,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             {
                 btnFollow.Visible = true;
                 iconSetting.Visible = false;
-            }   
+            }
 
         }
 
@@ -233,6 +233,12 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         }
 
         private void ıconButton2_Click(object sender, EventArgs e)
+        {
+            ProfileSetting profSetting = new();
+            profSetting.Show();
+        }
+
+        private void iconSetting_Click(object sender, EventArgs e)
         {
             ProfileSetting profSetting = new();
             profSetting.Show();

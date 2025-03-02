@@ -28,10 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPost = new FlowLayoutPanel();
             groupBox1 = new GroupBox();
-            iconSetting = new FontAwesome.Sharp.IconButton();
-            btnFollow = new Button();
+            btnFollow = new Guna.UI2.WinForms.Guna2Button();
+            iconSetting = new Guna.UI2.WinForms.Guna2PictureBox();
             pictureBoxProfile = new PictureBox();
             lblUserName = new Label();
             lblFollowing = new Label();
@@ -40,6 +45,7 @@
             lblFollowers = new Label();
             ıconButton1 = new FontAwesome.Sharp.IconButton();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconSetting).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
             SuspendLayout();
             // 
@@ -52,8 +58,8 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(iconSetting);
             groupBox1.Controls.Add(btnFollow);
+            groupBox1.Controls.Add(iconSetting);
             groupBox1.Controls.Add(pictureBoxProfile);
             groupBox1.Controls.Add(lblUserName);
             groupBox1.Controls.Add(lblFollowing);
@@ -67,32 +73,37 @@
             groupBox1.TabStop = false;
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // iconSetting
-            // 
-            iconSetting.FlatStyle = FlatStyle.Flat;
-            iconSetting.Font = new Font("Segoe UI Light", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            iconSetting.IconChar = FontAwesome.Sharp.IconChar.AlignJustify;
-            iconSetting.IconColor = Color.Black;
-            iconSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconSetting.IconSize = 30;
-            iconSetting.Location = new Point(718, 80);
-            iconSetting.Name = "iconSetting";
-            iconSetting.Size = new Size(103, 32);
-            iconSetting.TabIndex = 4;
-            iconSetting.UseVisualStyleBackColor = true;
-            iconSetting.Click += ıconButton2_Click;
-            // 
             // btnFollow
             // 
-            btnFollow.FlatStyle = FlatStyle.Flat;
-            btnFollow.Location = new Point(718, 44);
+            btnFollow.BorderRadius = 10;
+            btnFollow.CustomizableEdges = customizableEdges1;
+            btnFollow.DisabledState.BorderColor = Color.DarkGray;
+            btnFollow.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFollow.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFollow.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFollow.Font = new Font("Segoe UI", 9F);
+            btnFollow.ForeColor = Color.White;
+            btnFollow.Location = new Point(665, 54);
             btnFollow.Name = "btnFollow";
-            btnFollow.Size = new Size(103, 30);
-            btnFollow.TabIndex = 3;
-            btnFollow.Tag = "userToFollow";
+            btnFollow.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnFollow.Size = new Size(109, 35);
+            btnFollow.TabIndex = 17;
             btnFollow.Text = "Takip Et";
-            btnFollow.UseVisualStyleBackColor = true;
-            btnFollow.Click += btnFollow_Click;
+            // 
+            // iconSetting
+            // 
+            iconSetting.Cursor = Cursors.Hand;
+            iconSetting.CustomizableEdges = customizableEdges3;
+            iconSetting.Image = (Image)resources.GetObject("iconSetting.Image");
+            iconSetting.ImageRotate = 0F;
+            iconSetting.Location = new Point(799, 49);
+            iconSetting.Name = "iconSetting";
+            iconSetting.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            iconSetting.Size = new Size(40, 40);
+            iconSetting.SizeMode = PictureBoxSizeMode.StretchImage;
+            iconSetting.TabIndex = 16;
+            iconSetting.TabStop = false;
+            iconSetting.Click += iconSetting_Click;
             // 
             // pictureBoxProfile
             // 
@@ -185,6 +196,7 @@
             Load += ProfileForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconSetting).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).EndInit();
             ResumeLayout(false);
         }
@@ -193,13 +205,13 @@
         private FlowLayoutPanel flowLayoutPost;
         private GroupBox groupBox1;
         private PictureBox pictureBoxProfile;
-        private Button btnFollow;
         private Label lblUserName;
         private Label lblFollowing;
         private Label label2;
         private Label label4;
         private Label lblFollowers;
         private FontAwesome.Sharp.IconButton ıconButton1;
-        private FontAwesome.Sharp.IconButton iconSetting;
+        private Guna.UI2.WinForms.Guna2Button btnFollow;
+        private Guna.UI2.WinForms.Guna2PictureBox iconSetting;
     }
 }
