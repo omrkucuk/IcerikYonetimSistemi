@@ -80,6 +80,16 @@ namespace IcerikUretimSistemi.Business.Services
                 .OrderBy(m => m.SendAt)
                 .ToList();
         }
+
+        // Hem gönderici hem de alıcı kimliğiyle mesajları alıyoruz
+        public IEnumerable<Message> GetMessagesBySenderOrReceiver(Guid currentID, Guid receiverID)
+        {
+            return _messageRepository.GetAll()
+                .Where(m => (m.SenderID == currentID && m.ReceiverID == receiverID) ||
+                            (m.SenderID == receiverID && m.ReceiverID == currentID))
+                .OrderBy(m => m.SendAt)  // Zaman sırasına göre sıralama
+                .ToList();
+        }
     }
 }
 

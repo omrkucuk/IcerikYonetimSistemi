@@ -30,6 +30,7 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageControl));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtMessage = new Guna.UI2.WinForms.Guna2TextBox();
             pctPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -46,6 +47,7 @@
             txtMessage.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMessage.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMessage.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMessage.Enabled = false;
             txtMessage.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMessage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
             txtMessage.ForeColor = Color.Black;
@@ -62,6 +64,7 @@
             // 
             // pctPhoto
             // 
+            pctPhoto.Image = (Image)resources.GetObject("pctPhoto.Image");
             pctPhoto.ImageRotate = 0F;
             pctPhoto.Location = new Point(20, 2);
             pctPhoto.Name = "pctPhoto";

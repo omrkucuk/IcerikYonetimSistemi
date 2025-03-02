@@ -41,8 +41,8 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             try
             {
-                // Mesajları alıyoruz
-                var messages = _messageService.GetMessages(_currentID, _receiverID);
+                // Gönderen veya alıcı kimliği ile mesajları alıyoruz
+                var messages = _messageService.GetMessagesBySenderOrReceiver(_currentID, _receiverID);
 
                 // FlowLayoutPanel'i temizliyoruz
                 flowLayoutPanel1.Controls.Clear();
