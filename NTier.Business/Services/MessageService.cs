@@ -71,6 +71,15 @@ namespace IcerikUretimSistemi.Business.Services
 
             _messageRepository.Update(entity);
         }
+
+        public List<Message> GetMessages(Guid senderId, Guid receiverId)
+        {
+            return _messageRepository.GetAll()
+                .Where(m => (m.SenderID == senderId && m.ReceiverID == receiverId) ||
+                            (m.SenderID == receiverId && m.ReceiverID == senderId))
+                .OrderBy(m => m.SendAt)
+                .ToList();
+        }
     }
 }
 

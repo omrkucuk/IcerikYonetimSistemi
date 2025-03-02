@@ -31,13 +31,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             flowLayoutPersons = new FlowLayoutPanel();
-            guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             iconBack = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconBack).BeginInit();
@@ -64,27 +61,16 @@
             flowLayoutPersons.Size = new Size(294, 656);
             flowLayoutPersons.TabIndex = 0;
             // 
-            // guna2ContainerControl2
-            // 
-            guna2ContainerControl2.BorderRadius = 25;
-            guna2ContainerControl2.CustomizableEdges = customizableEdges3;
-            guna2ContainerControl2.Location = new Point(337, 68);
-            guna2ContainerControl2.Name = "guna2ContainerControl2";
-            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ContainerControl2.Size = new Size(680, 665);
-            guna2ContainerControl2.TabIndex = 1;
-            guna2ContainerControl2.Text = "guna2ContainerControl2";
-            // 
             // iconBack
             // 
             iconBack.BackColor = Color.Transparent;
             iconBack.Cursor = Cursors.Hand;
-            iconBack.CustomizableEdges = customizableEdges5;
+            iconBack.CustomizableEdges = customizableEdges3;
             iconBack.Image = (Image)resources.GetObject("iconBack.Image");
             iconBack.ImageRotate = 0F;
             iconBack.Location = new Point(15, 12);
             iconBack.Name = "iconBack";
-            iconBack.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            iconBack.ShadowDecoration.CustomizableEdges = customizableEdges4;
             iconBack.Size = new Size(40, 40);
             iconBack.SizeMode = PictureBoxSizeMode.StretchImage;
             iconBack.TabIndex = 19;
@@ -97,7 +83,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1050, 750);
             Controls.Add(iconBack);
-            Controls.Add(guna2ContainerControl2);
             Controls.Add(guna2ContainerControl1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MessageForm";
@@ -112,7 +97,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl2;
         private FlowLayoutPanel flowLayoutPersons;
         private Guna.UI2.WinForms.Guna2PictureBox iconBack;
     }

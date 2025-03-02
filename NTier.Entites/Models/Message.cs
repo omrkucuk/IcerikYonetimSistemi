@@ -12,6 +12,8 @@ namespace IcerikUretimSistemi.Entites.Models
         public Message()
         {
             ID = Guid.NewGuid();
+            SendAt = DateTime.Now;
+            IsRead = false;
         }
         public Guid ID { get; set; }
         public Guid SenderID { get; set; }
@@ -19,7 +21,7 @@ namespace IcerikUretimSistemi.Entites.Models
         public Guid ReceiverID { get; set; }
         public User Receiver { get; set; }
         public string? Content { get; set; }
-        public DateTime SendAt { get; set; }
+        public DateTime SendAt { get; set; } 
         public bool IsRead { get; set; }
     }
 }

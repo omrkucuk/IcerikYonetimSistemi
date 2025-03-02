@@ -25,6 +25,9 @@ namespace IcerikUretimSistemi.UI.Forms
         private readonly MessageRepository _messageRepository;
         private readonly MessageService _messageService;
 
+        private User _currentUser;
+        private Guid _activeChatUserId; // Aktif mesajlaşılan kişi
+
         public MessageForm()
         {
             InitializeComponent();
@@ -43,16 +46,16 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            var currentUser = CurrentUser.GetUser();
+            _currentUser = CurrentUser.GetUser();
 
-            if (currentUser == null)
+            if (_currentUser == null)
             {
                 MessageBox.Show("Mevcut kullanıcı bulunamadı.");
                 return;
             }
 
             // Takip edilen kullanıcıları çekiyoruz
-            var followedUsers = _followRepository.GetFollowedUsers(currentUser.ID);
+            var followedUsers = _followRepository.GetFollowedUsers(_currentUser.ID);
 
             // Kullanıcıları ekrana ekleyelim
             foreach (var user in followedUsers)
@@ -71,11 +74,14 @@ namespace IcerikUretimSistemi.UI.Forms
 
         }
 
+  
         private void iconBack_Click(object sender, EventArgs e)
         {
             HomePageForm ev = new();
             ev.Show();
             this.Close();
         }
+
+
     }
 }

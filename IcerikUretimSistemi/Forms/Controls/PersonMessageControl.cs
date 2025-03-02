@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.DataAccess.Context;
+using IcerikUretimSistemi.Entites.Models;
 
 namespace IcerikUretimSistemi.UI.Forms.Controls
 {
@@ -16,6 +17,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
     {
         private readonly UserRepository _userRepository;
         private Guid _userID;
+        private Guid _currentID;
+        private string _userName;
         public PersonMessageControl(string ImagePath, string userName, Guid userID)
         {
             InitializeComponent();
@@ -27,11 +30,19 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             _userRepository = new UserRepository(context);
 
             _userID = userID;
+            _userName = userName;
+            _currentID = CurrentUser.LoggedInUser.ID;
         }
 
         private void guna2ContainerControl1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMessage_Click(object sender, EventArgs e)
+        {
+            MessageSendForm gonder = new MessageSendForm(_currentID, _userID);
+            gonder.Show();
         }
     }
 }

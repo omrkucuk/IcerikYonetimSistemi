@@ -31,14 +31,14 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonMessageControl));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PersonMessageControl));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             btnMessage = new Guna.UI2.WinForms.Guna2Button();
+            guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             profilePhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1.SuspendLayout();
@@ -49,8 +49,8 @@
             // guna2ContainerControl1
             // 
             guna2ContainerControl1.BorderRadius = 15;
-            guna2ContainerControl1.Controls.Add(guna2PictureBox6);
             guna2ContainerControl1.Controls.Add(btnMessage);
+            guna2ContainerControl1.Controls.Add(guna2PictureBox6);
             guna2ContainerControl1.Controls.Add(lblUserName);
             guna2ContainerControl1.Controls.Add(profilePhoto);
             guna2ContainerControl1.CustomizableEdges = customizableEdges6;
@@ -62,39 +62,39 @@
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;
             // 
-            // guna2PictureBox6
-            // 
-            guna2PictureBox6.BackColor = Color.Transparent;
-            guna2PictureBox6.CustomizableEdges = customizableEdges1;
-            guna2PictureBox6.Image = (Image)resources.GetObject("guna2PictureBox6.Image");
-            guna2PictureBox6.ImageRotate = 0F;
-            guna2PictureBox6.Location = new Point(225, 39);
-            guna2PictureBox6.Name = "guna2PictureBox6";
-            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox6.Size = new Size(35, 35);
-            guna2PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
-            guna2PictureBox6.TabIndex = 23;
-            guna2PictureBox6.TabStop = false;
-            // 
             // btnMessage
             // 
             btnMessage.Animated = true;
             btnMessage.AnimatedGIF = true;
             btnMessage.BorderRadius = 10;
-            btnMessage.Cursor = Cursors.Hand;
-            btnMessage.CustomizableEdges = customizableEdges3;
+            btnMessage.CustomizableEdges = customizableEdges1;
             btnMessage.DisabledState.BorderColor = Color.DarkGray;
             btnMessage.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMessage.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnMessage.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnMessage.Font = new Font("Segoe UI", 9F);
             btnMessage.ForeColor = Color.White;
-            btnMessage.Location = new Point(102, 39);
+            btnMessage.Location = new Point(94, 39);
             btnMessage.Name = "btnMessage";
-            btnMessage.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnMessage.Size = new Size(117, 41);
-            btnMessage.TabIndex = 2;
+            btnMessage.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnMessage.Size = new Size(125, 41);
+            btnMessage.TabIndex = 24;
             btnMessage.Text = "Mesaj At";
+            btnMessage.Click += btnMessage_Click;
+            // 
+            // guna2PictureBox6
+            // 
+            guna2PictureBox6.BackColor = Color.Transparent;
+            guna2PictureBox6.CustomizableEdges = customizableEdges3;
+            guna2PictureBox6.Image = (Image)resources.GetObject("guna2PictureBox6.Image");
+            guna2PictureBox6.ImageRotate = 0F;
+            guna2PictureBox6.Location = new Point(225, 39);
+            guna2PictureBox6.Name = "guna2PictureBox6";
+            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2PictureBox6.Size = new Size(35, 35);
+            guna2PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            guna2PictureBox6.TabIndex = 23;
+            guna2PictureBox6.TabStop = false;
             // 
             // lblUserName
             // 
@@ -138,9 +138,9 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private Guna.UI2.WinForms.Guna2Button btnMessage;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblUserName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox profilePhoto;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
+        private Guna.UI2.WinForms.Guna2Button btnMessage;
     }
 }
