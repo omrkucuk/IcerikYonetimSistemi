@@ -88,6 +88,7 @@
             txtMessage.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMessage.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMessage.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMessage.Enabled = false;
             txtMessage.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMessage.Font = new Font("Segoe UI", 9F);
             txtMessage.HoverState.BorderColor = Color.FromArgb(94, 148, 255);

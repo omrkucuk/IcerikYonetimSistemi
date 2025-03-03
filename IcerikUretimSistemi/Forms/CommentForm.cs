@@ -62,6 +62,8 @@ namespace IcerikUretimSistemi.UI.Forms
 
                 MessageBox.Show(ex.Message);
             }
+
+            txtComment.Text = "";
         }
         CommentControl comControl;
         private void CommentForm_Load(object sender, EventArgs e)

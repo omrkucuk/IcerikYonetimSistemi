@@ -52,7 +52,12 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             ProfileForm proForm = new ProfileForm(_userID);
             proForm.Show();
-            
+
+
+            Persons personPage = Application.OpenForms.OfType<Persons>().FirstOrDefault();
+
+            personPage.Close();
+
         }
     }
 }

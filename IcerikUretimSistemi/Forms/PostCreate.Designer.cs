@@ -91,11 +91,12 @@
             txtContent.Font = new Font("Segoe UI", 9F);
             txtContent.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtContent.Location = new Point(237, 140);
+            txtContent.Multiline = true;
             txtContent.Name = "txtContent";
             txtContent.PlaceholderText = "";
             txtContent.SelectedText = "";
             txtContent.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtContent.Size = new Size(284, 167);
+            txtContent.Size = new Size(284, 170);
             txtContent.TabIndex = 3;
             // 
             // button1

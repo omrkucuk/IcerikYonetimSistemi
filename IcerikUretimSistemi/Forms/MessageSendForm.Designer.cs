@@ -36,9 +36,7 @@
             txtMesajYazma = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtMesajYazma
@@ -81,22 +79,12 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(label1);
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.FlowDirection = FlowDirection.BottomUp;
             flowLayoutPanel1.Location = new Point(53, 32);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(592, 530);
             flowLayoutPanel1.TabIndex = 25;
             flowLayoutPanel1.WrapContents = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
             // 
             // MessageSendForm
             // 
@@ -114,8 +102,6 @@
             Text = "MessageSendForm";
             Load += MessageSendForm_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -124,6 +110,5 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMesajYazma;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Label label1;
     }
 }

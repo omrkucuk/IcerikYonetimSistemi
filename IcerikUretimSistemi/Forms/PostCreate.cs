@@ -63,6 +63,9 @@ namespace IcerikUretimSistemi.UI.Forms
 
                 MessageBox.Show(ex.ToString());
             }
+
+            txtTitle.Text = "";
+            txtContent.Text = "";
         }
 
         private void iconBack_Click(object sender, EventArgs e)

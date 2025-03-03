@@ -179,7 +179,8 @@
             txtGirisSifre.SelectedText = "";
             txtGirisSifre.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtGirisSifre.Size = new Size(236, 36);
-            txtGirisSifre.TabIndex = 20;
+            txtGirisSifre.TabIndex = 5;
+            txtGirisSifre.UseSystemPasswordChar = true;
             // 
             // txtGirisKullanıcıAdi
             // 
@@ -200,7 +201,7 @@
             txtGirisKullanıcıAdi.SelectedText = "";
             txtGirisKullanıcıAdi.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtGirisKullanıcıAdi.Size = new Size(236, 36);
-            txtGirisKullanıcıAdi.TabIndex = 19;
+            txtGirisKullanıcıAdi.TabIndex = 4;
             // 
             // btnLogin
             // 
@@ -323,7 +324,7 @@
             txtKayitUserName.SelectedText = "";
             txtKayitUserName.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtKayitUserName.Size = new Size(236, 36);
-            txtKayitUserName.TabIndex = 19;
+            txtKayitUserName.TabIndex = 2;
             // 
             // txtKayitSifre
             // 
@@ -344,7 +345,8 @@
             txtKayitSifre.SelectedText = "";
             txtKayitSifre.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtKayitSifre.Size = new Size(236, 36);
-            txtKayitSifre.TabIndex = 18;
+            txtKayitSifre.TabIndex = 3;
+            txtKayitSifre.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
@@ -365,7 +367,7 @@
             txtEmail.SelectedText = "";
             txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtEmail.Size = new Size(236, 36);
-            txtEmail.TabIndex = 16;
+            txtEmail.TabIndex = 1;
             // 
             // btnSignUp
             // 

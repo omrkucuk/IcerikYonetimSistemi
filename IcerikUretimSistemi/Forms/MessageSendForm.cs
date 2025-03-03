@@ -109,6 +109,8 @@ namespace IcerikUretimSistemi.UI.Forms
             {
                 MessageBox.Show($"Mesaj gönderme hatası: {ex.Message}");
             }
+
+            txtMesajYazma.Text = "";
         }
 
         // Geri butonuna tıklanma olayı

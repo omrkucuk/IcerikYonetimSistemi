@@ -48,6 +48,10 @@ namespace IcerikUretimSistemi.UI.Forms
 
                 MessageBox.Show(ex.Message);
             }
+
+            txtKayitUserName.Text = "";
+            txtEmail.Text = "";
+            txtKayitSifre.Text = "";
         }
 
         private void SignUpForm_Load(object sender, EventArgs e)
@@ -107,6 +111,9 @@ namespace IcerikUretimSistemi.UI.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+
+            txtGirisKullanıcıAdi.Text = "";
+            txtGirisSifre.Text = "";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

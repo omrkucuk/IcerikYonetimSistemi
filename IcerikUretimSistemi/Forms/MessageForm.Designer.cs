@@ -55,10 +55,11 @@
             // 
             // flowLayoutPersons
             // 
+            flowLayoutPersons.AutoScroll = true;
             flowLayoutPersons.BackColor = Color.Transparent;
             flowLayoutPersons.Location = new Point(3, 14);
             flowLayoutPersons.Name = "flowLayoutPersons";
-            flowLayoutPersons.Size = new Size(294, 656);
+            flowLayoutPersons.Size = new Size(316, 656);
             flowLayoutPersons.TabIndex = 0;
             // 
             // iconBack

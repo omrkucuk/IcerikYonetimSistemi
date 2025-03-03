@@ -128,6 +128,10 @@ namespace IcerikUretimSistemi.UI.Forms
 
                 MessageBox.Show(ex.Message);
             }
+
+            txtUserName.Text = "";
+            txtEmail.Text = "";
+            txtPassword.Text = "";
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -159,7 +163,7 @@ namespace IcerikUretimSistemi.UI.Forms
                 {
                     var userId = CurrentUser.LoggedInUser.ID;
 
-                    var userToDelete = _userRepo.GetByID(userId); 
+                    var userToDelete = _userRepo.GetByID(userId);
 
                     if (userToDelete == null)
                     {
@@ -167,7 +171,7 @@ namespace IcerikUretimSistemi.UI.Forms
                         return;
                     }
 
-                    
+
                     _userRepo.Delete(userToDelete.ID);
 
                     this.Close();
