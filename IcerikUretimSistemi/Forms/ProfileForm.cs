@@ -50,56 +50,17 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             var posts = _postRepo.GetPostsByUserId(userId);
 
+            flowLayoutPost.Controls.Clear();
+
             foreach (var post in posts)
             {
                 PostCardProfile postCard = new PostCardProfile(post.Title, post.Content, post.CreatedDate, post.ID, _currentUserId);
-                flowLayoutPost.Controls.Add(postCard);  // Post kartlarını FlowLayoutPanel'e ekle
+                flowLayoutPost.Controls.Add(postCard);
             }
         }
 
-        private Panel CreatePostCard(Posts post)
-        {
-            Panel postCard = new Panel
-            {
-                Width = 300,
-                Height = 150,
-                BorderStyle = BorderStyle.FixedSingle,
-                Padding = new Padding(10),
-                Margin = new Padding(10)
-            };
-
-            // Başlık etiketi
-            Label lblTitle = new Label
-            {
-                Text = post.Title,
-                Font = new Font("Arial", 12, FontStyle.Bold),
-                Dock = DockStyle.Top
-            };
-            postCard.Controls.Add(lblTitle);
-
-            // İçerik etiketi
-            Label lblContent = new Label
-            {
-                Text = post.Content.Length > 50 ? post.Content.Substring(0, 50) + "..." : post.Content,
-                Font = new Font("Arial", 10),
-                Dock = DockStyle.Fill
-            };
-            postCard.Controls.Add(lblContent);
-
-            // Oluşturulma tarihi etiketi
-            Label lblCreatedAt = new Label
-            {
-                Text = post.CreatedDate.ToString("g"),
-                Font = new Font("Arial", 8, FontStyle.Italic),
-                Dock = DockStyle.Bottom
-            };
-            postCard.Controls.Add(lblCreatedAt);
-
-            return postCard;
-        }
-
         private void LoadUserProfile(Guid userId)
-        {
+        {       
             var user = _userRepo.GetByID(userId);
 
             if (user != null)

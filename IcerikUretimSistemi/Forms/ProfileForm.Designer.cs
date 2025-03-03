@@ -39,7 +39,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            flowLayoutPost = new FlowLayoutPanel();
             btnFollow = new Guna.UI2.WinForms.Guna2Button();
             iconSetting = new Guna.UI2.WinForms.Guna2PictureBox();
             lblUserName = new Label();
@@ -51,21 +50,12 @@
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             iconBack = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            flowLayoutPost = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)iconSetting).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProfile).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconBack).BeginInit();
             SuspendLayout();
-            // 
-            // flowLayoutPost
-            // 
-            flowLayoutPost.AutoScroll = true;
-            flowLayoutPost.AutoSize = true;
-            flowLayoutPost.BackColor = Color.Transparent;
-            flowLayoutPost.Location = new Point(92, 185);
-            flowLayoutPost.Name = "flowLayoutPost";
-            flowLayoutPost.Size = new Size(882, 454);
-            flowLayoutPost.TabIndex = 1;
             // 
             // btnFollow
             // 
@@ -224,16 +214,26 @@
             guna2Shapes1.Text = "guna2Shapes1";
             guna2Shapes1.Zoom = 100;
             // 
+            // flowLayoutPost
+            // 
+            flowLayoutPost.AutoScroll = true;
+            flowLayoutPost.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPost.Location = new Point(244, 215);
+            flowLayoutPost.Name = "flowLayoutPost";
+            flowLayoutPost.Size = new Size(857, 407);
+            flowLayoutPost.TabIndex = 33;
+            flowLayoutPost.WrapContents = false;
+            // 
             // ProfileForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1050, 750);
+            Controls.Add(flowLayoutPost);
             Controls.Add(guna2Shapes1);
             Controls.Add(iconBack);
             Controls.Add(guna2ContainerControl1);
-            Controls.Add(flowLayoutPost);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "ProfileForm";
@@ -246,11 +246,9 @@
             guna2ContainerControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconBack).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private FlowLayoutPanel flowLayoutPost;
         private Label lblUserName;
         private Label lblFollowing;
         private Label label2;
@@ -262,5 +260,6 @@
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private Guna.UI2.WinForms.Guna2PictureBox iconBack;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
+        private FlowLayoutPanel flowLayoutPost;
     }
 }

@@ -20,10 +20,13 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         private LikeRepository _likeRepo;
         private CommentService _commentService;
         private CommentsRepository _commentRepository;
+        private readonly PostRepository _postRepository;
+        private readonly PostService _postService;
 
         private Guid _postID;
         private Guid _currentUserID;
-        public PostCard(string creatorName, string title, string content, DateTime createdAt, string ImagePath, Guid postID, Guid currentUserID)
+        private Guid _postOwnerID;
+        public PostCard(string creatorName, string title, string content, DateTime createdAt, string ImagePath, Guid postID, Guid currentUserID, Guid postOwnerID)
         {
             InitializeComponent();
 
@@ -39,8 +42,12 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             _commentRepository = new CommentsRepository(context);
             _commentService = new CommentService(_commentRepository);
 
+            _postRepository = new PostRepository(context);
+            _postService = new PostService(_postRepository);
+
             _postID = postID; // _postID'yi doğru şekilde ayarlıyoruz
             _currentUserID = currentUserID;
+            _postOwnerID = postOwnerID;
         }
 
         private void btnLike_Click(object sender, EventArgs e)
@@ -58,6 +65,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             UpdateLikeCount();
             UpdateLikeIcon();
             UpdateCommentCount();
+
+            guna2PictureBox1.Visible = (_postOwnerID == _currentUserID);
         }
 
         private void lblCreator_Click(object sender, EventArgs e)
@@ -137,5 +146,36 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
 
         }
+
+        private void guna2PictureBox1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "SİLME İŞLEMİ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    _postService.Delete(_postID);
+
+                    HomePageForm homePage = Application.OpenForms.OfType<HomePageForm>().FirstOrDefault();
+
+                    if (homePage != null)
+                    {
+                        homePage.RefreshContent();
+                    }
+                    else
+                    {
+                        MessageBox.Show("HomePageForm bulunamadı!");
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

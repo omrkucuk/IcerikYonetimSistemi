@@ -28,21 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageSendForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtMesajYazma = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtMesajYazma
             // 
+            txtMesajYazma.AcceptsReturn = true;
             txtMesajYazma.BorderRadius = 15;
-            txtMesajYazma.CustomizableEdges = customizableEdges5;
+            txtMesajYazma.CustomizableEdges = customizableEdges1;
             txtMesajYazma.DefaultText = "";
             txtMesajYazma.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtMesajYazma.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -55,19 +58,20 @@
             txtMesajYazma.Name = "txtMesajYazma";
             txtMesajYazma.PlaceholderText = "";
             txtMesajYazma.SelectedText = "";
-            txtMesajYazma.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtMesajYazma.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtMesajYazma.Size = new Size(513, 50);
             txtMesajYazma.TabIndex = 0;
             // 
             // guna2PictureBox6
             // 
             guna2PictureBox6.BackColor = Color.Transparent;
-            guna2PictureBox6.CustomizableEdges = customizableEdges7;
+            guna2PictureBox6.Cursor = Cursors.Hand;
+            guna2PictureBox6.CustomizableEdges = customizableEdges3;
             guna2PictureBox6.Image = (Image)resources.GetObject("guna2PictureBox6.Image");
             guna2PictureBox6.ImageRotate = 0F;
             guna2PictureBox6.Location = new Point(595, 568);
             guna2PictureBox6.Name = "guna2PictureBox6";
-            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2PictureBox6.Size = new Size(50, 50);
             guna2PictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox6.TabIndex = 24;
@@ -76,10 +80,23 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Controls.Add(label1);
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(53, 32);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(592, 530);
             flowLayoutPanel1.TabIndex = 25;
+            flowLayoutPanel1.WrapContents = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(38, 15);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
             // MessageSendForm
             // 
@@ -97,6 +114,8 @@
             Text = "MessageSendForm";
             Load += MessageSendForm_Load;
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -105,5 +124,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtMesajYazma;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label1;
     }
 }

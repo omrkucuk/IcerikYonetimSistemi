@@ -26,6 +26,7 @@ namespace IcerikUretimSistemi.UI.Forms
         private readonly UserService _userService;
         private readonly UserRepository _userRepository;
 
+        public event EventHandler ContentRefreshRequested;
         public HomePageForm()
         {
             InitializeComponent();
@@ -73,7 +74,7 @@ namespace IcerikUretimSistemi.UI.Forms
             foreach (var post in postList)
             {
                 var user = _userService.GetByID(post.UserID);
-                postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
+                postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID,post.UserID);
                 postCard.UpdateLikeCount();
                 postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
@@ -156,7 +157,7 @@ namespace IcerikUretimSistemi.UI.Forms
             foreach (var post in filteredPosts)
             {
                 var user = _userService.GetByID(post.UserID);
-                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID);
+                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID,post.UserID);
                 postCard.UpdateLikeCount();
                 postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
@@ -168,6 +169,16 @@ namespace IcerikUretimSistemi.UI.Forms
             MessageForm mesForm = new();
             mesForm.Show();
             this.Close();
+        }
+
+        public void RefreshContent()
+        {
+            flowLayoutPanel1.Controls.Clear(); // Önceki gönderileri temizle
+            HomePageForm_Load(null, null); // Yeniden yükle
+        }
+        private void SomeMethodThatTriggersRefresh()
+        {
+            ContentRefreshRequested?.Invoke(this, EventArgs.Empty);
         }
     }
 }

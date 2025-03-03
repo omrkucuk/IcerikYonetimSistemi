@@ -21,5 +21,6 @@ namespace IcerikUretimSistemi.DataAccess.Repositories
         {
             return _context.Posts.Where(p => p.UserID == userId).ToList();
         }
+
     }
 }
