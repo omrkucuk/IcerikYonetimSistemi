@@ -21,9 +21,13 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         private readonly CommentService _commentService;
         private readonly CommentsRepository _commentRepository;
 
+        private readonly PostRepository _postRepository;
+        private readonly PostService _postService;
+
         private Guid _postID;
         private Guid _currentUserID;
-        public PostCardProfile(string title, string content, DateTime createdAt, Guid postID, Guid currentUserID)
+        private Guid _postOwnerID;
+        public PostCardProfile(string title, string content, DateTime createdAt, Guid postID, Guid currentUserID, Guid postOwnerID)
         {
             InitializeComponent();
             lblTitle.Text = title;
@@ -38,8 +42,12 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             _commentRepository = new CommentsRepository(context);
             _commentService = new CommentService(_commentRepository);
 
+            _postRepository = new PostRepository(context);
+            _postService = new PostService(_postRepository);
+
             _postID = postID;
             _currentUserID = currentUserID;
+            _postOwnerID = postOwnerID;
         }
 
         private void iconComment_Click(object sender, EventArgs e)
@@ -99,6 +107,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             UpdateLikeCount();
             UpdateLikeIcon();
             UpdateCommentCount();
+
+            guna2PictureBox1.Visible = (_postOwnerID == _currentUserID);
         }
 
         private void iconLike_Click(object sender, EventArgs e)
@@ -121,6 +131,36 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             CommentForm comForm = new CommentForm(_currentUserID, _postID);
             comForm.Show();
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "SİLME İŞLEMİ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    _postService.Delete(_postID);
+
+                    ProfileForm homePage = Application.OpenForms.OfType<ProfileForm>().FirstOrDefault();
+
+                    if (homePage != null)
+                    {
+                        homePage.RefreshContent();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ProfileForm bulunamadı!");
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

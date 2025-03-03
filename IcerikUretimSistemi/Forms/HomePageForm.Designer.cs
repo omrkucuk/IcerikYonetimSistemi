@@ -88,6 +88,7 @@
             lblUserName.Size = new Size(148, 19);
             lblUserName.TabIndex = 5;
             lblUserName.Text = "UserNameasdasdgfasd";
+            lblUserName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
             // 

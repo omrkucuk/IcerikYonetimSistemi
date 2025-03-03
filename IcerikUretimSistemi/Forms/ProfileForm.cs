@@ -54,7 +54,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
             foreach (var post in posts)
             {
-                PostCardProfile postCard = new PostCardProfile(post.Title, post.Content, post.CreatedDate, post.ID, _currentUserId);
+                PostCardProfile postCard = new PostCardProfile(post.Title, post.Content, post.CreatedDate, post.ID, _currentUserId, post.UserID);
                 flowLayoutPost.Controls.Add(postCard);
             }
         }
@@ -214,6 +214,13 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             home.Show();
             this.Close();
         }
+
+        public void RefreshContent()
+        {
+            flowLayoutPost.Controls.Clear(); // Önceki gönderileri temizle
+            ProfileForm_Load(null, null); // Yeniden yükle
+        }
+
     }
 }
 
