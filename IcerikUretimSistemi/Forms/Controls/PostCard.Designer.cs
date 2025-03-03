@@ -29,50 +29,39 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostCard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PostCard));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            lblCreator = new Label();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblDate = new Label();
             label1 = new Label();
             pictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lblContent = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblLikeCount = new Label();
             lblCommentCount = new Label();
             iconComment = new Guna.UI2.WinForms.Guna2PictureBox();
             iconLike = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
-            lblContent = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
+            lblCreator = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureProfil).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconComment).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconLike).BeginInit();
-            guna2ContainerControl2.SuspendLayout();
             SuspendLayout();
-            // 
-            // lblCreator
-            // 
-            lblCreator.AutoSize = true;
-            lblCreator.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            lblCreator.Location = new Point(31, 139);
-            lblCreator.Name = "lblCreator";
-            lblCreator.Size = new Size(41, 17);
-            lblCreator.TabIndex = 0;
-            lblCreator.Text = "label1";
-            lblCreator.Click += lblCreator_Click;
             // 
             // lblDate
             // 
@@ -95,6 +84,8 @@
             // pictureProfil
             // 
             pictureProfil.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureProfil.ErrorImage = Properties.Resources.user;
+            pictureProfil.Image = Properties.Resources.user;
             pictureProfil.ImageRotate = 0F;
             pictureProfil.Location = new Point(31, 37);
             pictureProfil.Name = "pictureProfil";
@@ -108,36 +99,61 @@
             // guna2ContainerControl1
             // 
             guna2ContainerControl1.BorderRadius = 50;
+            guna2ContainerControl1.Controls.Add(lblCreator);
+            guna2ContainerControl1.Controls.Add(lblContent);
             guna2ContainerControl1.Controls.Add(guna2PictureBox1);
             guna2ContainerControl1.Controls.Add(lblTitle);
             guna2ContainerControl1.Controls.Add(lblLikeCount);
             guna2ContainerControl1.Controls.Add(lblCommentCount);
             guna2ContainerControl1.Controls.Add(iconComment);
             guna2ContainerControl1.Controls.Add(iconLike);
-            guna2ContainerControl1.Controls.Add(guna2ContainerControl2);
             guna2ContainerControl1.Controls.Add(guna2Shapes1);
             guna2ContainerControl1.Controls.Add(pictureProfil);
             guna2ContainerControl1.Controls.Add(lblDate);
-            guna2ContainerControl1.Controls.Add(lblCreator);
             guna2ContainerControl1.Controls.Add(label1);
-            guna2ContainerControl1.CustomizableEdges = customizableEdges11;
+            guna2ContainerControl1.CustomizableEdges = customizableEdges13;
             guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
-            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2ContainerControl1.Size = new Size(629, 296);
             guna2ContainerControl1.TabIndex = 10;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;
             // 
+            // lblContent
+            // 
+            lblContent.BackColor = Color.White;
+            lblContent.BorderRadius = 15;
+            lblContent.CustomizableEdges = customizableEdges4;
+            lblContent.DefaultText = "";
+            lblContent.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lblContent.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lblContent.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lblContent.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lblContent.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lblContent.Font = new Font("Segoe UI", 9F);
+            lblContent.ForeColor = Color.Black;
+            lblContent.HoverState.BorderColor = Color.FromArgb(213, 218, 223);
+            lblContent.Location = new Point(154, 92);
+            lblContent.Multiline = true;
+            lblContent.Name = "lblContent";
+            lblContent.PlaceholderText = "";
+            lblContent.ReadOnly = true;
+            lblContent.SelectedText = "";
+            lblContent.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            lblContent.Size = new Size(398, 116);
+            lblContent.TabIndex = 21;
+            // 
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
-            guna2PictureBox1.CustomizableEdges = customizableEdges2;
+            guna2PictureBox1.Cursor = Cursors.Hand;
+            guna2PictureBox1.CustomizableEdges = customizableEdges6;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(468, 214);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2PictureBox1.Size = new Size(35, 35);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 20;
@@ -177,12 +193,12 @@
             // iconComment
             // 
             iconComment.Cursor = Cursors.Hand;
-            iconComment.CustomizableEdges = customizableEdges4;
+            iconComment.CustomizableEdges = customizableEdges8;
             iconComment.Image = (Image)resources.GetObject("iconComment.Image");
             iconComment.ImageRotate = 0F;
             iconComment.Location = new Point(262, 214);
             iconComment.Name = "iconComment";
-            iconComment.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            iconComment.ShadowDecoration.CustomizableEdges = customizableEdges9;
             iconComment.Size = new Size(30, 30);
             iconComment.SizeMode = PictureBoxSizeMode.StretchImage;
             iconComment.TabIndex = 17;
@@ -192,63 +208,69 @@
             // iconLike
             // 
             iconLike.Cursor = Cursors.Hand;
-            iconLike.CustomizableEdges = customizableEdges6;
+            iconLike.CustomizableEdges = customizableEdges10;
+            iconLike.ErrorImage = Properties.Resources.heart_thin_icon;
             iconLike.Image = (Image)resources.GetObject("iconLike.Image");
             iconLike.ImageRotate = 0F;
             iconLike.Location = new Point(158, 214);
             iconLike.Name = "iconLike";
-            iconLike.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            iconLike.ShadowDecoration.CustomizableEdges = customizableEdges11;
             iconLike.Size = new Size(30, 30);
             iconLike.SizeMode = PictureBoxSizeMode.StretchImage;
             iconLike.TabIndex = 16;
             iconLike.TabStop = false;
             iconLike.Click += guna2PictureBox1_Click;
             // 
-            // guna2ContainerControl2
-            // 
-            guna2ContainerControl2.BorderRadius = 50;
-            guna2ContainerControl2.Controls.Add(lblContent);
-            guna2ContainerControl2.CustomizableEdges = customizableEdges8;
-            guna2ContainerControl2.FillColor = Color.WhiteSmoke;
-            guna2ContainerControl2.Location = new Point(127, 92);
-            guna2ContainerControl2.Name = "guna2ContainerControl2";
-            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            guna2ContainerControl2.Size = new Size(405, 116);
-            guna2ContainerControl2.TabIndex = 12;
-            guna2ContainerControl2.Text = "guna2ContainerControl2";
-            // 
-            // lblContent
-            // 
-            lblContent.BackColor = Color.Transparent;
-            lblContent.Location = new Point(28, 47);
-            lblContent.Name = "lblContent";
-            lblContent.Size = new Size(97, 17);
-            lblContent.TabIndex = 20;
-            lblContent.Text = "guna2HtmlLabel1";
-            // 
             // guna2Shapes1
             // 
             guna2Shapes1.BorderThickness = 0;
             guna2Shapes1.LineThickness = 3;
-            guna2Shapes1.Location = new Point(106, 76);
+            guna2Shapes1.Location = new Point(154, 76);
             guna2Shapes1.Name = "guna2Shapes1";
             guna2Shapes1.PolygonSkip = 1;
             guna2Shapes1.Rotate = 0F;
-            guna2Shapes1.RoundedEdges = customizableEdges10;
+            guna2Shapes1.RoundedEdges = customizableEdges12;
             guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Line;
-            guna2Shapes1.Size = new Size(446, 10);
+            guna2Shapes1.Size = new Size(398, 10);
             guna2Shapes1.TabIndex = 11;
             guna2Shapes1.Text = "guna2Shapes1";
-            guna2Shapes1.Zoom = 80;
+            guna2Shapes1.Zoom = 100;
+            // 
+            // lblCreator
+            // 
+            lblCreator.BackColor = Color.Transparent;
+            lblCreator.BorderColor = Color.Transparent;
+            lblCreator.BorderThickness = 0;
+            lblCreator.CustomizableEdges = customizableEdges2;
+            lblCreator.DefaultText = "kullanıcı";
+            lblCreator.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lblCreator.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lblCreator.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lblCreator.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lblCreator.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lblCreator.Font = new Font("Segoe UI", 9F);
+            lblCreator.ForeColor = Color.Black;
+            lblCreator.HoverState.BorderColor = Color.White;
+            lblCreator.Location = new Point(20, 112);
+            lblCreator.Name = "lblCreator";
+            lblCreator.PlaceholderForeColor = Color.Transparent;
+            lblCreator.PlaceholderText = "";
+            lblCreator.ReadOnly = true;
+            lblCreator.SelectedText = "";
+            lblCreator.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            lblCreator.Size = new Size(90, 36);
+            lblCreator.TabIndex = 24;
+            lblCreator.TextAlign = HorizontalAlignment.Center;
             // 
             // PostCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             BackColor = Color.Transparent;
             Controls.Add(guna2ContainerControl1);
             Name = "PostCard";
-            Size = new Size(668, 300);
+            Size = new Size(668, 302);
             Load += PostCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureProfil).EndInit();
             guna2ContainerControl1.ResumeLayout(false);
@@ -256,26 +278,22 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconComment).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconLike).EndInit();
-            guna2ContainerControl2.ResumeLayout(false);
-            guna2ContainerControl2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Label lblCreator;
         private Label lblDate;
         private Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pictureProfil;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
         private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
-        private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl2;
         private Guna.UI2.WinForms.Guna2PictureBox iconLike;
         private Label lblLikeCount;
         private Label lblCommentCount;
         private Guna.UI2.WinForms.Guna2PictureBox iconComment;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblContent;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2TextBox lblContent;
+        private Guna.UI2.WinForms.Guna2TextBox lblCreator;
     }
 }

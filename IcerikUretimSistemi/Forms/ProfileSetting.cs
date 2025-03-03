@@ -46,7 +46,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void LoadImages()
         {
-            string imagesFolderPath = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
+            string imagesFolderPath = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
 
             // Folder içindeki tüm resim dosyalarını al
             var imageFiles = Directory.GetFiles(imagesFolderPath, "*.jpg")

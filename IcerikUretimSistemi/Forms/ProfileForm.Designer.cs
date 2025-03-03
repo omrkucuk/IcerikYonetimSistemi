@@ -151,6 +151,8 @@
             // pictureBoxProfile
             // 
             pictureBoxProfile.BackColor = Color.Transparent;
+            pictureBoxProfile.ErrorImage = Properties.Resources.user;
+            pictureBoxProfile.Image = Properties.Resources.user;
             pictureBoxProfile.ImageRotate = 0F;
             pictureBoxProfile.Location = new Point(13, 13);
             pictureBoxProfile.Name = "pictureBoxProfile";

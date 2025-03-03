@@ -71,8 +71,6 @@ namespace IcerikUretimSistemi.UI.Forms
         private void iconBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            HomePageForm ev = new();
-            ev.Show();
         }
 
         private void guna2PictureBox1_Click(object sender, EventArgs e)

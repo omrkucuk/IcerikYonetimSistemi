@@ -53,5 +53,10 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             AdjustMessageHeight();
         }
+
+        private void txtMessage_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

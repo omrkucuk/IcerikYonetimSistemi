@@ -122,6 +122,7 @@
             // profilePhoto
             // 
             profilePhoto.Cursor = Cursors.Hand;
+            profilePhoto.ErrorImage = Properties.Resources.user;
             profilePhoto.FillColor = Color.Transparent;
             profilePhoto.Image = (Image)resources.GetObject("profilePhoto.Image");
             profilePhoto.ImageRotate = 0F;

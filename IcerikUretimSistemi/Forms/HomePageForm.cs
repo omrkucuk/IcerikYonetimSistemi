@@ -74,7 +74,7 @@ namespace IcerikUretimSistemi.UI.Forms
             foreach (var post in postList)
             {
                 var user = _userService.GetByID(post.UserID);
-                postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID,post.UserID);
+                postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID, post.UserID);
                 postCard.UpdateLikeCount();
                 postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
@@ -157,7 +157,7 @@ namespace IcerikUretimSistemi.UI.Forms
             foreach (var post in filteredPosts)
             {
                 var user = _userService.GetByID(post.UserID);
-                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID,post.UserID);
+                PostCard postCard = new PostCard(user.UserName, post.Title, post.Content, post.CreatedDate, user.ImagePath, post.ID, currentUserID, post.UserID);
                 postCard.UpdateLikeCount();
                 postCard.UpdateLikeIcon();
                 flowLayoutPanel1.Controls.Add(postCard);
@@ -179,6 +179,10 @@ namespace IcerikUretimSistemi.UI.Forms
         private void SomeMethodThatTriggersRefresh()
         {
             ContentRefreshRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void gunaPictureProfil_Click(object sender, EventArgs e)
+        {
         }
     }
 }

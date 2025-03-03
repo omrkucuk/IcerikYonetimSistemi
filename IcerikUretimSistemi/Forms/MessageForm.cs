@@ -82,8 +82,11 @@ namespace IcerikUretimSistemi.UI.Forms
             this.Close();
 
             MessageSendForm homePage = Application.OpenForms.OfType<MessageSendForm>().FirstOrDefault();
+            if (homePage != null)
+            {
+                homePage.Close();
 
-            homePage.Close();
+            }
         }
 
 

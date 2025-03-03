@@ -54,7 +54,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            lblUserName = new Label();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
             gunaPictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
@@ -69,6 +70,7 @@
             guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            lblUserName = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)gunaPictureProfil).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox5).BeginInit();
@@ -78,17 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
             SuspendLayout();
-            // 
-            // lblUserName
-            // 
-            lblUserName.AutoSize = true;
-            lblUserName.Font = new Font("Segoe UI", 10F);
-            lblUserName.Location = new Point(881, 25);
-            lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(148, 19);
-            lblUserName.TabIndex = 5;
-            lblUserName.Text = "UserNameasdasdgfasd";
-            lblUserName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // flowLayoutPanel1
             // 
@@ -104,8 +95,11 @@
             // gunaPictureProfil
             // 
             gunaPictureProfil.BackgroundImageLayout = ImageLayout.Stretch;
+            gunaPictureProfil.Cursor = Cursors.Hand;
+            gunaPictureProfil.ErrorImage = Properties.Resources.user;
+            gunaPictureProfil.Image = Properties.Resources.user;
             gunaPictureProfil.ImageRotate = 0F;
-            gunaPictureProfil.Location = new Point(917, 60);
+            gunaPictureProfil.Location = new Point(932, 49);
             gunaPictureProfil.Name = "gunaPictureProfil";
             gunaPictureProfil.ShadowDecoration.CustomizableEdges = customizableEdges1;
             gunaPictureProfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -113,6 +107,7 @@
             gunaPictureProfil.SizeMode = PictureBoxSizeMode.StretchImage;
             gunaPictureProfil.TabIndex = 8;
             gunaPictureProfil.TabStop = false;
+            gunaPictureProfil.Click += gunaPictureProfil_Click;
             // 
             // guna2ContainerControl1
             // 
@@ -345,18 +340,45 @@
             txtSearch.TabIndex = 22;
             txtSearch.TextChanged += guna2TextBox1_TextChanged;
             // 
+            // lblUserName
+            // 
+            lblUserName.BackColor = Color.Transparent;
+            lblUserName.BorderColor = Color.Transparent;
+            lblUserName.BorderThickness = 0;
+            lblUserName.CustomizableEdges = customizableEdges26;
+            lblUserName.DefaultText = "kullanıcı";
+            lblUserName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lblUserName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lblUserName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lblUserName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lblUserName.FillColor = Color.AliceBlue;
+            lblUserName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lblUserName.Font = new Font("Segoe UI", 9F);
+            lblUserName.ForeColor = Color.Black;
+            lblUserName.HoverState.BorderColor = Color.AliceBlue;
+            lblUserName.Location = new Point(932, 145);
+            lblUserName.Name = "lblUserName";
+            lblUserName.PlaceholderForeColor = Color.Transparent;
+            lblUserName.PlaceholderText = "";
+            lblUserName.ReadOnly = true;
+            lblUserName.SelectedText = "";
+            lblUserName.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            lblUserName.Size = new Size(90, 36);
+            lblUserName.TabIndex = 23;
+            lblUserName.TextAlign = HorizontalAlignment.Center;
+            // 
             // HomePageForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(1034, 711);
+            Controls.Add(lblUserName);
             Controls.Add(txtSearch);
             Controls.Add(guna2PictureBox6);
             Controls.Add(guna2ContainerControl1);
             Controls.Add(gunaPictureProfil);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(lblUserName);
             Controls.Add(guna2PictureBox4);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
@@ -373,11 +395,9 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private Label lblUserName;
         private Label label2;
         private FontAwesome.Sharp.IconPictureBox ıconPictureBox1;
         private FlowLayoutPanel flowLayoutPanel1;
@@ -394,5 +414,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox6;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2TextBox lblUserName;
     }
 }

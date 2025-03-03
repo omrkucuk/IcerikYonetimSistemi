@@ -115,6 +115,8 @@
             // 
             // pctCommentUser
             // 
+            pctCommentUser.ErrorImage = Properties.Resources.user;
+            pctCommentUser.Image = Properties.Resources.user;
             pctCommentUser.ImageRotate = 0F;
             pctCommentUser.Location = new Point(26, 6);
             pctCommentUser.Name = "pctCommentUser";

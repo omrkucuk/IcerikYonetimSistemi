@@ -44,6 +44,7 @@
             // 
             // pctPhoto
             // 
+            pctPhoto.ErrorImage = Properties.Resources.user;
             pctPhoto.Image = (Image)resources.GetObject("pctPhoto.Image");
             pctPhoto.ImageRotate = 0F;
             pctPhoto.Location = new Point(20, 2);
@@ -88,7 +89,6 @@
             txtMessage.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             txtMessage.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtMessage.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMessage.Enabled = false;
             txtMessage.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMessage.Font = new Font("Segoe UI", 9F);
             txtMessage.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
@@ -96,10 +96,12 @@
             txtMessage.Multiline = true;
             txtMessage.Name = "txtMessage";
             txtMessage.PlaceholderText = "";
+            txtMessage.ReadOnly = true;
             txtMessage.SelectedText = "";
             txtMessage.ShadowDecoration.CustomizableEdges = customizableEdges3;
             txtMessage.Size = new Size(290, 38);
             txtMessage.TabIndex = 0;
+            txtMessage.TextChanged += txtMessage_TextChanged;
             // 
             // MessageControl
             // 

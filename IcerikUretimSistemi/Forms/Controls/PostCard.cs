@@ -88,11 +88,15 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre geri bildirim mesajı
             if (isLiked)
             {
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                iconLike.ErrorImage = errorImage;
             }
             else
             {
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                iconLike.ErrorImage = errorImage;
             }
 
             // Beğeni sayısını güncelleyebiliriz, örneğin butonun yanındaki beğeni sayısını...
@@ -112,11 +116,15 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre ikon belirleniyor
             if (isLiked)
             {
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                iconLike.ErrorImage = errorImage;
             }
             else
             {
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                iconLike.ErrorImage = errorImage;
             }
         }
 
@@ -135,6 +143,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             var yorumSayisi = _commentService.GetAll().Count(c => c.PostID == _postID);
             lblCommentCount.Text = yorumSayisi.ToString();
         }
+
 
         private void iconComment_Click(object sender, EventArgs e)
         {
