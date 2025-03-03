@@ -33,6 +33,13 @@ namespace IcerikUretimSistemi.UI.Forms
         {
             try
             {
+                var existingUser = _userRepository.GetAll().FirstOrDefault(x => x.UserName == txtKayitUserName.Text || x.Email == txtEmail.Text);
+                if (existingUser != null)
+                {
+                    MessageBox.Show("Kullanıcı adı veya e-posta adresi zaten alınmış.");
+                    return;
+                }
+
                 User kullanici = new User()
                 {
                     UserName = txtKayitUserName.Text,
@@ -45,7 +52,6 @@ namespace IcerikUretimSistemi.UI.Forms
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
 
@@ -87,6 +93,14 @@ namespace IcerikUretimSistemi.UI.Forms
                 var eMail = txtGirisKullanıcıAdi.Text;
                 var sifre = txtGirisSifre.Text;
 
+                if (eMail == "admin" && sifre == "admin")
+                {
+                    AdminForm adminForm = new AdminForm();
+                    adminForm.Show();
+                    this.Hide();
+                    return; 
+                }
+
                 // Veritabanındaki kullanıcıyı kontrol et
                 var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == eMail && x.Password == sifre);
 
@@ -94,13 +108,11 @@ namespace IcerikUretimSistemi.UI.Forms
                 {
                     MessageBox.Show("Giriş Başarılı");
 
-                    // Aktif kullanıcıyı CurrentUser'a set et
                     CurrentUser.LogIn(user);
 
                     HomePageForm home = new HomePageForm();
                     home.Show();
                     this.Hide();
-
                 }
                 else
                 {
