@@ -36,7 +36,6 @@ namespace IcerikUretimSistemi.UI.Forms
             LoadMessages();
         }
 
-        // Mesajları yüklemek için bir yardımcı fonksiyon
         private void LoadMessages()
         {
             try
@@ -44,7 +43,7 @@ namespace IcerikUretimSistemi.UI.Forms
                 // Gönderen veya alıcı kimliği ile mesajları alıyoruz
                 var messages = _messageService.GetMessagesBySenderOrReceiver(_currentID, _receiverID);
 
-                // FlowLayoutPanel'i temizliyoruz
+                
                 flowLayoutPanel1.Controls.Clear();
 
                 // Her bir mesaj için MessageControl ekliyoruz
@@ -60,7 +59,7 @@ namespace IcerikUretimSistemi.UI.Forms
                         message.SendAt
                     );
 
-                    // FlowLayoutPanel'a yeni kontrol ekliyoruz
+                    
                     flowLayoutPanel1.Controls.Add(messageControl);
                 }
             }
@@ -70,18 +69,17 @@ namespace IcerikUretimSistemi.UI.Forms
             }
         }
 
-        // Mesaj gönderme butonuna tıklanma olayı
         private void guna2PictureBox6_Click(object sender, EventArgs e)
         {
             try
             {
-                // Kullanıcıdan gelen mesajı alıyoruz
+               
                 string messageContent = txtMesajYazma.Text.Trim();
 
-                // Eğer mesaj boş değilse
+               
                 if (!string.IsNullOrEmpty(messageContent))
                 {
-                    // Yeni mesaj nesnesi oluşturuyoruz
+                    
                     Entites.Models.Message mesaj = new()
                     {
                         SenderID = _currentID,
@@ -91,10 +89,10 @@ namespace IcerikUretimSistemi.UI.Forms
                         IsRead = false
                     };
 
-                    // Mesajı veritabanına kaydediyoruz
+                    
                     _messageService.Create(mesaj);
                     
-                    // Mesajlar yeniden yükleniyor
+                    
                     LoadMessages();
                 }
                 else
@@ -102,7 +100,7 @@ namespace IcerikUretimSistemi.UI.Forms
                     MessageBox.Show("Mesaj boş olamaz.");
                 }
 
-                // Mesaj kutusunu temizliyoruz
+                
                 txtMesajYazma.Clear();
             }
             catch (Exception ex)
@@ -113,7 +111,7 @@ namespace IcerikUretimSistemi.UI.Forms
             txtMesajYazma.Text = "";
         }
 
-        // Geri butonuna tıklanma olayı
+       
         private void iconBack_Click(object sender, EventArgs e)
         {
             this.Close();

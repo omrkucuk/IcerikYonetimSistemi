@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250305070819_FirstMigrationV4")]
-    partial class FirstMigrationV4
+    [Migration("20250305073854_First")]
+    partial class First
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

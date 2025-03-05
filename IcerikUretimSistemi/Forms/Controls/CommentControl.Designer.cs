@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
             guna2ContainerControl3 = new Guna.UI2.WinForms.Guna2ContainerControl();
             lblCommentDate = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblCommentText = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2ContainerControl2 = new Guna.UI2.WinForms.Guna2ContainerControl();
             pctCommentUser = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            lblCommentUserName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            lblCommentUserName = new Guna.UI2.WinForms.Guna2TextBox();
             guna2ContainerControl1.SuspendLayout();
             guna2ContainerControl3.SuspendLayout();
             guna2ContainerControl2.SuspendLayout();
@@ -54,11 +56,11 @@
             guna2ContainerControl1.BorderRadius = 20;
             guna2ContainerControl1.Controls.Add(guna2ContainerControl3);
             guna2ContainerControl1.Controls.Add(guna2ContainerControl2);
-            guna2ContainerControl1.CustomizableEdges = customizableEdges6;
+            guna2ContainerControl1.CustomizableEdges = customizableEdges8;
             guna2ContainerControl1.ForeColor = Color.Transparent;
             guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
-            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges9;
             guna2ContainerControl1.Size = new Size(488, 125);
             guna2ContainerControl1.TabIndex = 0;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
@@ -102,13 +104,13 @@
             // 
             guna2ContainerControl2.BackColor = Color.Transparent;
             guna2ContainerControl2.BorderRadius = 10;
-            guna2ContainerControl2.Controls.Add(pctCommentUser);
             guna2ContainerControl2.Controls.Add(lblCommentUserName);
-            guna2ContainerControl2.CustomizableEdges = customizableEdges4;
+            guna2ContainerControl2.Controls.Add(pctCommentUser);
+            guna2ContainerControl2.CustomizableEdges = customizableEdges6;
             guna2ContainerControl2.FillColor = Color.FromArgb(123, 123, 225);
             guna2ContainerControl2.Location = new Point(16, 18);
             guna2ContainerControl2.Name = "guna2ContainerControl2";
-            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2ContainerControl2.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2ContainerControl2.Size = new Size(107, 90);
             guna2ContainerControl2.TabIndex = 3;
             guna2ContainerControl2.Text = "guna2ContainerControl2";
@@ -120,7 +122,7 @@
             pctCommentUser.ImageRotate = 0F;
             pctCommentUser.Location = new Point(26, 6);
             pctCommentUser.Name = "pctCommentUser";
-            pctCommentUser.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            pctCommentUser.ShadowDecoration.CustomizableEdges = customizableEdges5;
             pctCommentUser.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             pctCommentUser.Size = new Size(56, 56);
             pctCommentUser.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -130,14 +132,29 @@
             // lblCommentUserName
             // 
             lblCommentUserName.BackColor = Color.Transparent;
-            lblCommentUserName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            lblCommentUserName.BorderColor = Color.Transparent;
+            lblCommentUserName.BorderThickness = 0;
+            lblCommentUserName.CustomizableEdges = customizableEdges3;
+            lblCommentUserName.DefaultText = "kullanıcı";
+            lblCommentUserName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lblCommentUserName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lblCommentUserName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lblCommentUserName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lblCommentUserName.FillColor = Color.FromArgb(123, 123, 225);
+            lblCommentUserName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lblCommentUserName.Font = new Font("Segoe UI", 9F);
             lblCommentUserName.ForeColor = Color.Black;
+            lblCommentUserName.HoverState.BorderColor = Color.AliceBlue;
             lblCommentUserName.Location = new Point(7, 65);
             lblCommentUserName.Name = "lblCommentUserName";
-            lblCommentUserName.Size = new Size(97, 17);
-            lblCommentUserName.TabIndex = 1;
-            lblCommentUserName.Text = "guna2HtmlLabel1";
-            lblCommentUserName.TextAlignment = ContentAlignment.MiddleCenter;
+            lblCommentUserName.PlaceholderForeColor = Color.Transparent;
+            lblCommentUserName.PlaceholderText = "";
+            lblCommentUserName.ReadOnly = true;
+            lblCommentUserName.SelectedText = "";
+            lblCommentUserName.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            lblCommentUserName.Size = new Size(90, 25);
+            lblCommentUserName.TabIndex = 24;
+            lblCommentUserName.TextAlign = HorizontalAlignment.Center;
             // 
             // CommentControl
             // 
@@ -152,7 +169,6 @@
             guna2ContainerControl3.ResumeLayout(false);
             guna2ContainerControl3.PerformLayout();
             guna2ContainerControl2.ResumeLayout(false);
-            guna2ContainerControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pctCommentUser).EndInit();
             ResumeLayout(false);
         }
@@ -160,11 +176,11 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblCommentUserName;
         private Guna.UI2.WinForms.Guna2CirclePictureBox pctCommentUser;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCommentText;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl2;
         private Guna.UI2.WinForms.Guna2ContainerControl guna2ContainerControl3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblCommentDate;
+        private Guna.UI2.WinForms.Guna2TextBox lblCommentUserName;
     }
 }

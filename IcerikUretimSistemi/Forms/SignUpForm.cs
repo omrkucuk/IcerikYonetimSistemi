@@ -2,17 +2,6 @@
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
-using IcerikUretimSistemi.UI.Forms.Controls;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace IcerikUretimSistemi.UI.Forms
 {
@@ -123,6 +112,27 @@ namespace IcerikUretimSistemi.UI.Forms
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        {
+            var acikSifre = txtGirisSifre.UseSystemPasswordChar;
+
+            if (acikSifre == false)
+            {
+                txtGirisSifre.UseSystemPasswordChar = true;
+            }
+            else
+            {
+
+                txtGirisSifre.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void guna2PictureBox5_Click(object sender, EventArgs e)
+        {
+
+            txtKayitSifre.UseSystemPasswordChar = !txtKayitSifre.UseSystemPasswordChar;
         }
     }
 }

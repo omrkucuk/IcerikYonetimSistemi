@@ -115,6 +115,7 @@
             guna2ContainerControl1.Location = new Point(3, 3);
             guna2ContainerControl1.Name = "guna2ContainerControl1";
             guna2ContainerControl1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2ContainerControl1.ShadowDecoration.Shadow = new Padding(50);
             guna2ContainerControl1.Size = new Size(629, 296);
             guna2ContainerControl1.TabIndex = 10;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
@@ -270,7 +271,7 @@
             BackColor = Color.Transparent;
             Controls.Add(guna2ContainerControl1);
             Name = "PostCard";
-            Size = new Size(668, 302);
+            Size = new Size(649, 302);
             Load += PostCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureProfil).EndInit();
             guna2ContainerControl1.ResumeLayout(false);

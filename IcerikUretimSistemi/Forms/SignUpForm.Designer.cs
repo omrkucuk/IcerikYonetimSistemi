@@ -224,6 +224,7 @@
             // 
             // guna2PictureBox1
             // 
+            guna2PictureBox1.Cursor = Cursors.Hand;
             guna2PictureBox1.CustomizableEdges = customizableEdges9;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
@@ -234,6 +235,7 @@
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox1.TabIndex = 15;
             guna2PictureBox1.TabStop = false;
+            guna2PictureBox1.Click += guna2PictureBox1_Click;
             // 
             // label7
             // 
@@ -294,6 +296,7 @@
             // 
             // guna2PictureBox5
             // 
+            guna2PictureBox5.Cursor = Cursors.Hand;
             guna2PictureBox5.CustomizableEdges = customizableEdges15;
             guna2PictureBox5.Image = (Image)resources.GetObject("guna2PictureBox5.Image");
             guna2PictureBox5.ImageRotate = 0F;
@@ -304,6 +307,7 @@
             guna2PictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
             guna2PictureBox5.TabIndex = 22;
             guna2PictureBox5.TabStop = false;
+            guna2PictureBox5.Click += guna2PictureBox5_Click;
             // 
             // txtKayitUserName
             // 

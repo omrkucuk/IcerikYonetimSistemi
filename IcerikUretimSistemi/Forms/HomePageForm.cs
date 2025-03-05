@@ -173,8 +173,8 @@ namespace IcerikUretimSistemi.UI.Forms
 
         public void RefreshContent()
         {
-            flowLayoutPanel1.Controls.Clear(); // Önceki gönderileri temizle
-            HomePageForm_Load(null, null); // Yeniden yükle
+            flowLayoutPanel1.Controls.Clear();
+            HomePageForm_Load(null, null); 
         }
         private void SomeMethodThatTriggersRefresh()
         {
@@ -183,6 +183,11 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void gunaPictureProfil_Click(object sender, EventArgs e)
         {
+            var user = CurrentUser.GetUser();
+
+            ProfileForm profileForm = new ProfileForm(user.ID);
+            profileForm.Show();
+            this.Close();
         }
     }
 }

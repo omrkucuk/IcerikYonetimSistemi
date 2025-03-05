@@ -46,15 +46,15 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void LoadImages()
         {
-            string imagesFolderPath = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
+            string imagesFolderPath = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\ProfileImages\";  
 
-            // Folder içindeki tüm resim dosyalarını al
+            
             var imageFiles = Directory.GetFiles(imagesFolderPath, "*.jpg")
                                       .Concat(Directory.GetFiles(imagesFolderPath, "*.jpeg"))
                                       .Concat(Directory.GetFiles(imagesFolderPath, "*.png"))
                                       .ToList();
 
-            // FlowLayoutPanel içinde her resim için PictureBox ekle
+            
             foreach (var imagePath in imageFiles)
             {
                 PictureBox pictureBox = new PictureBox
@@ -67,18 +67,17 @@ namespace IcerikUretimSistemi.UI.Forms
                     Cursor = Cursors.Hand
                 };
 
-                // Resme tıklanabilirlik ekle
+                
                 pictureBox.Click += (sender, e) => OnImageSelected(imagePath);
 
-                // PictureBox'ı FlowLayoutPanel'e ekle
+                
                 flowLayoutPanelImages.Controls.Add(pictureBox);
             }
         }
 
         private void OnImageSelected(string imagePath)
         {
-            // Resmi kaydetmek için işlemleri yapabilirsiniz
-            // Örneğin, Image path'i alıp veritabanına kaydedelim
+            
             var currentUser = CurrentUser.GetUser();
             if (currentUser != null)
             {
@@ -92,13 +91,13 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void btnSaveProfileImage_Click(object sender, EventArgs e)
         {
-            // Kaydedilen profil resmini veritabanına yazma işlemi
+            
             var currentUser = CurrentUser.GetUser();
             string selectedImagePath = currentUser.ImagePath;
 
             if (!string.IsNullOrEmpty(selectedImagePath))
             {
-                // Profil resmini kaydedelim
+                
                 MessageBox.Show($"Profil resminiz {selectedImagePath} olarak kaydedildi.");
             }
             else

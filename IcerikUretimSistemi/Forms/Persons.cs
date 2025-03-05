@@ -35,7 +35,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void Persons_Load(object sender, EventArgs e)
         {
-            // Veritabanından kullanıcıları çekin. Bu örnekte, kullanıcıları manuel bir listeyle ekliyoruz.
+            
             var users = _userService.GetAll();
             var follow = _followRepository.GetAll();
 

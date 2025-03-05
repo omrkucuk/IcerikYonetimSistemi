@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigrationV4 : Migration
+    public partial class First : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
