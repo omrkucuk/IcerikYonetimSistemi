@@ -10,8 +10,6 @@ namespace IcerikUretimSistemi.DataAccess.Context
 {
     public class AppDBContext : DbContext
     {
-        public DbSet<Admin> Admin { get; set; }
-        public DbSet<AdminLog> AdminLog { get; set; }
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Follow> Follows { get; set; }
         public DbSet<Likes> Likes { get; set; }
@@ -21,7 +19,7 @@ namespace IcerikUretimSistemi.DataAccess.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CMSV3;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CMSV4;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,23 +33,23 @@ namespace IcerikUretimSistemi.DataAccess.Context
                  .HasOne(f => f.Follower)
                  .WithMany()
                  .HasForeignKey(f => f.FollowerID)
-                 .OnDelete(DeleteBehavior.NoAction); // ❌ Cascade kaldırıldı
+                 .OnDelete(DeleteBehavior.NoAction); 
 
             modelBuilder.Entity<Follow>()
                 .HasOne(f => f.Following)
                 .WithMany()
                 .HasForeignKey(f => f.FollowingID)
-                .OnDelete(DeleteBehavior.NoAction); // ❌ Cascade kaldırıldı
+                .OnDelete(DeleteBehavior.NoAction); 
 
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Sender)
-                .WithMany(u => u.SentMessages) // Kullanıcının gönderdiği mesajlar
+                .WithMany(u => u.SentMessages) 
                 .HasForeignKey(m => m.SenderID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Message>()
                 .HasOne(m => m.Receiver)
-                .WithMany(u => u.ReceivedMessages) // Kullanıcının aldığı mesajlar
+                .WithMany(u => u.ReceivedMessages) 
                 .HasForeignKey(m => m.ReceiverID)
                 .OnDelete(DeleteBehavior.Restrict);
 
@@ -71,7 +69,7 @@ namespace IcerikUretimSistemi.DataAccess.Context
                 .HasOne(p => p.User)
                 .WithMany(u => u.Posts)
                 .HasForeignKey(p => p.UserID)
-                .OnDelete(DeleteBehavior.Cascade); // Yani kullanıcı silindiğinde postlar da silinsin.
+                .OnDelete(DeleteBehavior.Cascade); 
 
 
         }

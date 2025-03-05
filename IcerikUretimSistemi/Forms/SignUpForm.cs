@@ -93,14 +93,6 @@ namespace IcerikUretimSistemi.UI.Forms
                 var eMail = txtGirisKullanıcıAdi.Text;
                 var sifre = txtGirisSifre.Text;
 
-                if (eMail == "admin" && sifre == "admin")
-                {
-                    AdminForm adminForm = new AdminForm();
-                    adminForm.Show();
-                    this.Hide();
-                    return; 
-                }
-
                 // Veritabanındaki kullanıcıyı kontrol et
                 var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == eMail && x.Password == sifre);
 

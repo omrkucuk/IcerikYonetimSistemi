@@ -31,6 +31,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -41,12 +43,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lblDate = new Label();
             label1 = new Label();
             pictureProfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2ContainerControl1 = new Guna.UI2.WinForms.Guna2ContainerControl();
+            lblCreator = new Guna.UI2.WinForms.Guna2TextBox();
             lblContent = new Guna.UI2.WinForms.Guna2TextBox();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -55,7 +56,6 @@
             iconComment = new Guna.UI2.WinForms.Guna2PictureBox();
             iconLike = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
-            lblCreator = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureProfil).BeginInit();
             guna2ContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -119,6 +119,32 @@
             guna2ContainerControl1.TabIndex = 10;
             guna2ContainerControl1.Text = "guna2ContainerControl1";
             guna2ContainerControl1.Click += guna2ContainerControl1_Click;
+            // 
+            // lblCreator
+            // 
+            lblCreator.BackColor = Color.Transparent;
+            lblCreator.BorderColor = Color.Transparent;
+            lblCreator.BorderThickness = 0;
+            lblCreator.CustomizableEdges = customizableEdges2;
+            lblCreator.DefaultText = "kullanıcı";
+            lblCreator.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            lblCreator.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            lblCreator.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            lblCreator.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            lblCreator.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            lblCreator.Font = new Font("Segoe UI", 9F);
+            lblCreator.ForeColor = Color.Black;
+            lblCreator.HoverState.BorderColor = Color.White;
+            lblCreator.Location = new Point(20, 112);
+            lblCreator.Name = "lblCreator";
+            lblCreator.PlaceholderForeColor = Color.Transparent;
+            lblCreator.PlaceholderText = "";
+            lblCreator.ReadOnly = true;
+            lblCreator.SelectedText = "";
+            lblCreator.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            lblCreator.Size = new Size(90, 36);
+            lblCreator.TabIndex = 24;
+            lblCreator.TextAlign = HorizontalAlignment.Center;
             // 
             // lblContent
             // 
@@ -210,7 +236,7 @@
             iconLike.Cursor = Cursors.Hand;
             iconLike.CustomizableEdges = customizableEdges10;
             iconLike.ErrorImage = Properties.Resources.heart_thin_icon;
-            iconLike.Image = (Image)resources.GetObject("iconLike.Image");
+            iconLike.Image = Properties.Resources.heart_thin_icon;
             iconLike.ImageRotate = 0F;
             iconLike.Location = new Point(158, 214);
             iconLike.Name = "iconLike";
@@ -235,32 +261,6 @@
             guna2Shapes1.TabIndex = 11;
             guna2Shapes1.Text = "guna2Shapes1";
             guna2Shapes1.Zoom = 100;
-            // 
-            // lblCreator
-            // 
-            lblCreator.BackColor = Color.Transparent;
-            lblCreator.BorderColor = Color.Transparent;
-            lblCreator.BorderThickness = 0;
-            lblCreator.CustomizableEdges = customizableEdges2;
-            lblCreator.DefaultText = "kullanıcı";
-            lblCreator.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            lblCreator.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            lblCreator.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            lblCreator.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            lblCreator.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            lblCreator.Font = new Font("Segoe UI", 9F);
-            lblCreator.ForeColor = Color.Black;
-            lblCreator.HoverState.BorderColor = Color.White;
-            lblCreator.Location = new Point(20, 112);
-            lblCreator.Name = "lblCreator";
-            lblCreator.PlaceholderForeColor = Color.Transparent;
-            lblCreator.PlaceholderText = "";
-            lblCreator.ReadOnly = true;
-            lblCreator.SelectedText = "";
-            lblCreator.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            lblCreator.Size = new Size(90, 36);
-            lblCreator.TabIndex = 24;
-            lblCreator.TextAlign = HorizontalAlignment.Center;
             // 
             // PostCard
             // 

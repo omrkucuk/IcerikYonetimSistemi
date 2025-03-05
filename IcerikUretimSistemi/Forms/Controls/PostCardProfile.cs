@@ -69,14 +69,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre ikon belirleniyor
             if (isLiked)
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
                 iconLike.Image = errorImage;
             }
             else
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
                 iconLike.Image = errorImage;
             }
         }
@@ -96,19 +96,19 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre geri bildirim mesajı
             if (isLiked)
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
                 iconLike.Image = errorImage;
             }
             else
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
                 iconLike.Image = errorImage;
             }
 
             // Beğeni sayısını güncelleyebiliriz, örneğin butonun yanındaki beğeni sayısını...
-            UpdateLikeCount();
+            UpdateLikeCount(); 
         }
 
         private void PostCardProfile_Load(object sender, EventArgs e)

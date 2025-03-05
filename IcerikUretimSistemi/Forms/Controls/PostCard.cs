@@ -88,14 +88,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre geri bildirim mesajı
             if (isLiked)
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
                 iconLike.ErrorImage = errorImage;
             }
             else
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
                 iconLike.ErrorImage = errorImage;
             }
 
@@ -116,14 +116,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             // Duruma göre ikon belirleniyor
             if (isLiked)
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\red-heart-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
                 iconLike.ErrorImage = errorImage;
             }
             else
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\Icons\heart-thin-icon.png";
+                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
+                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
                 iconLike.ErrorImage = errorImage;
             }
         }

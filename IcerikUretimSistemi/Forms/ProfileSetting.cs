@@ -46,7 +46,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void LoadImages()
         {
-            string imagesFolderPath = @"C:\Users\bes080124\Desktop\ProjeCMS\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
+            string imagesFolderPath = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\ProfileImages\";  // Resimlerin bulunduğu klasör
 
             // Folder içindeki tüm resim dosyalarını al
             var imageFiles = Directory.GetFiles(imagesFolderPath, "*.jpg")
@@ -155,15 +155,21 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz ?", "SİLME İŞLEMİ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Silmek istediğinizden emin misiniz?", "SİLME İŞLEMİ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
                 try
                 {
-                    var userId = CurrentUser.LoggedInUser.ID;
+                    var userId = CurrentUser.LoggedInUser.ID;         
 
+               
                     var userToDelete = _userRepo.GetByID(userId);
+
+                    _userRepo.RemoveFollowRelations(userId);
+                    _userRepo.RemoveComments(userId);
+                    _userRepo.RemoveLikes(userId);
+
 
                     if (userToDelete == null)
                     {
@@ -171,8 +177,7 @@ namespace IcerikUretimSistemi.UI.Forms
                         return;
                     }
 
-
-                    _userRepo.Delete(userToDelete.ID);
+                    _userRepo.Delete(userId);
 
                     this.Close();
                     SignUpForm giris = new();
@@ -183,6 +188,7 @@ namespace IcerikUretimSistemi.UI.Forms
                     MessageBox.Show($"Silme işlemi sırasında hata oluştu: {ex.Message}");
                 }
             }
+        
         }
     }
 }

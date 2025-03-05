@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20250301145434_FirstMigration123")]
-    partial class FirstMigration123
+    [Migration("20250305070819_FirstMigrationV4")]
+    partial class FirstMigrationV4
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,70 +24,6 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.Admin", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AdminName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AdminPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("CanDeletePosts")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanEditPosts")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CanManagersUsers")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Admin");
-                });
-
-            modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.AdminLog", b =>
-                {
-                    b.Property<Guid>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Action")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("AdminID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("CommentID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("PostID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("PostsID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("AdminID");
-
-                    b.HasIndex("CommentID");
-
-                    b.HasIndex("PostsID");
-
-                    b.ToTable("AdminLog");
-                });
 
             modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.Comments", b =>
                 {
@@ -146,19 +82,23 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
 
             modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.Likes", b =>
                 {
-                    b.Property<Guid>("PostID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UserID")
+                    b.Property<Guid>("ID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("PostID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("PostsID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("PostID", "UserID");
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ID");
 
                     b.HasIndex("PostsID");
 
@@ -231,6 +171,12 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
@@ -240,31 +186,6 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.AdminLog", b =>
-                {
-                    b.HasOne("IcerikUretimSistemi.Entites.Models.Admin", "Admin")
-                        .WithMany()
-                        .HasForeignKey("AdminID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IcerikUretimSistemi.Entites.Models.Comments", "Comment")
-                        .WithMany()
-                        .HasForeignKey("CommentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IcerikUretimSistemi.Entites.Models.Posts", "Posts")
-                        .WithMany()
-                        .HasForeignKey("PostsID");
-
-                    b.Navigation("Admin");
-
-                    b.Navigation("Comment");
-
-                    b.Navigation("Posts");
                 });
 
             modelBuilder.Entity("IcerikUretimSistemi.Entites.Models.Comments", b =>

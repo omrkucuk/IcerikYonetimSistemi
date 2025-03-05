@@ -6,28 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace IcerikUretimSistemi.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration123 : Migration
+    public partial class FirstMigrationV4 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "Admin",
-                columns: table => new
-                {
-                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AdminName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AdminPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CanManagersUsers = table.Column<bool>(type: "bit", nullable: false),
-                    CanEditPosts = table.Column<bool>(type: "bit", nullable: false),
-                    CanDeletePosts = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Admin", x => x.ID);
-                });
-
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
@@ -35,6 +18,8 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                     ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImagePath = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -157,14 +142,15 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                 name: "Likes",
                 columns: table => new
                 {
+                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PostID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     PostsID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Likes", x => new { x.PostID, x.UserID });
+                    table.PrimaryKey("PK_Likes", x => x.ID);
                     table.ForeignKey(
                         name: "FK_Likes_Posts_PostsID",
                         column: x => x.PostsID,
@@ -177,55 +163,6 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "AdminLog",
-                columns: table => new
-                {
-                    ID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    AdminID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Action = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PostID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PostsID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    CommentID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AdminLog", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_AdminLog_Admin_AdminID",
-                        column: x => x.AdminID,
-                        principalTable: "Admin",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AdminLog_Comments_CommentID",
-                        column: x => x.CommentID,
-                        principalTable: "Comments",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AdminLog_Posts_PostsID",
-                        column: x => x.PostsID,
-                        principalTable: "Posts",
-                        principalColumn: "ID");
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AdminLog_AdminID",
-                table: "AdminLog",
-                column: "AdminID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AdminLog_CommentID",
-                table: "AdminLog",
-                column: "CommentID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AdminLog_PostsID",
-                table: "AdminLog",
-                column: "PostsID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_PostID",
@@ -282,7 +219,7 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AdminLog");
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "Follows");
@@ -292,12 +229,6 @@ namespace IcerikUretimSistemi.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Messages");
-
-            migrationBuilder.DropTable(
-                name: "Admin");
-
-            migrationBuilder.DropTable(
-                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "Posts");

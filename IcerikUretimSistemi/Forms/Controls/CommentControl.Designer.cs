@@ -131,11 +131,13 @@
             // 
             lblCommentUserName.BackColor = Color.Transparent;
             lblCommentUserName.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            lblCommentUserName.ForeColor = Color.Black;
             lblCommentUserName.Location = new Point(7, 65);
             lblCommentUserName.Name = "lblCommentUserName";
             lblCommentUserName.Size = new Size(97, 17);
             lblCommentUserName.TabIndex = 1;
             lblCommentUserName.Text = "guna2HtmlLabel1";
+            lblCommentUserName.TextAlignment = ContentAlignment.MiddleCenter;
             // 
             // CommentControl
             // 
