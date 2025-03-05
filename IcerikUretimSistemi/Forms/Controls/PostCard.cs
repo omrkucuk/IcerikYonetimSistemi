@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using IcerikUretimSistemi.Business.Services;
-using IcerikUretimSistemi.DataAccess.Repositories;
+﻿using IcerikUretimSistemi.Business.Services;
 using IcerikUretimSistemi.DataAccess.Context;
-using IcerikUretimSistemi.Entites.Models;
+using IcerikUretimSistemi.DataAccess.Repositories;
 
 namespace IcerikUretimSistemi.UI.Forms.Controls
 {
@@ -82,10 +72,8 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
         private void ToggleLike()
         {
-            // ToggleLike metoduyla beğeni durumunu değiştiriyoruz.
             bool isLiked = _likeService.ToggleLike(_postID, _currentUserID);
 
-            // Duruma göre geri bildirim mesajı
             if (isLiked)
             {
                 Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
@@ -99,21 +87,22 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
                 iconLike.ErrorImage = errorImage;
             }
 
-            // Beğeni sayısını güncelleyebiliriz, örneğin butonun yanındaki beğeni sayısını...
+
             UpdateLikeCount();
         }
+
+
         public void UpdateLikeCount()
         {
             // Beğeni sayısını güncelleme işlemi
-            var likeCount = _likeRepo.GetLikeCountByPostId(_postID); // Burada veritabanından beğeni sayısını alıyoruz
-            lblLikeCount.Text = likeCount.ToString(); // Sayıyı gösteren bir label'ınız olduğunu varsayalım
+            var likeCount = _likeRepo.GetLikeCountByPostId(_postID); 
+            lblLikeCount.Text = likeCount.ToString(); 
         }
         public void UpdateLikeIcon()
         {
-            // Sayfa yüklendiğinde mevcut beğeni durumu kontrol edilir
-            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID); // Beğeni durumu kontrolü
+            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID); 
 
-            // Duruma göre ikon belirleniyor
+            
             if (isLiked)
             {
                 Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");

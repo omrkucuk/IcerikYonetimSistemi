@@ -14,14 +14,14 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
     {
         private readonly UserRepository _userRepo;
         private readonly PostRepository _postRepo;
-        private readonly Guid _userId; 
-        private readonly Guid _currentUserId; 
+        private readonly Guid _userId;
+        private readonly Guid _currentUserId;
 
         public ProfileForm(Guid userId)
         {
             InitializeComponent();
             _userId = userId;
-            _currentUserId = CurrentUser.LoggedInUser.ID; 
+            _currentUserId = CurrentUser.LoggedInUser.ID;
 
             var context = new AppDBContext();
             _userRepo = new UserRepository(context);
@@ -60,7 +60,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         }
 
         private void LoadUserProfile(Guid userId)
-        {       
+        {
             var user = _userRepo.GetByID(userId);
 
             if (user != null)
@@ -76,7 +76,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
                     pictureBoxProfile.ImageLocation = @"C:\Users\husey\OneDrive\Masaüstü\CMSV2\IcerikUretimSistemi\ProfileImages\user.png";
                 }
 
-                UpdateFollowCounts(user); 
+                UpdateFollowCounts(user);
 
 
                 bool isFollowing = _userRepo.IsFollowing(_currentUserId, user.ID);
@@ -97,7 +97,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             {
                 bool takipEdildi = ToggleFollowStatus(_currentUserId, userToFollow.ID);
 
-                
+
                 UpdateFollowButton(takipEdildi);
 
                 LoadUserProfile(_userId);
@@ -113,36 +113,36 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
                 if (currentUser != null && targetUser != null)
                 {
-                    
+
                     var existingFollow = context.Follows
                         .FirstOrDefault(f => f.FollowerID == currentUserId && f.FollowingID == targetUserId);
 
                     if (existingFollow == null)
                     {
-                        
+
                         var newFollow = new Follow { FollowerID = currentUserId, FollowingID = targetUserId };
 
-                        
+
                         currentUser.Following.Add(newFollow);
                         targetUser.Followers.Add(newFollow);
 
-                        
+
                         context.Follows.Add(newFollow);
                         context.SaveChanges();
 
-                        return true; 
+                        return true;
                     }
                     else
                     {
-                        
+
                         context.Follows.Remove(existingFollow);
 
-                        
+
                         currentUser.Following.Remove(existingFollow);
                         targetUser.Followers.Remove(existingFollow);
 
                         context.SaveChanges();
-                        return false; 
+                        return false;
                     }
                 }
                 return false;
@@ -174,7 +174,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
         private void lblFollowers_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -215,9 +215,12 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         public void RefreshContent()
         {
             flowLayoutPost.Controls.Clear();
-            ProfileForm_Load(null, null); 
+            ProfileForm_Load(null, null);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
 

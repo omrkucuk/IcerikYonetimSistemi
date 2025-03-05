@@ -82,22 +82,30 @@ namespace IcerikUretimSistemi.UI.Forms
                 var eMail = txtGirisKullanıcıAdi.Text;
                 var sifre = txtGirisSifre.Text;
 
-                // Veritabanındaki kullanıcıyı kontrol et
-                var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == eMail && x.Password == sifre);
-
-                if (user != null)
+                if (eMail == "admin" && sifre == "admin")
                 {
-                    MessageBox.Show("Giriş Başarılı");
-
-                    CurrentUser.LogIn(user);
-
-                    HomePageForm home = new HomePageForm();
-                    home.Show();
+                    Admin adminForm = new();
+                    adminForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Geçersiz kullanıcı adı veya şifre");
+                    var user = _userRepository.GetAll().FirstOrDefault(x => x.Email == eMail && x.Password == sifre);
+
+                    if (user != null)
+                    {
+                        MessageBox.Show("Giriş Başarılı");
+
+                        CurrentUser.LogIn(user);
+
+                        HomePageForm home = new HomePageForm();
+                        home.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Geçersiz kullanıcı adı veya şifre");
+                    }
                 }
             }
             catch (Exception ex)

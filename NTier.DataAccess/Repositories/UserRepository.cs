@@ -91,5 +91,10 @@ namespace IcerikUretimSistemi.DataAccess.Repositories
             _dbContext.SaveChanges();
         }
 
+        public List<User> GetAllWithPosts()
+        {
+            return _dbContext.Users.Include(u => u.Posts).ThenInclude(p => p.Comments).ToList();
+        }
+
     }
 }

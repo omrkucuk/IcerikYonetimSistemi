@@ -143,7 +143,7 @@
             BackColor = Color.Transparent;
             Controls.Add(guna2ContainerControl1);
             Name = "PersonsControl";
-            Size = new Size(390, 218);
+            Size = new Size(390, 200);
             guna2ContainerControl1.ResumeLayout(false);
             guna2ContainerControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)profilePhoto).EndInit();

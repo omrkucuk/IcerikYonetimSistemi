@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\heart-thin-icon.png" />
+    <None Remove="Icons\red-heart-icon.png" />
     <None Remove="Images\cmslogo-Photoroom.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\heart-thin-icon.png" />
+    <EmbeddedResource Include="Icons\red-heart-icon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,7 +39,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Icons\" />
     <Folder Include="ProfileImages\" />
   </ItemGroup>
 

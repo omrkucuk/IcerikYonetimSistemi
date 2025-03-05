@@ -124,6 +124,7 @@
             label2.Size = new Size(74, 20);
             label2.TabIndex = 1;
             label2.Text = "Takipçiler";
+            label2.Click += label2_Click;
             // 
             // label4
             // 
