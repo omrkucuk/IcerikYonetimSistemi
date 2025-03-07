@@ -2,6 +2,7 @@
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
 using IcerikUretimSistemi.Entites.Models;
+using IcerikUretimSistemi.UI.Forms.Controls;
 
 namespace IcerikUretimSistemi.UI.Forms
 {
@@ -49,9 +50,11 @@ namespace IcerikUretimSistemi.UI.Forms
             txtKayitSifre.Text = "";
         }
 
+
+
         private void SignUpForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -75,7 +78,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
@@ -94,7 +97,12 @@ namespace IcerikUretimSistemi.UI.Forms
 
                     if (user != null)
                     {
-                        MessageBox.Show("Giriş Başarılı");
+                        OpenMessageForm acilis = new();
+                        acilis.Show();
+                        // 1 saniye bekle
+                        await Task.Delay(1500);
+                        
+                        acilis.Hide();
 
                         CurrentUser.LogIn(user);
 

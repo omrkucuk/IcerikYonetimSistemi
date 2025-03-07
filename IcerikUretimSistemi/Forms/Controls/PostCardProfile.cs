@@ -53,21 +53,10 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
         public void UpdateLikeIcon()
         {
-            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID); 
+            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID);
 
             
-            if (isLiked)
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
-                iconLike.Image = errorImage;
-            }
-            else
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
-                iconLike.Image = errorImage;
-            }
+            iconLike.Image = ByteArrayToImage(isLiked ? Properties.Resources.red_heart_icon : Properties.Resources.heart_thin_icon);
         }
 
         public void UpdateLikeCount()
@@ -82,22 +71,17 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
             bool isLiked = _likeService.ToggleLike(_postID, _currentUserID);
 
-            // Duruma göre geri bildirim mesajı
-            if (isLiked)
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
-                iconLike.Image = errorImage;
-            }
-            else
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
-                iconLike.Image = errorImage;
-            }
+            iconLike.Image = ByteArrayToImage(isLiked ? Properties.Resources.red_heart_icon : Properties.Resources.heart_thin_icon);
 
-            
-            UpdateLikeCount(); 
+            UpdateLikeCount();
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                return Image.FromStream(ms);
+            }
         }
 
         private void PostCardProfile_Load(object sender, EventArgs e)

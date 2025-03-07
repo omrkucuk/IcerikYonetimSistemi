@@ -153,6 +153,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             btnFollow.Text = isFollowing ? "Takipten Çık" : "Takip Et";
             btnFollow.FillColor = isFollowing ? Color.Red : Color.Green;
+            btnFollow.Cursor = Cursors.Hand;
         }
 
         private void UpdateFollowCounts(Entites.Models.User userToFollow)

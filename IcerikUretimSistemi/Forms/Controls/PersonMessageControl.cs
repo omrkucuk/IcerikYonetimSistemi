@@ -41,8 +41,16 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
 
         private void btnMessage_Click(object sender, EventArgs e)
         {
+            MessageSendForm gonder2 = Application.OpenForms.OfType<MessageSendForm>().FirstOrDefault();
+            if (gonder2 != null)
+            {
+                gonder2.Close();
+            }
+
             MessageSendForm gonder = new MessageSendForm(_currentID, _userID);
             gonder.Show();
+
+
         }
     }
 }

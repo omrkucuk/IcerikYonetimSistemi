@@ -61,6 +61,7 @@
             // 
             btnFollow.BackColor = Color.Transparent;
             btnFollow.BorderRadius = 10;
+            btnFollow.Cursor = Cursors.Hand;
             btnFollow.CustomizableEdges = customizableEdges1;
             btnFollow.DisabledState.BorderColor = Color.DarkGray;
             btnFollow.DisabledState.CustomBorderColor = Color.DarkGray;

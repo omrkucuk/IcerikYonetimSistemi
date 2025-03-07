@@ -57,7 +57,7 @@
             txtMesajYazma.PlaceholderText = "";
             txtMesajYazma.SelectedText = "";
             txtMesajYazma.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtMesajYazma.Size = new Size(513, 50);
+            txtMesajYazma.Size = new Size(550, 50);
             txtMesajYazma.TabIndex = 0;
             // 
             // guna2PictureBox6
@@ -67,7 +67,7 @@
             guna2PictureBox6.CustomizableEdges = customizableEdges3;
             guna2PictureBox6.Image = (Image)resources.GetObject("guna2PictureBox6.Image");
             guna2PictureBox6.ImageRotate = 0F;
-            guna2PictureBox6.Location = new Point(595, 568);
+            guna2PictureBox6.Location = new Point(613, 568);
             guna2PictureBox6.Name = "guna2PictureBox6";
             guna2PictureBox6.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2PictureBox6.Size = new Size(50, 50);

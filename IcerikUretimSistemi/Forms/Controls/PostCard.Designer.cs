@@ -84,6 +84,7 @@
             // pictureProfil
             // 
             pictureProfil.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureProfil.Cursor = Cursors.Hand;
             pictureProfil.ErrorImage = Properties.Resources.user;
             pictureProfil.Image = Properties.Resources.user;
             pictureProfil.ImageRotate = 0F;
@@ -95,6 +96,7 @@
             pictureProfil.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureProfil.TabIndex = 9;
             pictureProfil.TabStop = false;
+            pictureProfil.Click += pictureProfil_Click;
             // 
             // guna2ContainerControl1
             // 
@@ -236,8 +238,6 @@
             // 
             iconLike.Cursor = Cursors.Hand;
             iconLike.CustomizableEdges = customizableEdges10;
-            iconLike.ErrorImage = Properties.Resources.heart_thin_icon;
-            iconLike.Image = Properties.Resources.heart_thin_icon;
             iconLike.ImageRotate = 0F;
             iconLike.Location = new Point(158, 214);
             iconLike.Name = "iconLike";

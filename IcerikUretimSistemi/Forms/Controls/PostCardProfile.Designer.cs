@@ -171,7 +171,6 @@
             iconLike.BackColor = Color.Transparent;
             iconLike.Cursor = Cursors.Hand;
             iconLike.CustomizableEdges = customizableEdges7;
-            iconLike.ErrorImage = Properties.Resources.heart_thin_icon;
             iconLike.Image = (Image)resources.GetObject("iconLike.Image");
             iconLike.ImageRotate = 0F;
             iconLike.Location = new Point(71, 187);

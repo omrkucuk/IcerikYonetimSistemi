@@ -1,6 +1,7 @@
 ﻿using IcerikUretimSistemi.Business.Services;
 using IcerikUretimSistemi.DataAccess.Context;
 using IcerikUretimSistemi.DataAccess.Repositories;
+using IcerikUretimSistemi.Entites.Models;
 
 namespace IcerikUretimSistemi.UI.Forms.Controls
 {
@@ -74,19 +75,7 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         {
             bool isLiked = _likeService.ToggleLike(_postID, _currentUserID);
 
-            if (isLiked)
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
-                iconLike.ErrorImage = errorImage;
-            }
-            else
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
-                iconLike.ErrorImage = errorImage;
-            }
-
+            iconLike.Image = ByteArrayToImage(isLiked ? Properties.Resources.red_heart_icon : Properties.Resources.heart_thin_icon);
 
             UpdateLikeCount();
         }
@@ -95,25 +84,22 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
         public void UpdateLikeCount()
         {
             // Beğeni sayısını güncelleme işlemi
-            var likeCount = _likeRepo.GetLikeCountByPostId(_postID); 
-            lblLikeCount.Text = likeCount.ToString(); 
+            var likeCount = _likeRepo.GetLikeCountByPostId(_postID);
+            lblLikeCount.Text = likeCount.ToString();
         }
         public void UpdateLikeIcon()
         {
-            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID); 
+            bool isLiked = _likeService.IsPostLikedByUser(_postID, _currentUserID);
 
-            
-            if (isLiked)
+            // Kaynağı byte dizisinden Image'a çeviriyoruz
+            iconLike.Image = ByteArrayToImage(isLiked ? Properties.Resources.red_heart_icon : Properties.Resources.heart_thin_icon);
+        }
+
+        private Image ByteArrayToImage(byte[] byteArray)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
             {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\red-heart-icon.png";
-                iconLike.ErrorImage = errorImage;
-            }
-            else
-            {
-                Image errorImage = Image.FromFile(@"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png");
-                iconLike.ImageLocation = @"C:\Users\bes080124\Desktop\Proje\IcerikUretimSistemi\Icons\heart-thin-icon.png";
-                iconLike.ErrorImage = errorImage;
+                return Image.FromStream(ms);
             }
         }
 
@@ -170,10 +156,20 @@ namespace IcerikUretimSistemi.UI.Forms.Controls
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
             }
         }
 
+        private void pictureProfil_Click(object sender, EventArgs e)
+        {
+            ProfileForm proForm = new ProfileForm(_postOwnerID);
+            proForm.Show();
+
+
+            HomePageForm homePage = Application.OpenForms.OfType<HomePageForm>().FirstOrDefault();
+
+            homePage.Close();
+        }
     }
 }

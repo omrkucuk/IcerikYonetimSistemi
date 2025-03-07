@@ -18,8 +18,9 @@ namespace IcerikUretimSistemi.UI.Forms
     {
         private readonly PostService _postService;
         private readonly PostRepository _postRepository;
+        private readonly HomePageForm _homePageForm;
 
-        public PostCreate()
+        public PostCreate(HomePageForm homePageForm)
         {
             InitializeComponent();
 
@@ -27,6 +28,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
             _postRepository = new PostRepository(context);
             _postService = new PostService(_postRepository);
+            _homePageForm = homePageForm;
         }
 
 
@@ -70,6 +72,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void iconBack_Click(object sender, EventArgs e)
         {
+            _homePageForm.RefreshContent();
             this.Close();
         }
 

@@ -85,7 +85,7 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void btnPost_Click(object sender, EventArgs e)
         {
-            PostCreate postCreateForm = new();
+            PostCreate postCreateForm = new PostCreate(this);
             postCreateForm.Show();
         }
 

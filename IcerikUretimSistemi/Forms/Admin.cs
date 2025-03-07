@@ -121,11 +121,6 @@ namespace IcerikUretimSistemi.UI.Forms
 
         private void dateTime_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnDate_Click(object sender, EventArgs e)
-        {
             DateTime selectedDate = dateTime.Value.Date;
 
             var filteredUsersByDate = _userRepository.GetAllWithPosts()
@@ -144,6 +139,11 @@ namespace IcerikUretimSistemi.UI.Forms
                 .ToList();
 
             dataGrid.DataSource = filteredUsersByDate;
+        }
+
+        private void btnDate_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void iconBack_Click(object sender, EventArgs e)
